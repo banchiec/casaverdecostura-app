@@ -2,7 +2,6 @@
   "name": "casaverdecostura-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "axios": "^0.26.1",
     "react": "^17.0.2",
