@@ -31,7 +31,7 @@ const Navbar = (props) => {
         </Link>
         {props.user ? (
         <>
-          {/* <Link to={PATHS.PROTECTEDPAGE} className="authLink">
+          <Link to={PATHS.PROTECTEDPAGE} className="authLink">
             <FaFacebook/>
           </Link>
           <Link to={PATHS.PROTECTEDPAGE} className="authLink">
@@ -39,11 +39,11 @@ const Navbar = (props) => {
           </Link>
           <Link to={PATHS.PROTECTEDPAGE} className="authLink">
             <FaFacebook/>
-          </Link> */}
+          </Link>
 
-          {/* <Link to={PATHS.ADMINPAGE} className="authLink">
+          <Link to={PATHS.ADMINPAGE} className="authLink">
             Admin
-          </Link> */}
+          </Link>
 
           <button className="nav-logoutbtn" onClick={props.handleLogout}>
             Logout
