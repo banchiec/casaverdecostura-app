@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 	// import NotificationDropdown from "../Dropdowns/NotificationDropdown"
@@ -14,10 +15,10 @@ const Sidebar = () => {
             className="sidebar_logo"
         >
           <div
-            // className={
-            //   "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded " +
-            //   collapseShow
-            // }
+            className={
+              "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded " +
+              collapseShow
+            }
           >
             <div className="">
               <div className="flex flex-wrap">

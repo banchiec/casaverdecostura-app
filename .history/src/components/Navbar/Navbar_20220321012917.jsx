@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {FaUserPlus} from 'react-icons/fa'
 import { FiLogIn} from 'react-icons/fi'
@@ -8,6 +8,8 @@ import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
 
 const Navbar = (props) => {
+  const [hiddenNavbar, setHiddenNavbar] = useState('flex')
+  console.log(props.user);
   return (
     <NavbarContainer hidden >
       <Link to={PATHS.HOMEPAGE}>

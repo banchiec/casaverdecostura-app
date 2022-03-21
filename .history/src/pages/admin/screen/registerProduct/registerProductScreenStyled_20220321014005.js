@@ -20,7 +20,8 @@ export const FormGroup = styled.div`
 	color: palevioletred;
   display: block;
 	width: 300px;
-	margin: 10px auto;
+	border: 1px solid green;
+	/* margin: 50px auto; */
 `;
 
 export const Label = styled.label`

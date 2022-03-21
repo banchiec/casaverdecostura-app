@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {FaUserPlus} from 'react-icons/fa'
 import { FiLogIn} from 'react-icons/fi'
@@ -6,8 +6,11 @@ import { NavbarContainer } from "./navbarStyled";
 import { BsCartFill } from 'react-icons/bs'
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
+import * as CONSTS from "../../utils/consts";
 
 const Navbar = (props) => {
+  const [hiddenNavbar, setHiddenNavbar] = useState('flex')
+  console.log(props.user);
   return (
     <NavbarContainer hidden >
       <Link to={PATHS.HOMEPAGE}>

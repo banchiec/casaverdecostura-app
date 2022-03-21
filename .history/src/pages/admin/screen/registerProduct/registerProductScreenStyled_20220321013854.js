@@ -20,7 +20,7 @@ export const FormGroup = styled.div`
 	color: palevioletred;
   display: block;
 	width: 300px;
-	margin: 10px auto;
+	margin: 20px auto;
 `;
 
 export const Label = styled.label`
@@ -31,7 +31,7 @@ export const Label = styled.label`
 
 
 export const Input = styled.input`
-	padding: 0.4em;
+	padding: 0.5em;
 	color: palevioletred;
 	background: papayawhip;
 	border: none;

@@ -5,7 +5,7 @@ const RegisterProductScreen = () => {
 		<Form>
 			<div>
 			<FormGroup>
-				<h2>Registrar Producto</h2>
+				<h3>Registrar Producto</h3>
 				<Label htmlFor="label">Nombre</Label>
 				<Input id="label" />
 				<Message>message</Message>

@@ -3,9 +3,9 @@ import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenSt
 const RegisterProductScreen = () => {
 	return(
 		<Form>
+				<h3>Registrar Producto</h3>
 			<div>
 			<FormGroup>
-				<h2>Registrar Producto</h2>
 				<Label htmlFor="label">Nombre</Label>
 				<Input id="label" />
 				<Message>message</Message>

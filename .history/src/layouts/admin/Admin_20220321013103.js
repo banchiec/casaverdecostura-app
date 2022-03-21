@@ -1,4 +1,5 @@
 import Sidebar from "../../components/Sidebar/Sidebar"
+import {ContainerLayoutAdmin} from './adminStyled'
 
 const AdminLayout = ({children}) =>{
 	return(

@@ -4,9 +4,9 @@ export const Form = styled.form`
 	display: flex;
 	align-items: center;
 	/* border: 1px solid green; */
-	box-shadow: 0px 0 10px 2px gray;
+	box-shadow: 0px 0 10px 1px gray;
 	width: 70% ;
-	height: 80% ;
+	height: 60% ;
 	margin: 0 auto;
 	margin-top: 3rem;
 	div {
@@ -20,7 +20,7 @@ export const FormGroup = styled.div`
 	color: palevioletred;
   display: block;
 	width: 300px;
-	margin: 10px auto;
+	margin: 50px auto;
 `;
 
 export const Label = styled.label`
@@ -31,7 +31,7 @@ export const Label = styled.label`
 
 
 export const Input = styled.input`
-	padding: 0.4em;
+	padding: 0.5em;
 	color: palevioletred;
 	background: papayawhip;
 	border: none;
