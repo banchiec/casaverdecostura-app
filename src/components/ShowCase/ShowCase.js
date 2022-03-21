@@ -1,0 +1,32 @@
+import { useState } from "react" 
+import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem" 
+
+
+ 
+ export const ShowCase = (props) => { 
+      
+    console.log(props)
+    
+     return (
+         <>        
+         <div class="container page-wrapper">  
+         <div class="main">  
+         <ul class="cards">
+
+         {
+             props.products?.map((products) => {
+                 return (
+                  <>
+        <ShowCaseItem {...products}></ShowCaseItem>
+        </>
+                 )
+             })
+         }
+         </ul> 
+         </div>
+         </div>
+         
+         </>
+     )
+
+ }
