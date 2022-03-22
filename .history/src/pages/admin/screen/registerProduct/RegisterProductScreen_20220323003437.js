@@ -8,6 +8,7 @@ import './css/styles.css'
 let productService = new ProductsService()   
 let categoryServices = new CategoriesServices()
 let uploadServices = new UploadsService()
+const sizeData = ['xs', 's', 'm', 'l', 'xl']
 
 const RegisterProductScreen = () => {
   const [categories, setCategories] = useState([])

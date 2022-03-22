@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled';
+import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
 import CategoriesServices from '../../../../services/categories.service'
 import ProductsService from '../../../../services/products.service'
 import UploadsService from '../../../../services/upload.services'
@@ -8,15 +10,13 @@ import './css/styles.css'
 let productService = new ProductsService()   
 let categoryServices = new CategoriesServices()
 let uploadServices = new UploadsService()
+const sizeData = ['xs', 's', 'm', 'l', 'xl']
 
 const RegisterProductScreen = () => {
   const [categories, setCategories] = useState([])
   const [images, setImages] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [sizes, setSizes] = useState([])
-
-  const [checkColor, setCheckColor] = useState()
-
   const [form, setForm] = useState({
       name: "", 
       price: "", 
@@ -41,31 +41,21 @@ const RegisterProductScreen = () => {
   } 
   const handleFile = (e) => {
     setIsLoading(true)
-    console.log(e.target.files);
     const uploadData = new FormData()
-    uploadData.append('photos', e.target.files[0])
-    uploadServices.uploadImg(uploadData)
-      .then(res => {
-        setIsLoading(false)
-        setImages([ ...images, res.data.cloudinary_url])
-      })
-      .catch(error => alert("Error, esto no carga"))
-    getColor()
-    
+      uploadData.append('photos', e.target.files[0])
+      uploadServices.uploadImg(uploadData)
+        .then(res => {
+            setIsLoading(false)
+            setImages([ ...images, res.data.cloudinary_url])
+            console.log(images);
+        })
+        .catch(error => alert("Error, esto no carga"))
   }
-  const getColor = () => {
-    setCheckColor(true)
-    console.log("Tienes que introducir un color.")
-  }
-  console.log(images);
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value});
-  }; 
-  const handleSelectImage = (e) => {
     console.log(e.target.value);
     setSizes([...sizes, e.target.value])
-  }
+  }; 
   const handleSubmit = (e) => {  
     e.preventDefault()
     productService
@@ -113,30 +103,25 @@ const RegisterProductScreen = () => {
               <button>Crear</button>
               {/* <p className="message">Already registered? <a href="#">Sign In</a></p> */}
             </form>
-            </div>
             <form className="register-form">
               {/* <input type="text" placeholder="username"/>
               <input type="password" placeholder="password"/> */}
-
-              <div className='mini-galery' >
-              {/* minigalery */}
-              {images[0] != undefined && images?.map((item)=>{
+              {images?.map((item)=>{
                 return (
-                  <div key ={item}>
-                  <img src={item} alt={item}/>
-                  </div>
+                <>
+                  <img key={item} src={item} alt={item}/>
+                 </>
                 )
-                })
+              })
               }
-             </div>
 
               <input type="file" onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
               {/* <button>login</button> */}
               {/* <p className="message">Not registered? <a href="#">Create an account</a></p> */}
-             {checkColor && (
-               <h1>Debes escoger un color fuck youuuuu!!!</h1>
-             )}
             </form>
+
+
+            </div>
           </div>
           </div>
 	  </>
