@@ -12,8 +12,8 @@ const Shopping = () => {
   const [productPerPage, setproductPerPage] = useState(10); 
 
   let ProductService = new ProductsService();    
-  const getProducts = async () => {  
-	await setLoading(true) 
+  const getProducts =  () => {  
+	 setLoading(true) 
       ProductService 
       .getProducts() 
       .then((products) => { 
