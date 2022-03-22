@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled';
+import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
 import CategoriesServices from '../../../../services/categories.service'
 import ProductsService from '../../../../services/products.service'
 import UploadsService from '../../../../services/upload.services'
@@ -8,6 +10,7 @@ import './css/styles.css'
 let productService = new ProductsService()   
 let categoryServices = new CategoriesServices()
 let uploadServices = new UploadsService()
+const sizeData = ['xs', 's', 'm', 'l', 'xl']
 
 const RegisterProductScreen = () => {
   const [categories, setCategories] = useState([])
@@ -15,7 +18,7 @@ const RegisterProductScreen = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [sizes, setSizes] = useState([])
 
-  const [checkColor, setCheckColor] = useState()
+  const [checkColor, setCheckColor] = useState(null)
 
   const [form, setForm] = useState({
       name: "", 
@@ -54,7 +57,6 @@ const RegisterProductScreen = () => {
     
   }
   const getColor = () => {
-    setCheckColor(true)
     console.log("Tienes que introducir un color.")
   }
   console.log(images);
@@ -133,12 +135,10 @@ const RegisterProductScreen = () => {
               <input type="file" onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
               {/* <button>login</button> */}
               {/* <p className="message">Not registered? <a href="#">Create an account</a></p> */}
-             {checkColor && (
-               <h1>Debes escoger un color fuck youuuuu!!!</h1>
-             )}
             </form>
           </div>
           </div>
+          {checkColor}
 	  </>
 	)
 	// return(
@@ -178,4 +178,4 @@ const RegisterProductScreen = () => {
 	// )
 }
 
-export default RegisterProductScreen;
+export default RegisterProductScreen

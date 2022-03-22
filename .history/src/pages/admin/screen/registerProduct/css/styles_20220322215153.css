@@ -25,11 +25,10 @@
   flex-direction: row;
 }
 .title-screen{
-  /* border: 1px solid green; */
-  margin-top: -10px;
+  border: 1px solid green;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 2.5em;
 }
 .form input {
@@ -122,22 +121,4 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
-}
-.mini-galery {
-  border: 1px solid green;
-  display:flex;
-  flex-direction: colum;
-  width: 100%;
-}
-.mini-galery div {
-  width: 80px;
-  padding:10px;
-  height: 80px;
-  object-fit: cover;
-}
-.mini-galery img{
-  width: 80px;
-  padding:10px;
-  /* margin: 10px; */
-  height: 80px;
 }

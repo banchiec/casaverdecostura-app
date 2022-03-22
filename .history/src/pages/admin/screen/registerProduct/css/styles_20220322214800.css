@@ -20,18 +20,6 @@
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.container-forms {
-  display:flex;
-  flex-direction: row;
-}
-.title-screen{
-  /* border: 1px solid green; */
-  margin-top: -10px;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 2.5em;
-}
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -122,22 +110,4 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
-}
-.mini-galery {
-  border: 1px solid green;
-  display:flex;
-  flex-direction: colum;
-  width: 100%;
-}
-.mini-galery div {
-  width: 80px;
-  padding:10px;
-  height: 80px;
-  object-fit: cover;
-}
-.mini-galery img{
-  width: 80px;
-  padding:10px;
-  /* margin: 10px; */
-  height: 80px;
 }

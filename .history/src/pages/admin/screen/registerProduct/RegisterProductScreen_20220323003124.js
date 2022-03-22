@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled';
+import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
 import CategoriesServices from '../../../../services/categories.service'
 import ProductsService from '../../../../services/products.service'
 import UploadsService from '../../../../services/upload.services'
@@ -8,6 +10,7 @@ import './css/styles.css'
 let productService = new ProductsService()   
 let categoryServices = new CategoriesServices()
 let uploadServices = new UploadsService()
+const sizeData = ['xs', 's', 'm', 'l', 'xl']
 
 const RegisterProductScreen = () => {
   const [categories, setCategories] = useState([])
@@ -178,4 +181,4 @@ const RegisterProductScreen = () => {
 	// )
 }
 
-export default RegisterProductScreen;
+export default RegisterProductScreen

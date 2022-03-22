@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled';
+import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
 import CategoriesServices from '../../../../services/categories.service'
 import ProductsService from '../../../../services/products.service'
 import UploadsService from '../../../../services/upload.services'
@@ -14,9 +16,6 @@ const RegisterProductScreen = () => {
   const [images, setImages] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [sizes, setSizes] = useState([])
-
-  const [checkColor, setCheckColor] = useState()
-
   const [form, setForm] = useState({
       name: "", 
       price: "", 
@@ -39,33 +38,25 @@ const RegisterProductScreen = () => {
       }) 
       .catch(err => console.log("Error retreiving products", err))     
   } 
+  console.log(categories);
+
   const handleFile = (e) => {
     setIsLoading(true)
     console.log(e.target.files);
     const uploadData = new FormData()
-    uploadData.append('photos', e.target.files[0])
-    uploadServices.uploadImg(uploadData)
-      .then(res => {
-        setIsLoading(false)
-        setImages([ ...images, res.data.cloudinary_url])
-      })
-      .catch(error => alert("Error, esto no carga"))
-    getColor()
-    
+      uploadData.append('photos', e.target.files[0])
+      uploadServices.uploadImg(uploadData)
+        .then(res => {
+            setIsLoading(false)
+            setImages(res.data.cloudinary_url)
+            console.log(images);
+        })
+        .catch(error => alert("Error, esto no carga"))
   }
-  const getColor = () => {
-    setCheckColor(true)
-    console.log("Tienes que introducir un color.")
-  }
-  console.log(images);
-
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value});
+    setForm({ ...form, [e.target.name]: e.target.value, sizes: [...sizes,...e.target.value]});
   }; 
-  const handleSelectImage = (e) => {
-    console.log(e.target.value);
-    setSizes([...sizes, e.target.value])
-  }
+  console.log(form);
   const handleSubmit = (e) => {  
     e.preventDefault()
     productService
@@ -84,7 +75,6 @@ const RegisterProductScreen = () => {
       .catch(err => console.log(err))   
   }   
 
-  const size = 'xs'
   return(
         <> 
         <div className="register-page">
@@ -98,45 +88,27 @@ const RegisterProductScreen = () => {
               <input type="text" placeholder="name"/>
               <input type="password" placeholder="password"/>
               <input type="text" placeholder="email address"/>
-              <select multiple={true} name='size' onChange={(e)=>handleChange(e)}>
-                {/* {
-                  sizeData.map((item)=>{
-                   return ( <option key={item} value={item}>{item}</option>)
-                  })
-                } */}
-                <option value='xs'>xs</option>
+              <select multiple={true} value={sizes}  name='size' onChange={(e)=>handleChange(e)}>
+                <option value="xs">xs</option>
                 <option value="s">s</option>
-                <option value="l">m</option>
-                <option value="m">l</option>
+                <option value="m">m</option>
+                <option value="l">l</option>
+                <option value="xl">xl</option>
               </select>
 
               <button>Crear</button>
               {/* <p className="message">Already registered? <a href="#">Sign In</a></p> */}
             </form>
-            </div>
             <form className="register-form">
-              {/* <input type="text" placeholder="username"/>
-              <input type="password" placeholder="password"/> */}
-
-              <div className='mini-galery' >
-              {/* minigalery */}
-              {images[0] != undefined && images?.map((item)=>{
-                return (
-                  <div key ={item}>
-                  <img src={item} alt={item}/>
-                  </div>
-                )
-                })
-              }
-             </div>
-
-              <input type="file" onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
+              <input type="text" placeholder="username"/>
+              <input type="password" placeholder="password"/>
+              <input type="file" onChange={(e) => handleFile(e)} placeholder="email address"/>
               {/* <button>login</button> */}
               {/* <p className="message">Not registered? <a href="#">Create an account</a></p> */}
-             {checkColor && (
-               <h1>Debes escoger un color fuck youuuuu!!!</h1>
-             )}
             </form>
+
+
+            </div>
           </div>
           </div>
 	  </>
@@ -178,4 +150,4 @@ const RegisterProductScreen = () => {
 	// )
 }
 
-export default RegisterProductScreen;
+export default RegisterProductScreen

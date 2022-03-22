@@ -178,4 +178,4 @@ const RegisterProductScreen = () => {
 	// )
 }
 
-export default RegisterProductScreen;
+export default RegisterProductScreen
