@@ -5,7 +5,11 @@ import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"
  
  export const ShowCase = (props) => { 
       
-    console.log(props)
+    console.log(props) 
+
+    if(props.loading) {
+        <h2>Loading....</h2>
+    } 
     
      return (
          <>        
