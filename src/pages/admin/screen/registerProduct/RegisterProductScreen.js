@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled';
 import ProductsService from '../../../../services/products.service'
 import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
-import CategoriesServices from '../../../../services/categories.service'
+import CategoriesServices from '../../../../services/categories.service' 
 import './css/styles.css'
 
 let productService = new ProductsService()   
@@ -11,16 +11,15 @@ let categoryServices = new CategoriesServices()
 const RegisterProductScreen = () => {
   const [categories, setCategories] = useState([])
   const [images, setImages] = useState([])
-  const [form, setForm] = useState({
+  const [form, setForm] = useState({       
       name: "", 
       price: "", 
       description: "",  
-      size: "", 
-      beloning: {
-        idCategory: "", 
-        subCategory: ""
-       }
-  })  
+      size: ""
+  })   
+ 
+  console.log(form)
+
   useEffect(() => {
     getCategories()
   },[])
@@ -49,10 +48,7 @@ const RegisterProductScreen = () => {
             name: "", 
             price: "", 
             description: "",    
-            size: "", 
-            beloning: {
-            idCategory: ""
-  	        }       
+            size: ""     
           })
         }) 
        .catch(err => console.log(err))   
@@ -61,24 +57,15 @@ const RegisterProductScreen = () => {
     return(
         <> 
         <div className="register-page">
-          <div className="form">
-            <form className="login-form">
-              <input type="text" placeholder="name"/>
-              <input type="text" placeholder="price"/>
-              <input type="text" placeholder="descripción"/>
-              <input type="text" placeholder="name"/>
-              <input type="password" placeholder="password"/>
-              <input type="text" placeholder="email address"/>
-              <button>Crear</button>
+          <div  className="form">
+            <form onSubmit={handleSubmit} className="login-form">
+              <input type="text"    name="name" value={form.name}   onChange={(e) => handleChange(e)} placeholder="name"/>
+              <input type="text"  name="price"   value={form.price}     onChange={(e) => handleChange(e)} placeholder="price"/>
+              <input type="text" name="description" value={form.description} onChange={(e) => handleChange(e)} placeholder="descripción"/>
+              <button type='submit'>Crear</button>
               {/* <p className="message">Already registered? <a href="#">Sign In</a></p> */}
             </form>
-            <form className="register-form">
-              <input type="text" placeholder="username"/>
-              <input type="password" placeholder="password"/>
-              <input type="file" placeholder="email address"/>
-              {/* <button>login</button> */}
-              {/* <p className="message">Not registered? <a href="#">Create an account</a></p> */}
-            </form>
+
           </div>
           </div>
         {/* <StyledFormWrapper>
