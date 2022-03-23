@@ -1,7 +1,7 @@
 import React from "react" 
 
  
-export const Pagination = ({productPerPage, totalProducts }) => { 
+export const Pagination = ({productPerPage, totalProducts, paginate }) => { 
    
  
 
@@ -15,21 +15,20 @@ export const Pagination = ({productPerPage, totalProducts }) => {
    }
       
      return (
-         <>   
-         <nav>
+         <>  
              <ul className="pagination"> 
              {pageNumbers?.map((number) => { 
                  return (
                     <li key={number} className="page-item"> 
-                    <a href="!#" className="page-link">
+                    <button onClick={() => paginate(number)} href="#" className="page-link">
                         {number}
-                    </a>
+                    </button>
                     </li>
                  )
              })}
 
              </ul>
-         </nav>
+        
 
          </>
      )

@@ -48,18 +48,18 @@ const Shopping = () => {
 	 getCategories()
  }, []) 
 
- //Get current products 
-
- 
+ //Get current products  
  const indexOfLastProduct = currentPage * productPerPage; 
  const indexOfFirstProducts = indexOfLastProduct - productPerPage; 
- const currentProducts = products.slice(indexOfFirstProducts, indexOfLastProduct);  
+ const currentProducts = products.slice(indexOfFirstProducts, indexOfLastProduct);   
+
+const paginate = (pageNumuber) => setCurrentPage(pageNumuber)
 
 	return(
 		<>     
   
   <ShowCase categories={categories} loading={loading}    products={currentProducts}> </ShowCase>  
-  <Pagination productPerPage={productPerPage} totalProducts={products.length}></Pagination>
+  <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination>
 
 
 		</>
