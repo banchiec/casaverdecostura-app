@@ -115,9 +115,9 @@
   color: #EF3B3A;
 }
 body {
-/*   background: #76b852; fallback for old browsers */
+/*   background: #76b852; fallback for old browsers */ 
 /*   background: rgb(141,194,111);
-  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%); */
+  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%); */ 
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
@@ -139,4 +139,25 @@ body {
   padding:10px;
   /* margin: 10px; */
   height: 80px;
+} 
+ 
+.modal {
+  height: 100vh;  
+  width: 100vw; 
+  background-color: rgba(0, 0, 0 , 0.4 ,  blue, alpha); 
+  position: fixed; 
+  top: 0;    
+  left: 0;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}  
+
+.modal__content {
+  padding: 20px;   
+  width: 80vw; 
+  height: 80vh;
+  border-radius: 12px; 
+  background-color: white; 
 }
+
