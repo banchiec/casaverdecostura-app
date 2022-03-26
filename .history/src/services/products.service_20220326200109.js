@@ -9,6 +9,6 @@ class ProductsService {
     deleteProduct = (id) => this.instance.delete(`/${id}`)
     getProducts = () => this.instance.get("/")   
     getOneProduct = (id) => this.instance.get(`/${id}`) 
-    createProduct = (product) => this.instance.post("/", product)  
+    createProduct = (product) => this.instance.post("/new", product)  
 }
 export default ProductsService; 

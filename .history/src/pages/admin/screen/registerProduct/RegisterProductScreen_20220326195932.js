@@ -100,14 +100,12 @@ const RegisterProductScreen = () => {
     console.log("Tienes que introducir un color.")
   } 
   const  handleChangeComplete = (color) => { 
-    console.log(color);
     setColor({ color: color.hex });
-      setImages([...images, {url: image, color: color.hex}]) 
+      setImages([...images, {url: image, color: color}]) 
     setCheckColor(false)  
     // setImage(null)
     // setColor(null)
   };
-  console.log(images);
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])

@@ -27,7 +27,6 @@ const RegisterProductScreen = () => {
   const [sizes, setSizes] = useState([]) 
   const [categoriesInDb, setCategoriesInDb] = useState([])
   const [categoryId, setCategoryId] = useState()
-  const [subcategory, setSubcategory]  = useState()
   const [subcategories, setSubcategories] = useState([])
   const [checkColor, setCheckColor] = useState()   
 
@@ -49,37 +48,26 @@ const RegisterProductScreen = () => {
       })
       .catch()
   }
-  const getSubcategories = (_id) => {
-    categoryServices.getCategoryById(_id)
-      .then((data)=>{
-        setSubcategories(data.data.subCategory)
-      })
-      .catch()
-  }
+  console.log(categoriesInDb);
   const handleSubmit = (e) => {    
     e.preventDefault() 
     let product = { 
       name: form.name, 
       price: form.price, 
       description:  form.description, 
-      beloning: {
-        idCategory: categoryId,
-        subCategory: subcategory
-      },
-      size: sizes, 
+      size: [form.size], 
       photos: images
-
     }             
     
     console.log(product)
 
     e.preventDefault()
     productService
-    .createProduct(product)   
-    .then((res) => {   
-      console.log(res)
-    }) 
-    .catch(err => console.log(err))   
+      .createProduct(product)   
+      .then((res) => {   
+        console.log(res)
+      }) 
+      .catch(err => console.log(err))   
   }    
   const handleFile = (e) => {
     setIsLoading(true)
@@ -100,26 +88,22 @@ const RegisterProductScreen = () => {
     console.log("Tienes que introducir un color.")
   } 
   const  handleChangeComplete = (color) => { 
-    console.log(color);
     setColor({ color: color.hex });
-      setImages([...images, {url: image, color: color.hex}]) 
+      setImages([...images, {url: image, color: color}]) 
     setCheckColor(false)  
     // setImage(null)
     // setColor(null)
   };
-  console.log(images);
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])
-    if(e.target.name === 'category'){
-      e.target.name === 'category' && setCategoryId(e.target.value)
-      getSubcategories(e.target.value)
-    }
-    if(e.target.name === 'subcategory'){
-      setSubcategory(e.target.value)
-    }
+    e.target.name === 'category' && setCategoryId(e.target.value)
   };  
-
+  console.log(form)
+  console.log(images);
+  console.log(color);
+  console.log(sizes);
+  console.log(categoryId);
   return( 
       <> 
         <div className="register-page">
@@ -138,23 +122,23 @@ const RegisterProductScreen = () => {
                     <option value="m">l</option>
                   </select>    
                   <select id="category" name='category' onChange={(e)=>handleChange(e)}>
-                    {categoriesInDb?.map((category) => {
+                    {categoriesInDb?.map((category)=>{
                       return(
-                          <option  key={category.id} value={category._id}>{category.name}</option>
+                        <>
+                          <option  key={category.key} value={category._id}>{category.name}</option>
+                        </>
                       )
                     })}
                   </select>    
-                  { categoryId && (
-                    <select id="subcategory" name='subcategory' onChange={(e)=>handleChange(e)}>
-                      {subcategories?.map((category)=>{
-                        return(
-                          <>
-                            <option key={category} value={category}>{category}</option>
-                          </>
-                        )
-                      })}
-                    </select> 
-                  )}
+                  <select id="subcategor" name='subcategory' onChange={(e)=>handleChange(e)}>
+                    {categoriesInDb?.map((category)=>{
+                      return(
+                        <>
+                          <option  key={category.key} value="m">{category.name}</option>
+                        </>
+                      )
+                    })}
+                  </select> 
                   <br/>
                   <label htmlFor="imgselect">Selecciona imagen</label>
                   <input id='imgselect' type="file" name="img" value={form.img}  onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
@@ -162,7 +146,9 @@ const RegisterProductScreen = () => {
                   <div className='mini-galery' >
                     {images[0] != undefined && images?.map((item)=>{
                       return (
-                          <img key={item._id} src={item.url} alt={item}/>
+                        <div key ={item}>
+                          <img src={item.url} alt={item}/>
+                        </div>
                       )
                       })
                     }

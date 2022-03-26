@@ -56,30 +56,27 @@ const RegisterProductScreen = () => {
       })
       .catch()
   }
+  console.log(subcategories);
+
   const handleSubmit = (e) => {    
     e.preventDefault() 
     let product = { 
       name: form.name, 
       price: form.price, 
       description:  form.description, 
-      beloning: {
-        idCategory: categoryId,
-        subCategory: subcategory
-      },
-      size: sizes, 
+      size: [form.size], 
       photos: images
-
     }             
     
     console.log(product)
 
     e.preventDefault()
     productService
-    .createProduct(product)   
-    .then((res) => {   
-      console.log(res)
-    }) 
-    .catch(err => console.log(err))   
+      .createProduct(product)   
+      .then((res) => {   
+        console.log(res)
+      }) 
+      .catch(err => console.log(err))   
   }    
   const handleFile = (e) => {
     setIsLoading(true)
@@ -100,14 +97,12 @@ const RegisterProductScreen = () => {
     console.log("Tienes que introducir un color.")
   } 
   const  handleChangeComplete = (color) => { 
-    console.log(color);
     setColor({ color: color.hex });
-      setImages([...images, {url: image, color: color.hex}]) 
+      setImages([...images, {url: image, color: color}]) 
     setCheckColor(false)  
     // setImage(null)
     // setColor(null)
   };
-  console.log(images);
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])
@@ -119,6 +114,12 @@ const RegisterProductScreen = () => {
       setSubcategory(e.target.value)
     }
   };  
+
+  console.log(form);
+  console.log(images);
+  console.log(sizes);
+  console.log(subcategories);
+  console.log(categoryId);
 
   return( 
       <> 
@@ -138,9 +139,11 @@ const RegisterProductScreen = () => {
                     <option value="m">l</option>
                   </select>    
                   <select id="category" name='category' onChange={(e)=>handleChange(e)}>
-                    {categoriesInDb?.map((category) => {
+                    {categoriesInDb?.map((category)=>{
                       return(
-                          <option  key={category.id} value={category._id}>{category.name}</option>
+                        <>
+                          <option  key={category._id} value={category._id}>{category.name}</option>
+                        </>
                       )
                     })}
                   </select>    
@@ -148,9 +151,7 @@ const RegisterProductScreen = () => {
                     <select id="subcategory" name='subcategory' onChange={(e)=>handleChange(e)}>
                       {subcategories?.map((category)=>{
                         return(
-                          <>
-                            <option key={category} value={category}>{category}</option>
-                          </>
+                          <option key={category} value={category}>{category}</option>
                         )
                       })}
                     </select> 
@@ -162,7 +163,9 @@ const RegisterProductScreen = () => {
                   <div className='mini-galery' >
                     {images[0] != undefined && images?.map((item)=>{
                       return (
-                          <img key={item._id} src={item.url} alt={item}/>
+                        <div key ={item}>
+                          <img src={item.url} alt={item}/>
+                        </div>
                       )
                       })
                     }
