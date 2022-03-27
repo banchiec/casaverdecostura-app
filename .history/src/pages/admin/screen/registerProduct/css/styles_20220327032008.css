@@ -151,7 +151,7 @@ body {
   -moz-osx-font-smoothing: grayscale;      
 }
 .mini-galery {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   /* border: 0; */
   display:flex;
   /* padding: 0; */
@@ -163,7 +163,7 @@ body {
   width: 90%;
 }
 .mini-galery div {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -194,7 +194,6 @@ body {
 .item-minigalery div {
   width: 15%;
   height: 15%;
-  margin: 15px 0 0 0;
   border-radius: 50%;
 }
 .modal {

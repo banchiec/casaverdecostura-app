@@ -163,7 +163,8 @@ const RegisterProductScreen = () => {
                           return (
                             <div className ="item-minigalery" key={item._id}>
                               <img src={item.url} alt={item}/>
-                              <div className='container-color' style={{background: `${item.color}`}}>
+                              <div className='container-color'>
+                                <h1>{item.color}</h1>
                               </div>
                             </div>
                           )

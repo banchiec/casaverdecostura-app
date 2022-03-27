@@ -124,14 +124,20 @@ const RegisterProductScreen = () => {
       <> 
         <div className="register-page">
             <div className="form">
+              <h1 className='title-screen'>Registrar Producto</h1>
               <div className='container-forms'>
                 <form onSubmit={handleSubmit} className="login-form">
                   <div className="container-data">
-                    <div className='container-form-data'>
-                      <h1 className='title-screen'>Registrar Producto</h1>
+                    <div>
                       <input type="text" name="name" onChange= {(e)=>{handleChange(e)}}  placeholder="Nombre"/>
                       <input type="text" name="price" onChange= {(e)=>{handleChange(e)}} placeholder="Precio"/>
-                      <input type="text" name='description' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción"/> 
+                      {/* <input type="text" name='description' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción"/>  */}
+                      <select id="sizechange" multiple={true} name='sizes' onChange={(e)=>handleChange(e)}>
+                        <option value='xs'>xs</option>
+                        <option value="s">s</option>
+                        <option value="l">m</option>
+                        <option value="m">l</option>
+                      </select>    
                       <select id="category" name='category' onChange={(e)=>handleChange(e)}>
                         {categoriesInDb?.map((category) => {
                           return(
@@ -152,48 +158,22 @@ const RegisterProductScreen = () => {
                         </select> 
                       </div>
                       )}
-                      <select id="sizecha ge" multiple={true} name='sizes' onChange={(e)=>handleChange(e)}>
-                        <option value='xs'>xs</option>
-                        <option value="s">s</option>
-                        <option value="l">m</option>
-                        <option value="m">l</option>
-                      </select>    
+                      <br/>
+                    </div>
+                    <div>
                       <div className='mini-galery' >
                         {images[0] != undefined && images?.map((item)=>{
                           return (
-                            <div className ="item-minigalery" key={item._id}>
-                              <img src={item.url} alt={item}/>
-                              <div className='container-color' style={{background: `${item.color}`}}>
-                              </div>
-                            </div>
+                            <>
+                              <img key={item._id} src={item.url} alt={item}/>
+                              <h1>{item.color}</h1>
+                            </>
                           )
                           })
                         }
                       </div>
-
-                    </div>
-                    <div>
                       <label htmlFor="imgselect">Selecciona imagen</label>
                       <input id='imgselect' type="file" name="img" value={form.img}  onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
-                      { image && (
-                        <div className="image-root-register">
-                          <img src={images[images.length - 1]?.url} alt={images[0]?.url}/>
-                        </div>
-                      )
-                      }
-                      {/* <div className='mini-galery' >
-                        {images[0] != undefined && images?.map((item)=>{
-                          return (
-                            <div className ="item-minigalery">
-                              <img key={item._id} src={item.url} alt={item}/>
-                              <div>
-                                <h1>{item.color}</h1>
-                              </div>
-                            </div>
-                          )
-                          })
-                        }
-                      </div> */}
                     </div>
 
                   {checkColor && (

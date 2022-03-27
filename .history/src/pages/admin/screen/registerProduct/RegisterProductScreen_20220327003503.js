@@ -127,8 +127,8 @@ const RegisterProductScreen = () => {
               <div className='container-forms'>
                 <form onSubmit={handleSubmit} className="login-form">
                   <div className="container-data">
-                    <div className='container-form-data'>
-                      <h1 className='title-screen'>Registrar Producto</h1>
+                   <h1 className='title-screen'>Registrar Producto</h1>
+                    <div>
                       <input type="text" name="name" onChange= {(e)=>{handleChange(e)}}  placeholder="Nombre"/>
                       <input type="text" name="price" onChange= {(e)=>{handleChange(e)}} placeholder="Precio"/>
                       <input type="text" name='description' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción"/> 
@@ -161,9 +161,10 @@ const RegisterProductScreen = () => {
                       <div className='mini-galery' >
                         {images[0] != undefined && images?.map((item)=>{
                           return (
-                            <div className ="item-minigalery" key={item._id}>
-                              <img src={item.url} alt={item}/>
-                              <div className='container-color' style={{background: `${item.color}`}}>
+                            <div className ="item-minigalery">
+                              <img key={item._id} src={item.url} alt={item}/>
+                              <div>
+                                <h1>{item.color}</h1>
                               </div>
                             </div>
                           )

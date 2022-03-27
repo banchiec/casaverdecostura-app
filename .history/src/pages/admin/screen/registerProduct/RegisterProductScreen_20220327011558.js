@@ -162,8 +162,9 @@ const RegisterProductScreen = () => {
                         {images[0] != undefined && images?.map((item)=>{
                           return (
                             <div className ="item-minigalery" key={item._id}>
-                              <img src={item.url} alt={item}/>
-                              <div className='container-color' style={{background: `${item.color}`}}>
+                              <img key={item._id} src={item.url} alt={item}/>
+                              <div>
+                                <h1>{item.color}</h1>
                               </div>
                             </div>
                           )
