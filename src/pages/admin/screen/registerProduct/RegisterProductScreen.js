@@ -39,12 +39,12 @@ const [form, setForm,] = useState({
   price: "", 
   description: "",  
   size: [""], 
-})   
+})     
+
   
 
 const handleSubmit = (e) => {    
   e.preventDefault() 
-
   let product = { 
     name: form.name, 
     price: form.price, 
@@ -52,9 +52,6 @@ const handleSubmit = (e) => {
     size: [form.size], 
      photos: images
   }             
-   
-  console.log(product)
-
   e.preventDefault()
   productService
     .createProduct(product)   
