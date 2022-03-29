@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';  
 import { Pagination } from '../../components/Pagination/Pagination';
-import ProductsService  from "../../services/products.service"
-import { ShowCase } from "../../components/ShowCase/ShowCase";
-import CategoriesServices from './../../services/categories.service';  
+import ProductsService  from "../../services/products.service" 
+import { ContainerAdminPage } from '../admin/AdminStyled';
+import { ShowCase } from "../../components/ShowCase/ShowCase"; 
+import CategoriesServices from './../../services/categories.service';   
+import { SideFilterBar } from '../../components/SideFilterBar/SideFilterBar';
+
+
+
 
 const Shopping = () => {  
-  const [filteredProducts, setfilteredProduct] = useState([]);  
+  const [filteredProducts, setfilteredProduct] = useState([]);   
   const [products, setProducts]  = useState([]);  
   const [loading, setLoading] = useState(false); 
   const [currentPage, setCurrentPage] = useState(1);  
-  const [productPerPage, setproductPerPage] = useState(10); 
+  const [productPerPage, setproductPerPage] = useState(12); 
 
   let ProductService = new ProductsService();    
   const getProducts =  () => {  
@@ -51,16 +56,18 @@ const Shopping = () => {
  //Get current products  
  const indexOfLastProduct = currentPage * productPerPage; 
  const indexOfFirstProducts = indexOfLastProduct - productPerPage; 
- const currentProducts = products.slice(indexOfFirstProducts, indexOfLastProduct);   
+ const currentProducts = products.slice(indexOfFirstProducts, indexOfLastProduct);     
+
 
 const paginate = (pageNumuber) => setCurrentPage(pageNumuber)
 
 	return(
-		<>     
-  
+		<>      
+    <ContainerAdminPage>
+    <SideFilterBar></SideFilterBar>
   <ShowCase categories={categories} loading={loading}    products={currentProducts}> </ShowCase>  
+  </ContainerAdminPage>
   <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination>
-
 
 		</>
 	)

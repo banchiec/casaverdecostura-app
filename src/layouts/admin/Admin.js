@@ -1,12 +1,15 @@
 import Sidebar from "../../components/Sidebar/Sidebar"
 
-const AdminLayout = ({children}) =>{
+const AdminLayout = ({children}) =>{ 
+ 
+	console.log(children)
+
 	return(
-		<>
-			<div>
+		<>  
+			<div>  
 				<Sidebar/>
 			</div>
-			<main>{children}</main>
+			<main>{children}</main> 
 		</>
 	)
 }

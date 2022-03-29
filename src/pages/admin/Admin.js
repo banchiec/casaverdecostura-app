@@ -4,7 +4,7 @@ import Sidebar from "../../components/Sidebar/Sidebar"
 
 const Admin = () => {
 	return(
-		<ContainerAdminPage>
+		<ContainerAdminPage> 
 			<Sidebar/>
 		  <RegisterProductScreen/>
 		</ContainerAdminPage>

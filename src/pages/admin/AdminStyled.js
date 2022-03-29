@@ -5,6 +5,6 @@ export const ContainerAdminPage = styled.div`
 	.container_screen {
 		width: 80%;
 		background: red;
-		border: 1px solid ;
+		border: 1px solid ; 
 	}
 `
