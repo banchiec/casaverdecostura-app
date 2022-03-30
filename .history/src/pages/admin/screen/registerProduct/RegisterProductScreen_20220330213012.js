@@ -56,13 +56,6 @@ const RegisterProductScreen = () => {
       })
       .catch()
   }
-  const clearState = () => {
-    setForm({})
-    setImage(null)
-    setImages([])
-    setColor([])
-    setSubcategories([])
-  }
   const handleSubmit = (e) => {    
     e.preventDefault() 
     let product = { 
@@ -77,6 +70,8 @@ const RegisterProductScreen = () => {
       photos: images
 
     }             
+    
+    console.log(product)
 
     e.preventDefault()
     productService
@@ -85,12 +80,11 @@ const RegisterProductScreen = () => {
       console.log(res)
     }) 
     .catch(err => console.log(err))   
-    clearState()
   }    
   const handleFile = (e) => {
     setIsLoading(true)
     const uploadData = new FormData()
-    uploadData.append('photo', e.target.files[0])
+    uploadData.append('photos', e.target.files[0])
     uploadServices.uploadImg(uploadData)
     .then(res => { 
       setIsLoading(false)

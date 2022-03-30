@@ -56,13 +56,6 @@ const RegisterProductScreen = () => {
       })
       .catch()
   }
-  const clearState = () => {
-    setForm({})
-    setImage(null)
-    setImages([])
-    setColor([])
-    setSubcategories([])
-  }
   const handleSubmit = (e) => {    
     e.preventDefault() 
     let product = { 
@@ -77,6 +70,8 @@ const RegisterProductScreen = () => {
       photos: images
 
     }             
+    
+    console.log(product)
 
     e.preventDefault()
     productService
@@ -85,7 +80,6 @@ const RegisterProductScreen = () => {
       console.log(res)
     }) 
     .catch(err => console.log(err))   
-    clearState()
   }    
   const handleFile = (e) => {
     setIsLoading(true)
