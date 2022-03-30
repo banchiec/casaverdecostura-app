@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import "./ShowCaseItem.css"  
+import SubMenu from '../../components/SubMenu/SubMenu';
 import styled from 'styled-components' 
+import *  as AiIcons  from 'react-icons/ai'   
 import { Link } from 'react-router-dom'    
+import *  as FaIcons  from 'react-icons/fa'  
+import { FilterSideBarData } from '../../components/FilterSideBarData/FilterSideBarData';  
 
 const NavIcon = styled(Link)`
   margin-left: 2rem; 

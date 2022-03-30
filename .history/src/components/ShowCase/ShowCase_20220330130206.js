@@ -1,7 +1,13 @@
 import { useState } from "react" 
 import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"            
+
+
+
  
-export const ShowCase = (props) => {   
+ export const ShowCase = (props) => {   
+      
+    console.log(props) 
+
     if(props.loading) {
         <h2>Loading....</h2>
     } 
@@ -25,4 +31,5 @@ export const ShowCase = (props) => {
             </div>
          </>
      )
+
  }

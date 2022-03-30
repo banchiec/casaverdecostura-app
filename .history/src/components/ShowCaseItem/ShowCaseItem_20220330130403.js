@@ -1,29 +1,33 @@
-import React, { useState } from "react"
+ import React, { useState } from "react"
 import "./ShowCaseItem.css"  
+import SubMenu from '../../components/SubMenu/SubMenu';
 import styled from 'styled-components' 
+import *  as AiIcons  from 'react-icons/ai'   
 import { Link } from 'react-router-dom'    
+import *  as FaIcons  from 'react-icons/fa'  
+import { FilterSideBarData } from '../../components/FilterSideBarData/FilterSideBarData';  
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem; 
-  font-size: 2rem; 
-  height: 80px; 
-  display: flex; 
-  justify-content: flex-start; 
-  align-items: center;
+margin-left: 2rem; 
+font-size: 2rem; 
+height: 80px; 
+display: flex: 
+justify-content: flex-start; 
+align-items: center: 
 `   
 
 const SidebarNav = styled.nav`
-  background: #15171c; 
-  width: 250px;  
-  display: flex; 
-  justify-content: center; 
-  top: 0; 
-  left: 0;
-  transition: 350ms;   
+ background: #15171c; 
+ width: 250px;  
+ display: flex; 
+ justify-content: center; 
+ top: 0; 
+ left: 0;
+ transition: 350ms;   
 `   
-const SidebarWrap = styled.div`
-  width: 100%;
-  height: 100%; 
+const SidebarWrap = styled.div `
+width: 100%;
+height: 100%; 
 `         
 
 export const ShowCaseItem = (props) => {    
