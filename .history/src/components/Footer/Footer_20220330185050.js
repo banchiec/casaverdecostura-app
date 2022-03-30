@@ -12,7 +12,7 @@
                           <li><a href="#">Reclamaciones</a></li>
                           <li><a href="#">Política de envíos</a></li>
                           <li><a href="#">Política de cookies</a></li>
-                          {/* <li><a href="#">Sitemap</a></li> */}
+                          <li><a href="#">Sitemap</a></li>
                         </ul>
                       </div>
 

@@ -12,13 +12,13 @@
                           <li><a href="#">Reclamaciones</a></li>
                           <li><a href="#">Política de envíos</a></li>
                           <li><a href="#">Política de cookies</a></li>
-                          {/* <li><a href="#">Sitemap</a></li> */}
+                          <li><a href="#">Sitemap</a></li>
                         </ul>
                       </div>
 
                       <div class="col-xs-6 col-md-3">
                         <h6>SÍGUENOS</h6>
-                        <p>Suscríbete para recibir antes que nadie las novedades de Casaverdecostura, ofertas especiales, obsequios gratuitos y sorpresas exclusivas </p>
+                        <p>Suscríbete para recibir antes que nadie las novedades de Beni Room, ofertas especiales, obsequios gratuitos y sorpresas exclusivas </p>
                         <ul class="social-icons">
                           <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                           <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -28,7 +28,7 @@
                       </div> 
                       <div></div>
                       <div class="col-xs-6 col-md-3">
-                        <h6>Links</h6>  
+                        <h6>Quick Links</h6>  
                         <ul class="footer-links">
                           <li><a href="#">FAQ</a></li>
                           <li><a href="#">Búsqueda</a></li>

@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+
+
+
+
+
 .main{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -43,6 +46,7 @@ img {
   
 } 
 
+
 @media (max-width: 650px) { 
   .bDWRga{
     display: none;
@@ -78,8 +82,8 @@ img {
   font-family: "Futura";
   font-size: 1.1rem; 
   letter-spacing: 0.2em; 
-  text-align: center;  
-  line-height: 1.5;
+   text-align: center;  
+   line-height: 1.5;
   letter-spacing: 1px; 
   font-weight: 400;
   text-transform: uppercase;
@@ -89,6 +93,7 @@ img {
 .card_price {
     text-align: center;
 }
+
 .card_text {
   color: #ffffff;
   font-size: 0.875rem;

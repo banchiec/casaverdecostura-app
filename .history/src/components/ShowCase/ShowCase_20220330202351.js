@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Footer } from "../Footer/Footer"
 import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"            
 import {ContainerShowcase } from './showcaseStyled'
- 
+
 export const ShowCase = (props) => {   
     if(props.loading) {
         <h2>Loading....</h2>
@@ -10,7 +10,7 @@ export const ShowCase = (props) => {
     
     return (
       <ContainerShowcase>        
-        <div className="">  
+        <div className="container page-wrapper">  
             <div className="main">   
                 <ul className="cards">  
                   {

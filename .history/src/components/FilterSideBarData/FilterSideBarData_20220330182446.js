@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import * as Iocons from "react-icons/io"
 import * as RiIcons from "react-icons/ri"     
-import { GiLargeDress} from "react-icons/gi"; 
+import { GiDress} from "react-icons/gi"; 
 import "./FilterSideBarData.css"
 
 

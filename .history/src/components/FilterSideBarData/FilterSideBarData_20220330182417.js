@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import * as Iocons from "react-icons/io"
 import * as RiIcons from "react-icons/ri"     
-import { GiLargeDress} from "react-icons/gi"; 
+import { GiDress} from "react-icons/gi"; 
 import "./FilterSideBarData.css"
 
 
@@ -11,7 +11,7 @@ export const FilterSideBarData = [
     {
         title: "Vestidos Fiesta", 
         path: "#", 
-        icon: <GiLargeDress/>,
+        icon: <GiDress/>,
         // icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648645924/dress_auzhrf.png"/>,
         subNav: [
             {

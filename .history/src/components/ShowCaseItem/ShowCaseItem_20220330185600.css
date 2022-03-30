@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 .main{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

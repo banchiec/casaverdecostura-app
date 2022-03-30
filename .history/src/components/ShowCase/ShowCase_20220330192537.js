@@ -10,7 +10,7 @@ export const ShowCase = (props) => {
     
     return (
       <ContainerShowcase>        
-        <div className="">  
+        <div className="container page-wrapper">  
             <div className="main">   
                 <ul className="cards">  
                   {

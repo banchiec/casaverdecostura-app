@@ -1,5 +1,5 @@
 import { FilterSideBarData } from '../FilterSideBarData/FilterSideBarData' 
-import { SidebarNav, SidebarWrap } from './sideFilterBarStyled'
+import { SidebarNav } from './sideFilterBarStyled'
 import Submenu from "../../components/SubMenu/SubMenu"
 
  export const SideFilterBar = () => { 
