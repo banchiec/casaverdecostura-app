@@ -3,8 +3,9 @@ import { FilterSideBarData } from '../FilterSideBarData/FilterSideBarData'
 import Submenu from "../../components/SubMenu/SubMenu"
 
   const SidebarNav = styled.nav`
-  background: #15171c; 
-  width: 200px; 
+  background: #007220;; 
+  width: 200px;  
+  font-size: 1.5rem;
   display: flex; 
   justify-content: center;     
   left: 0;

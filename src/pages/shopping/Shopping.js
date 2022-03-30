@@ -4,10 +4,8 @@ import ProductsService  from "../../services/products.service"
 import { ContainerAdminPage } from '../admin/AdminStyled';
 import { ShowCase } from "../../components/ShowCase/ShowCase"; 
 import CategoriesServices from './../../services/categories.service';   
-import { SideFilterBar } from '../../components/SideFilterBar/SideFilterBar';
-
-
-
+import { SideFilterBar } from '../../components/SideFilterBar/SideFilterBar';   
+import { Footer } from '../../components/Footer/Footer';
 
 const Shopping = () => {  
   const [filteredProducts, setfilteredProduct] = useState([]);   
@@ -62,13 +60,15 @@ const Shopping = () => {
 const paginate = (pageNumuber) => setCurrentPage(pageNumuber)
 
 	return(
-		<>      
+		<>   
     <ContainerAdminPage>
-    <SideFilterBar></SideFilterBar>
-  <ShowCase categories={categories} loading={loading}    products={currentProducts}> </ShowCase>  
-  </ContainerAdminPage>
-  <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination>
-
+      <SideFilterBar></SideFilterBar>  
+        <div className="container-shop" >
+          <ShowCase categories={categories} loading={loading}    products={currentProducts}/> 
+          <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination> 
+        </div> 
+    </ContainerAdminPage>
+   <Footer></Footer>
 		</>
 	)
 

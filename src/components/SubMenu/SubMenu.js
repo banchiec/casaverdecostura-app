@@ -21,7 +21,8 @@ const SidebarLink = styled(Link)`
 `;
 
 const SidebarLabel = styled.span`
-  margin-left: 16px;
+  margin-left: 16px; 
+  font-size: 1rem;
 `;
 
 const DropdownLink = styled(Link)`
@@ -72,7 +73,6 @@ const DropdownLink = styled(Link)`
           );
         })}
     
-  );
        </>
    )
 } 
