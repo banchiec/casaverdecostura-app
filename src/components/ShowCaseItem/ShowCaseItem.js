@@ -54,7 +54,8 @@ export const ShowCaseItem = (props) => {
           <p className="card_price">€ {props.price} </p>
         </div>
       </div>
-    </li>
+    </li> 
+    
          </>
      )
 }

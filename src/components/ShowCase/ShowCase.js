@@ -1,10 +1,14 @@
 import { useState } from "react" 
+import { Footer } from "../Footer/Footer"
 import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"            
 
 
 
  
  export const ShowCase = (props) => {   
+
+
+
       
     console.log(props) 
 
@@ -26,12 +30,12 @@ import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"
         </>
                  )
              })
-         }
+         } 
          </ul> 
-         </div>
-         </div>
-         
-         </>
-     )
+         </div>   
 
+         </div>  
+         </> 
+
+     )
  }
