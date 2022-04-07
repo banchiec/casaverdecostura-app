@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import "./ShowCaseItem.css";
-import { Link } from "react-router-dom";
+import React from "react"
+import "./ShowCaseItem.css"  
 
-export const ShowCaseItem = (props) => {
-  const images = props.photos?.map((itemall) => itemall.url);
-
-  return (
-    <>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <img   className="card-img" src={images[0]} ></img>
-          </div> 
-          <div class="card_content">
-            <h2 class="card_title">{props.name}</h2>
-            <p className="card_price">€ {props.price} </p>
+export const ShowCaseItem = (props) => {    
+  const images = props.photos?.map((itemall) => (itemall.url))   
+     return( 
+         <>                         
+          <div className="cards_item">
+            <div className="card">
+              <div className="card_image">
+                <img className="card-img" alt='product' src={images[0]}/>
+              </div>
+              <div className="card_content">
+                <h4 className="card_title">{props.name}</h4> 
+                <p className="card_price">{props.price} .00 EUR </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </li>
-    </>
-  );
-};
+         </>
+     )
+}

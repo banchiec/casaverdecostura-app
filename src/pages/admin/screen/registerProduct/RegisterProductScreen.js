@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled'   
+// import {Form, FormGroup, Label, Input, Message}  from './registerProductScreenStyled'   
 import ProductsService from '../../../../services/products.service' 
-import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
+// import { StyledFormWrapper,StyledForm, StyledInput, StyledButton,  } from './registerProductScreenStyled' 
 import CategoriesServices from '../../../../services/categories.service' 
 import UploadsService from '../../../../services/upload.services' 
 import { SketchPicker } from 'react-color';
@@ -19,7 +19,7 @@ const RegisterProductScreen = () => {
   const [image, setImage] = useState()
   
 
-  const [modalActive, setModalActive] = useState(true)    
+  // const [modalActive, setModalActive] = useState(true)    
   const [color, setColor] = useState({
     background: '#fff'
   }) 
@@ -58,6 +58,13 @@ const RegisterProductScreen = () => {
       })
       .catch()
   }
+  const clearState = () => {
+    setForm({})
+    setImage(null)
+    setImages([])
+    setColor([])
+    setSubcategories([])
+  }
   const handleSubmit = (e) => {    
     e.preventDefault() 
     let product = { 
@@ -72,8 +79,6 @@ const RegisterProductScreen = () => {
       photos: images
 
     }             
-    
-    console.log(product)
 
     e.preventDefault()
     productService
@@ -82,6 +87,7 @@ const RegisterProductScreen = () => {
       console.log(res)
     }) 
     .catch(err => console.log(err))   
+    clearState()
   }    
   const handleFile = (e) => {
     setIsLoading(true)
@@ -157,11 +163,11 @@ const RegisterProductScreen = () => {
                           <option value="m">l</option>
                         </select>    
                       <div className='mini-galery' >
-                        {images[0] != undefined && images?.map((item)=>{
+                        {images[0] !== undefined && images?.map((item)=>{
                           return (
                             <div className ="item-minigalery" key={item._id}>
                               <img src={item.url} alt={item}/>
-                              <div className='container-color' style={{background: `${item.color}`}}>
+                                <div className='container-color' style={{background: `${item.color}`}}>
                               </div>
                             </div>
                           )

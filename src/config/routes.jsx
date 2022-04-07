@@ -10,11 +10,15 @@ import { ProductDetails } from "../components/ProductDetails/ProductDetails";
 
 const routes = (props) => {
   const { user } = props;
+<<<<<<< HEAD
   return [ 
     {
       path: PATHS.PRODUCTDETAILS,
       element: <ProductDetails {...props} />,
     },
+=======
+  return [
+>>>>>>> e4f7b3a68399602b21bf648b597c521221c9a86c
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,

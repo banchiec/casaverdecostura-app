@@ -1,30 +1,27 @@
-import { useState } from "react";
-import { Footer } from "../Footer/Footer";
-import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem";
-
-export const ShowCase = (props) => { 
-
+// import { useState } from "react" 
+// import { Footer } from "../Footer/Footer"
+import { ShowCaseItem } from "../ShowCaseItem/ShowCaseItem"            
+import {ContainerShowcase } from './showcaseStyled'
  
-
-  if (props.loading) {
-    <h2>Loading....</h2>;
-  }
-
-  return (
-    <>
-      <div class="container page-wrapper">
-        <div class="main">
-          <ul class="cards">
-            {props.products?.map((products) => { 
-              return (
-                <>
-                  <ShowCaseItem {...products}></ShowCaseItem>
-                </>
-              );
-            })}
-          </ul>
+export const ShowCase = (props) => {   
+    if(props.loading) {
+        <h2>Loading....</h2>
+    } 
+    return (
+      <ContainerShowcase>        
+        <div className="">  
+            <div className="main">   
+                <ul className="cards">  
+                  {
+                    props.products?.map((products) => {
+                        return (
+                          <ShowCaseItem key={products._id} {...products}></ShowCaseItem>
+                        )
+                    })
+                  }
+                </ul> 
+            </div>
         </div>
-      </div>
-    </>
-  );
-};
+      </ContainerShowcase>
+    )
+ }

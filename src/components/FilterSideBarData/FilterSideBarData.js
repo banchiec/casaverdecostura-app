@@ -1,9 +1,9 @@
-import React, { useState } from "react"; 
-import * as FaIcons from "react-icons/fa"
-import * as AiIcons from "react-icons/ai"
+import React from "react"; 
+// import * as FaIcons from "react-icons/fa"
+// import * as AiIcons from "react-icons/ai"
 import * as Iocons from "react-icons/io"
-import * as RiIcons from "react-icons/ri"     
-import { GiDress} from "react-icons/gi"; 
+// import * as RiIcons from "react-icons/ri"     
+import { GiLargeDress} from "react-icons/gi"; 
 import "./FilterSideBarData.css"
 
 
@@ -11,7 +11,8 @@ export const FilterSideBarData = [
     {
         title: "Vestidos fiesta", 
         path: "#", 
-        icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648645924/dress_auzhrf.png"/>,
+        icon: <GiLargeDress/>,
+        // icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648645924/dress_auzhrf.png"/>,
         subNav: [
             {
                 title: "Blusas",  
@@ -53,7 +54,7 @@ export const FilterSideBarData = [
     {
         title: "Complementos", 
         path: "#", 
-        icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648646187/mask_d40vfv.png"/>,
+        icon: <img className="icon-img" alt='product' src="https://res.cloudinary.com/aleksmotin/image/upload/v1648646187/mask_d40vfv.png"/>,
         subNav: [
             {
                 title: "Bolsos",  
@@ -83,7 +84,7 @@ export const FilterSideBarData = [
     {
         title: "Temporada", 
         path: "#", 
-        icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648646494/temporalropa_gby4ml.png"/>,
+        icon: <img className="icon-img" alt='temporada' src="https://res.cloudinary.com/aleksmotin/image/upload/v1648646494/temporalropa_gby4ml.png"/>,
         subNav: [
             {
                 title: "Blusas",  
