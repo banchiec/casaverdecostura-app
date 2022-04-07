@@ -71,7 +71,6 @@ const RegisterProductScreen = () => {
 
     }             
     
-    console.log(product)
 
     e.preventDefault()
     productService

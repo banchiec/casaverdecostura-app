@@ -1,16 +1,15 @@
-import Sidebar from "../../components/Sidebar/Sidebar"
+import Sidebar from "../../components/Sidebar/Sidebar";
 
-const AdminLayout = ({children}) =>{ 
- 
-	console.log(children)
+const AdminLayout = ({ children }) => {
+  console.log(children);
 
-	return(
-		<>  
-			<div>  
-				<Sidebar/>
-			</div>
-			<main>{children}</main> 
-		</>
-	)
-}
-export default AdminLayout
+  return (
+    <>
+      <div>
+        <Sidebar />
+      </div>
+      <main>{children}</main>
+    </>
+  );
+};
+export default AdminLayout;

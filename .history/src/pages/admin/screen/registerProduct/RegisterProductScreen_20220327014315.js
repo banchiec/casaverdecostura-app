@@ -100,7 +100,6 @@ const RegisterProductScreen = () => {
     console.log("Tienes que introducir un color.")
   } 
   const  handleChangeComplete = (color) => { 
-    console.log(color);
     setColor({ color: color.hex });
       setImages([...images, {url: image, color: color.hex}]) 
     setCheckColor(false)  

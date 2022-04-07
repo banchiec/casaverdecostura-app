@@ -9,7 +9,7 @@ import "./FilterSideBarData.css"
 
 export const FilterSideBarData = [   
     {
-        title: "Vestidos Fiesta", 
+        title: "Vestidos fiesta", 
         path: "#", 
         icon: <img className="icon-img" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648645924/dress_auzhrf.png"/>,
         subNav: [
@@ -47,7 +47,7 @@ export const FilterSideBarData = [
                 title: "Chaqueta",  
                 path: "#", 
                 icon: <Iocons.IoIosPaper/>
-            },   
+            },     
         ]
     },  
     {

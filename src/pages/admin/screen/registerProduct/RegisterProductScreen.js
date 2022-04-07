@@ -36,7 +36,9 @@ const RegisterProductScreen = () => {
     price: "", 
     description: "",  
     size: [""], 
-  })   
+  })    
+
+  console.log(form)
     
   useEffect(() => {
     getCategories()

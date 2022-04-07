@@ -6,11 +6,15 @@ import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
+import { ProductDetails } from "../components/ProductDetails/ProductDetails";
 
 const routes = (props) => {
   const { user } = props;
-  console.log(user);
-  return [
+  return [ 
+    {
+      path: PATHS.PRODUCTDETAILS,
+      element: <ProductDetails {...props} />,
+    },
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
