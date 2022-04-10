@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+.title_sidebar_shop {
+  font-family: "Alegreya Sans SC",'sans-serif';
+	font-size: 15px;
+	/* border: 1px solid green; */
+}
+.title_sibebar_shop:hover{
+	/* font-size: 29px; */
+	border: 1px solid green;
+}
+/* .show {
+} */
