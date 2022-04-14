@@ -30,7 +30,6 @@ const RegisterProductScreen = () => {
   const [subcategory, setSubcategory]  = useState()
   const [subcategories, setSubcategories] = useState([])
   const [checkColor, setCheckColor] = useState()   
-
   const [form, setForm,] = useState({       
     name: "", 
     price: "", 
@@ -77,7 +76,6 @@ const RegisterProductScreen = () => {
       },
       size: sizes, 
       photos: images
-
     }             
 
     e.preventDefault()
@@ -205,7 +203,7 @@ const RegisterProductScreen = () => {
                       <div className='modal__content'> 
                         Select color    
                         <SketchPicker
-                        color={ color}  
+                        color={color}  
                         onChangeComplete={handleChangeComplete }
                         />
                       </div>

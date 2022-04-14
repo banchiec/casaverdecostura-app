@@ -1,28 +1,25 @@
 import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Shopping from "../pages/shopping/Shopping";
-import Login from "../pages/LogIn";
+import Login from "../pages/LogIn"; 
 import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
-import { ProductDetails } from "../components/ProductDetails/ProductDetails";
+import { Details } from "../pages/details/Details";
 
-const routes = (props) => {
+const routes = (props) => { 
+  console.log(props);
   const { user } = props;
-<<<<<<< HEAD
-  return [ 
-    {
-      path: PATHS.PRODUCTDETAILS,
-      element: <ProductDetails {...props} />,
-    },
-=======
   return [
->>>>>>> e4f7b3a68399602b21bf648b597c521221c9a86c
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
-    },
+    }, 
+    {
+      path:  PATHS.DETAILS,
+      element: <Details {...props} /> 
+    }, 
     {
       path: PATHS.SHOPPING,
       element: <Shopping {...props}/>

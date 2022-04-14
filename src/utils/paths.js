@@ -1,8 +1,8 @@
 export const HOMEPAGE = "/";
 export const SIGNUPPAGE = "/auth/signup";
 export const LOGINPAGE = "/auth/login";  
-export const PRODUCTDETAILS="/product/:productId"
+export const DETAILS="/details/:id";
 export const PROTECTEDPAGE = "/protected";
-export const SHOPPING = '/shopping'
-export const ADMIN = '/admin'
-export const CREATEPRODUCT= '/admin/products'
+export const SHOPPING = '/shopping';
+export const ADMIN = '/admin';
+export const CREATEPRODUCT= '/admin/products';

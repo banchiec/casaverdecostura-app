@@ -7,10 +7,12 @@ import './sidebarShop.css'
 // import {RiAdminFill} from 'react-icons/ri'
 // import { GiLargeDress } from 'react-icons/gi'
 
-const SidebarShop = () => {
+const SidebarShop = (props) => { 
+
+	console.log(props)
+
 	const [showSidebarshop, setShowSidebarshop] = useState(true)
 	const [show, setShow] = useState('')
-
 	const toogleShowSidebashop = () => {
 		setShowSidebarshop(!showSidebarshop)
 		// setShow('show')
@@ -29,19 +31,19 @@ const SidebarShop = () => {
 				{/* <HamburguerButton/> */}
 				<div className={show}>
 					<ul className='menu_sidebar_shop'>
-						<li>Vestidos</li>
-						<li>Chaquetas</li>
-						<li>Pantalones</li>
-						<li>Faldas</li>
-						<li>Blusas</li>
-						<li>Abrigos</li>
-						<li>Toreras</li>
-						<li>Kimonos</li>
-						<li>Tocados</li>
-						<li>Monos</li>
-						<li>Joyeria</li>
-						<li>Bolsos</li>
-						<li>Mascarilla</li>
+						<li onClick={props.handleChange} id="Vestidos">Vestidos</li>
+						<li onClick={props.handleChange}  id="Chaquetas">Chaquetas</li>
+						<li onClick={props.handleChange}  id="Pantalones">Pantalones</li>
+						<li onClick={props.handleChange}  id="Faldas">Faldas</li>
+						<li onClick={props.handleChange}  id="Blusas">Blusas</li>
+						<li onClick={props.handleChange}  id="Abrigos" >Abrigos</li>
+						<li onClick={props.handleChange}   id="Toreras">Toreras</li>
+						<li onClick={props.handleChange}  id="Kimonos">Kimonos</li>
+						<li onClick={props.handleChange}  id="Tocados">Tocados</li>
+						<li onClick={props.handleChange}  id="Monos">Monos</li>
+						<li onClick={props.handleChange}  id="Joyeria">Joyeria</li>
+						<li onClick={props.handleChange}  id="Bolsos">Bolsos</li>
+						<li onClick={props.handleChange}  id="Mascarilla">Mascarilla</li>
 					</ul>
 				</div>
 	  </ContainerSidebarShop>

@@ -10,8 +10,9 @@ import SidebarShop from './components/SidebarShop/SidebarShop';
 
 const Shopping = (props) => {  
   // const [filteredProducts, setfilteredProduct] = useState([]);   
-  const [products, setProducts]  = useState([]);  
-  const [loading, setLoading] = useState(false); 
+  const [products, setProducts]  = useState([]);   
+  const [loading, setLoading] = useState(false);  
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);  
   const [productPerPage, setproductPerPage] = useState(12); 
 
@@ -22,16 +23,13 @@ const Shopping = (props) => {
       .getProducts() 
       .then((products) => { 
        setProducts(products?.data) 
+       setFilteredProducts(products?.data)
 	     setLoading(false)
       }) 
       .catch(err => console.log("Error retreiving products", err))     
   } 
-    
-  
  const [categories, setCategories] = useState([]);  
-
  let CategoryService = new CategoriesServices();  
-
  const getCategories = () => {
       CategoryService  
       .getCategories() 
@@ -39,27 +37,35 @@ const Shopping = (props) => {
         setCategories(categories?.data)
       })  
       .catch(err => console.log("Error retreving categoriessssssss" , err));
- }
-  
+ } 
+
+
+const handleChange = ((e) => { 
+  console.log(e);
+  let filteredProducts = products.filter(product => product.beloning.subCategory === e.target.id);  
+  setFilteredProducts(filteredProducts)
+  console.log(filteredProducts)
+})
+ 
+ 
 
  useEffect(() => {
-	 getProducts()
+	 getProducts() 
 	 getCategories()
  }, [])  
 
  //Get current products  
  const indexOfLastProduct = currentPage * productPerPage; 
  const indexOfFirstProducts = indexOfLastProduct - productPerPage; 
- const currentProducts = products.slice(indexOfFirstProducts, indexOfLastProduct);     
-
-
+ const currentProducts = filteredProducts.slice(indexOfFirstProducts, indexOfLastProduct);     
+ const paginate = (pageNumuber) => setCurrentPage(pageNumuber) 
 	return(
 		<>   
     <ContainerAdminPage>
-      <SidebarShop/>
+      <SidebarShop handleChange={handleChange}  />
       {/* <SideFilterBar/> */}
         <div className="container-shop" >
-          <ShowCase categories={categories} loading={loading}    products={currentProducts}/> 
+          <ShowCase categories={categories}  loading={loading}    products={filteredProducts}/> 
           <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination> 
         </div> 
     </ContainerAdminPage>

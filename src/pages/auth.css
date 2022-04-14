@@ -7,33 +7,74 @@ form.auth__form {
   margin: 0 auto;
 }
 
+
 button.button__submit {
-  margin: 1em auto; 
-  width: 100%; 
-  height: 30px;
+  height: 30px;  
+  background-color:#000;
+  text-transform: uppercase; 
+  letter-spacing: 1.7px;  
+  font-size: 12px;
+  color: white;  
+  font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+  width: 230px;
+}
+
+
+
+.container-form { 
+  text-align: center; 
+  max-width: 1190px;  
+  display: flex; 
+  justify-content: space-evenly; 
+  align-items: flex-start;
+  margin: 0 auto;
+  padding-top: 50px;
+}   
+
+.container-form input {  
+  width: 230px;  
+  margin-top: 20px; 
+  outline: none; 
+  font-size: 8px;
+  padding-bottom: 5px; 
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 1px solid black;
+}
+   
+
+.registration_information-description p {
+  font-size: 8px; 
+  width: 200px;  
+
+  display: block;  
+  text-align: start;   
+  padding-top: 5px;
+  font-size: 0.8em;
+  margin: 0 auto;
+}  
+ 
+.account {
+  margin-top: 30px;
+}
+
+
+
+br {
+  color: grey;
+}
+
+
+
+a{
+  text-decoration: none; 
 }
  
-.container-form {
-  display: flex; 
-  justify-content: space-evenly;   
-  height: 100vh;  
-  flex-wrap: wrap; 
-  background: #007220;
-  align-items: baseline;
-  padding-top: 50px;
-} 
 
-
-#input-username {
-  height: 30px; 
-  width: 220px;
-} 
- 
-#input-password { 
-  margin-top: 15px;
-  height: 30px; 
-  width: 220px;
-} 
+.form-layout {
+  width: 230px; 
+  text-align: center;
+}
 
 .img-loginform {
    width: 220px;

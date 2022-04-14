@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { login } from "../services/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import "./Signup";
 import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
@@ -37,15 +38,16 @@ export default function LogIn({ authenticate }) {
   }
 
   return (  
-    <div className="container-form">
- <img className="img-loginform" src="https://res.cloudinary.com/aleksmotin/image/upload/v1648415291/casaverde_logo_fsyri6.png" alt="casaverde-logo" border="0"></img>
-      <form onSubmit={handleFormSubmission} className="signup__form">
+    <div className="container-form">  
+    <br/> 
+    <form onSubmit={handleFormSubmission}> 
+      <h4>INICIA SESIÓN</h4>
         <label htmlFor="input-username"></label>
         <input
           id="input-username"
           type="text"
           name="username"
-          placeholder="Nombre del usuario"
+          placeholder="Email"
           value={username}
           onChange={handleInputChange}
           required
@@ -62,7 +64,9 @@ export default function LogIn({ authenticate }) {
           onChange={handleInputChange}
           required
           minLength="8"
-        />
+        />  
+        <br/>
+      
         {error && (
           <div className="error-block">
             <p>There was an error submiting the form:</p>
@@ -71,9 +75,19 @@ export default function LogIn({ authenticate }) {
         )}
         <br/>
         <button className="button__submit" type="submit">
-          Entrar
+        INICIAR SESIÓN
         </button>
-      </form>
-    </div> 
+      </form>  
+
+      <div className="register_information">   
+      <h4>REGÍSTRATE</h4>  
+      <div className="registration_information-description">
+      <p>SI TODAVÍA NO TIENES UNA CUENTA DE USUARIO DE CASAVERDECOSTURA.ES UTILIZA ESTA OPCIÓN PARA ACCEDER AL FORMULARIO DE REGISTRO.</p>  
+      <p>TE SOLICITAREMOS LA INFORMACIÓN IMPRESCINDIBLE PARA AGILIZAR EL PROCESO DE COMPRA.</p>
+      </div> 
+      <button className="button__submit account">CREAR CUENTA</button>
+      </div> 
+      <p></p>
+      </div>
   );
 }
