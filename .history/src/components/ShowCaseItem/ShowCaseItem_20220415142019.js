@@ -22,7 +22,7 @@ export const ShowCaseItem = (props) => {
   const removeFavority= () => {
     let newFavorities = props?.user?.favorities.map((item) => item.id != props?._id)
     props?.user?.favorities.pop(props?._id)
-    console.log(newFavorities);
+    console.log("false");
   }
   const handleFavority = () => {
     setClickFavorities(!clickFavorities)

@@ -68,7 +68,7 @@ const handleChange = ((e) => {
       <SidebarShop {...props} handleChange={handleChange}  />
       {/* <SideFilterBar/> */}
         <div className="container-shop" >
-          <ShowCase categories={categories}  loading={loading} {...props}   products={filteredProducts}/> 
+          <ShowCase categories={categories}  loading={loading} {..props}   products={filteredProducts}/> 
           <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination> 
         </div> 
     </ContainerAdminPage>
