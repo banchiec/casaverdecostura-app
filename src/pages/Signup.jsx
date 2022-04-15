@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { signup } from "../services/auth";
 import { useNavigate } from "react-router-dom";
 import "./auth.css";
-import * as PATHS from "../utils/paths";
+import * as PATHS from "../utils/paths"; 
+import "./signup.css"
 import * as USER_HELPERS from "../utils/userToken";
 
 export default function Signup({ authenticate }) {
@@ -41,21 +42,21 @@ export default function Signup({ authenticate }) {
   }
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="container-signup">
+      <h1>DATOS PERSONALES</h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
-        <label htmlFor="input-username">Username</label>
+        <label htmlFor="input-username"></label>
         <input
           id="input-username"
           type="text"
           name="username"
-          placeholder="Text"
+          placeholder="Email"
           value={username}
           onChange={handleInputChange}
           required
         />
 
-        <label htmlFor="input-password">Password</label>
+        <label htmlFor="input-password"></label>
         <input
           id="input-password"
           type="password"
@@ -75,7 +76,7 @@ export default function Signup({ authenticate }) {
         )}
 
         <button className="button__submit" type="submit">
-          Submit
+          CREAR CUENTA
         </button>
       </form>
     </div>

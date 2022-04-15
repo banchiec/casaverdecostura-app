@@ -1,0 +1,11 @@
+.container-signup input { 
+   border: none;  
+   outline: none; 
+   margin-top: 20px; 
+   border-bottom: 1px solid grey;
+} 
+ 
+button.button__submit{
+    margin-top: 30px; 
+    width: 100%;
+}
