@@ -66,7 +66,7 @@ const RegisterProductScreen = () => {
   }
   const handleSubmit = (e) => {    
     e.preventDefault() 
-    let product = { 
+    const product = { 
       name: form.name, 
       price: form.price, 
       description:  form.description, 
@@ -77,8 +77,7 @@ const RegisterProductScreen = () => {
       size: sizes, 
       photos: images
     }             
-
-    e.preventDefault()
+    // console.log(product);
     productService
     .createProduct(product)   
     .then((res) => {   
@@ -113,7 +112,6 @@ const RegisterProductScreen = () => {
     // setImage(null)
     // setColor(null)
   };
-  console.log(form);
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])
@@ -135,25 +133,23 @@ const RegisterProductScreen = () => {
                   <div className="container-data">
                     <div className='container-form-data'>
                       <h1 className='title-screen'>Registrar Producto</h1>
-                      <input type="text" name="name" onChange= {(e)=>{handleChange(e)}}  placeholder="Nombre"/>
-                      <input type="text" name="price" onChange= {(e)=>{handleChange(e)}} placeholder="Precio"/>
-                      <select id="category" name='category' onChange={(e)=>handleChange(e)}>
+                      <input type="text" name="name" onChange= {(e)=>{handleChange(e)}}  placeholder="Nombre" required/>
+                      <input type="text" name="price" onChange= {(e)=>{handleChange(e)}} placeholder="Precio" required/>
+                      <select id="category" name='category' onChange={(e)=>handleChange(e)} required>
                         {categoriesInDb?.map((category) => {
                           return(
                               <option  key={category.id} value={category._id}>{category.name}</option>
                           )
                         })}
                       </select>    
-                      <select id="subcategory" name='subcategory' onChange={(e)=>handleChange(e)}>
+                      <select id="subcategory" name='subcategory' onChange={(e)=>handleChange(e)} required>
                         {categoryId && subcategories?.map((category)=>{
                           return(
-                            <>
-                              <option key={category} value={category}>{category}</option>
-                            </>
+                              <option key={category.id} value={category}>{category}</option>
                           )
                         })}
                       </select> 
-                      <textarea type="text" name='description' rows='5' cols='54' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción"/> 
+                      <textarea type="text" name='description' rows='5' cols='54' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción" required/> 
                         <select id="sizecha ge" multiple={true} name='sizes' onChange={(e)=>handleChange(e)}>
                           <option value='xs'>xs</option>
                           <option value="s">s</option>
@@ -176,7 +172,7 @@ const RegisterProductScreen = () => {
                     </div>
                     <div className='container-uploaded-images'>
                       <label htmlFor="imgselect">Selecciona imagen</label>
-                      <input id='imgselect' type="file" name="img" value={form.img}  onChange={(e) => handleFile(e)} placeholder="email address" multiple/>
+                      <input id='imgselect' type="file" name="img" value={form.img}  onChange={(e) => handleFile(e)} placeholder="email address" multiple required/>
                       { image && (
                         <div className="image-root-register">
                           <img src={images[images.length - 1]?.url} alt={images[0]?.url}/>
