@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {FaUserPlus} from 'react-icons/fa'
 import { FiLogIn, FiSearch } from 'react-icons/fi'
@@ -6,8 +6,14 @@ import { NavbarContainer } from "./navbarStyled";
 import { BsCartFill } from 'react-icons/bs'
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
+import { CartContext } from "../../context/cart-context";
 
-const Navbar = (props) => {
+const Navbar = (props) => { 
+  
+  const {itemCount,cartItems} = useContext(CartContext);  
+  
+  console.log(cartItems);
+
   return (
     <NavbarContainer hidden >
       <div>  
@@ -54,7 +60,10 @@ const Navbar = (props) => {
               </Link>
             </>
           )}
-          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>
+          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}> 
+          {
+            itemCount > 0 ? <span className="cart-count">{itemCount}</span>: null
+          }
                 <BsCartFill/>
           </Link>
         </div>

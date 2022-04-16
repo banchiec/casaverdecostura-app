@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
-import ProductsService from "../../services/products.service";
+import React, { useEffect, useState, useContext } from "react";
+import ProductsService from "../../services/products.service"; 
+import { IsInCart } from "../../helpers"; 
+import { CartContext } from "../../context/cart-context";
 import { useParams } from "react-router-dom";
 import { Gallery } from "../../components/Gallery/Gallery";
 import "./Details.css";
@@ -7,12 +9,21 @@ import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
 export const Details = (props) => {
   console.log(props);
   const ProductService = new ProductsService();
-  const [productDetails, setProductDetails] = useState(null);
-  const { id } = useParams();
+  const [productDetails, setProductDetails] = useState(null);   
+ 
+  const { id } = useParams();    
+  const {addProduct, cartItems, increase} = useContext(CartContext) 
+
 
   useEffect(() => {
-    getProduct(id);
-  }, []);
+    getProduct(id); 
+
+  }, []);  
+
+
+  useEffect(() => { 
+   setProductDetails()
+  }, [])
 
   const getProduct = (id) => {
     ProductService.getOneProduct(id)
@@ -20,9 +31,23 @@ export const Details = (props) => {
         setProductDetails(data?.data);
       })
       .catch((err) => console.log(err));
-  };
+  }; 
+      
+  let product;
 
-  return (
+  if(productDetails) {
+    let {name, price} =  productDetails; 
+    let producter = {name, price};  
+    console.log(producter);  
+    product= producter;     
+  } 
+ 
+  console.log(product)
+  
+
+
+
+  return (         
     <>
       <div className="content-container">
         {productDetails ? (
@@ -45,8 +70,15 @@ export const Details = (props) => {
                   );
                 })}
               </select>
-              <hr />
-              <button className="shop-button">Añadir a la cesta</button> 
+              <hr />    
+
+              {
+                !IsInCart(product, cartItems) && <button onClick={() => addProduct(product)}>Añadir a la cesta</button>
+              }
+              {
+                IsInCart(product, cartItems) && <button  onClick={() => increase(product)}>ADD MORE</button>
+              }
+             
               <p>Envios, cambios y devoluciones</p>
             </div>
           </>
