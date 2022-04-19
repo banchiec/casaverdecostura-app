@@ -6,7 +6,8 @@ import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
-import { Details } from "../pages/details/Details";
+import { Details } from "../pages/details/Details"; 
+import CartPage from "../pages/cart-page/cart-page";
 
 const routes = (props) => { 
   const { user } = props;
@@ -19,6 +20,11 @@ const routes = (props) => {
       path:  PATHS.DETAILS,
       element: <Details {...props} /> 
     }, 
+    {
+      path:  PATHS.CART,
+      element: <CartPage {...props} /> 
+    },   
+
     {
       path: PATHS.SHOPPING,
       element: <Shopping {...props}/>

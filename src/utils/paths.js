@@ -2,6 +2,7 @@ export const HOMEPAGE = "/";
 export const SIGNUPPAGE = "/auth/signup";
 export const LOGINPAGE = "/auth/login";  
 export const DETAILS="/details/:id";
+export const CART="/cart";
 export const PROTECTEDPAGE = "/protected";
 export const SHOPPING = '/shopping';
 export const ADMIN = '/admin';

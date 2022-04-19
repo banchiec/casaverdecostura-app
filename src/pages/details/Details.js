@@ -10,14 +10,14 @@ export const Details = (props) => {
   console.log(props);
   const ProductService = new ProductsService();
   const [productDetails, setProductDetails] = useState(null);   
- 
+  
+  console.log(productDetails)
   const { id } = useParams();    
   const {addProduct, cartItems, increase} = useContext(CartContext) 
 
 
   useEffect(() => {
     getProduct(id); 
-
   }, []);  
 
 
@@ -35,11 +35,12 @@ export const Details = (props) => {
       
   let product;
 
-  if(productDetails) {
-    let {name, price} =  productDetails; 
-    let producter = {name, price};  
+  if(productDetails) { 
+    let {name, price, id} =  productDetails;  
+    id= productDetails._id;
+    let producter = {name, price, id};  
     console.log(producter);  
-    product= producter;     
+    product= producter;      
   } 
  
   console.log(product)
