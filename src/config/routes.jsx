@@ -3,11 +3,14 @@ import HomePage from "../pages/HomePage";
 import Shopping from "../pages/shopping/Shopping";
 import Login from "../pages/LogIn"; 
 import Signup from "../pages/Signup";
-import ProtectedPage from "../pages/ProtectedPage";
+import ProtectedPage from "../pages/ProtectedPage"; 
+import Checkout from "../components/checkout/checkout";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
 import { Details } from "../pages/details/Details"; 
-import CartPage from "../pages/cart-page/cart-page";
+import CartPage from "../pages/cart-page/cart-page"; 
+
+
 
 const routes = (props) => { 
   const { user } = props;
@@ -15,6 +18,10 @@ const routes = (props) => {
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
+    }, 
+    {
+      path: PATHS.CHECKOUT,
+      element: <Checkout {...props} />,
     }, 
     {
       path:  PATHS.DETAILS,

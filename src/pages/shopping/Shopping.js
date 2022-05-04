@@ -44,7 +44,6 @@ const handleChange = ((e) => {
   console.log(e);
   let filteredProducts = products.filter(product => product.beloning.subCategory === e.target.id);  
   setFilteredProducts(filteredProducts)
-  console.log(filteredProducts)
 })
  
  

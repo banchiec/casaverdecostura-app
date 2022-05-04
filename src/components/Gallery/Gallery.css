@@ -5,7 +5,8 @@ img {
 
 .container {
     margin: auto; 
-    width: 100%; 
+    width: 100%;  
+    border: 3px border green;
     max-width: 540px;   
 } 
 

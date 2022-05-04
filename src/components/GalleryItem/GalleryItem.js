@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import "./GalleryItem.css";
-export const GalleryItem = (props) => {  
-    console.log(props)
-    const images = props.photos?.map(item => item.url); 
-    const [selectedImg, setselectedImg] = useState(images[0]); 
-    console.log(selectedImg) 
+export const GalleryItem = (props) => {   
+   
+    const showImage = (url) => {
+        props.setImageShow(url);
+    }  
+
   return ( 
       <>  
       <div className='container-gallery'>
-        <img src={selectedImg} alt="Selected" className="selected"></img>
+        <img src={props.activeImage} alt="Selected" className="selected"></img>
         <div className="imgContainer"> 
        {props.photos?.map((img, index) => {
            return (
                <> 
-               <img key={index}  onClick={(() => setselectedImg(img.url))} src={img.url} alt="producto"></img>
+               <img key={index}  onClick={(() => showImage(img.url))} src={img.url} alt="producto"></img>
                </> 
            )
        })}

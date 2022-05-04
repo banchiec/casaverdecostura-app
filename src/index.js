@@ -3,13 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App"; 
 import CartContextProvider from "./context/cart-context";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"; 
+import {Elements} from "@stripe/react-stripe-js"
+import {loadStripe} from "@stripe/stripe-js"; 
+
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>  
-    <CartContextProvider>
+    <CartContextProvider> 
+      <Elements stripe={stripePromise}>
         <App />
+        </Elements>
      </CartContextProvider>
     </BrowserRouter>
   </React.StrictMode>,

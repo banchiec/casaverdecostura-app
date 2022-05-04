@@ -1,29 +1,26 @@
 import React, { useEffect, useState, useContext } from "react";
-import ProductsService from "../../services/products.service"; 
-import { IsInCart } from "../../helpers"; 
-import { CartContext } from "../../context/cart-context";
+import ProductsService from "../../services/products.service";
+import { IsInCart } from "../../helpers";
+import { Link } from "react-router-dom";
+//import { CartContext } from "../../context/cart-context";
+import { Colors } from "../../components/Colors/Colors";
 import { useParams } from "react-router-dom";
-import { Gallery } from "../../components/Gallery/Gallery";
+//import { Gallery } from "../../components/Gallery/Gallery";
 import "./Details.css";
-import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
-export const Details = (props) => {
-  console.log(props);
-  const ProductService = new ProductsService();
-  const [productDetails, setProductDetails] = useState(null);   
-  
-  console.log(productDetails)
-  const { id } = useParams();    
-  const {addProduct, cartItems, increase} = useContext(CartContext) 
+//import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
+import { DetailsItem } from "./DetailsItem";
 
+
+export const Details = (props) => {
+  const ProductService = new ProductsService(); 
+  const [productDetails, setProductDetails] = useState(null);
+  console.log(productDetails);   
+  const { id } = useParams();
+  //const { addProduct, cartItems, increase } = useContext(CartContext);
 
   useEffect(() => {
-    getProduct(id); 
+    getProduct(id);
   }, []);  
-
-
-  useEffect(() => { 
-   setProductDetails()
-  }, [])
 
   const getProduct = (id) => {
     ProductService.getOneProduct(id)
@@ -31,57 +28,14 @@ export const Details = (props) => {
         setProductDetails(data?.data);
       })
       .catch((err) => console.log(err));
-  }; 
-      
-  let product;
+  };
 
-  if(productDetails) { 
-    let {name, price, id} =  productDetails;  
-    id= productDetails._id;
-    let producter = {name, price, id};  
-    console.log(producter);  
-    product= producter;      
-  } 
- 
-  console.log(product)
-  
-
-
-
-  return (         
+  return (
     <>
       <div className="content-container">
         {productDetails ? (
-          <>
-            <Gallery photos={productDetails.photos}></Gallery>
-            <div className="product-info">
-              <p className="product-name">{productDetails?.name}</p>
-              <p className="product-description">
-                {productDetails?.description}
-              </p>
-              <span className="product-price">{productDetails?.price} EUR</span>
-              <br />
-              <hr />
-              <select>
-                {productDetails?.size.map((item, i) => {
-                  return (
-                    <>
-                      <option className="option-size">{item}</option>
-                    </>
-                  );
-                })}
-              </select>
-              <hr />    
-
-              {
-                !IsInCart(product, cartItems) && <button onClick={() => addProduct(product)}>Añadir a la cesta</button>
-              }
-              {
-                IsInCart(product, cartItems) && <button  onClick={() => increase(product)}>ADD MORE</button>
-              }
-             
-              <p>Envios, cambios y devoluciones</p>
-            </div>
+          <>  
+           <DetailsItem size={productDetails?.size}   productDetails={productDetails} photos={productDetails?.photos} ></DetailsItem>
           </>
         ) : (
           <p>Loading</p>

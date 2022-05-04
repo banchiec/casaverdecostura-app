@@ -5,19 +5,16 @@ img {
  
 .content-container {
     display: flex; 
-    padding-top: 20px;
-    padding-right: 30px;
-    padding-bottom: 30px; 
-    padding-left: 30px;
 }
 .container-gallery {
     margin: auto;   
     justify-content: center;
-    padding-top: 1.2rem;  
+    margin: 0; 
+    padding: 0;
     gap: 50px;  
 }
 .container-gallery .selected { 
-  width: 350px;
+  width: 250px;
   max-height: 100%; 
   max-width: 100%;
 } 

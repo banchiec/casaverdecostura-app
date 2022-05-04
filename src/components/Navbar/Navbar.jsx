@@ -7,10 +7,10 @@ import { BsCartFill } from 'react-icons/bs'
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
 import { CartContext } from "../../context/cart-context";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 
 const Navbar = (props) => {   
 
-  
   const {itemCount,cartItems} = useContext(CartContext);
   console.log(cartItems);   
 
@@ -18,15 +18,15 @@ const Navbar = (props) => {
 
   return (
     <NavbarContainer hidden >
-      <div>  
+      <div>   
         <div className='container-search'>
           <FiSearch/>
           <input type='text'/>
         </div>
-        <div className='navbar-center'>
+        <div className='navbar-center'> 
           <Link to={PATHS.HOMEPAGE}>
             <img src='/casaverde_logo.png' alt="Logo" />
-          </Link>                            
+          </Link>                      
           <div className='navbar_menu'>
             <Link to={PATHS.SHOPPING}>
               TIENDA
@@ -70,6 +70,7 @@ const Navbar = (props) => {
           </Link>
         </div>
       </div>  
+      <BurgerMenu></BurgerMenu>
     </NavbarContainer>
   );
 };
