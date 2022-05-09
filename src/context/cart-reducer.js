@@ -1,8 +1,8 @@
  
- export  const sumItems = cartItems => {
+ export const sumItems = cartItems => {
      return {
-         itemCount: cartItems.reduce((total, prod) => total + prod.quantity , 0), 
-         total: cartItems.reduce((total, prod) => total + (prod.price * prod.quantity) , 0)
+       itemCount: cartItems.reduce((total, prod) => total + prod.quantity , 0), 
+       total: cartItems.reduce((total, prod) => total + (prod.price * prod.quantity) , 0)
      }
  }
  
@@ -21,7 +21,8 @@
             ...sumItems(state.cartItems)
         } 
         case "INCREASE": 
-        const IncreaseIndex = state.cartItems.findIndex(item => item.id === action.payload.id); 
+        const IncreaseIndex = state.cartItems.findIndex(item => item.id === action.payload.id);  
+        console.log(IncreaseIndex);
         state.cartItems[IncreaseIndex].quantity++;  
  
         return {

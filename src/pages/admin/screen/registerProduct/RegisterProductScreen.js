@@ -37,7 +37,6 @@ const RegisterProductScreen = () => {
     size: [""], 
   })    
 
-  console.log(form)
     
   useEffect(() => {
     getCategories()

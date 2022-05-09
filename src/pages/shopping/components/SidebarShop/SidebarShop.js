@@ -66,8 +66,7 @@ const SidebarShop = (props) => {
 	const [showSidebarshop, setShowSidebarshop] = useState(true)
 	const [show, setShow] = useState('')
 	const toogleShowSidebashop = () => {
-		setShowSidebarshop(!showSidebarshop)
-	  console.log(showSidebarshop);
+		setShowSidebarshop(!showSidebarshop);
 		showSidebarshop ? setShow('show') : setShow('')
 	}
 	useEffect(()=>{

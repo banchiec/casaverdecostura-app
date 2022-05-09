@@ -53,9 +53,6 @@ const handleChange = ((e) => {
 	 getCategories()
  }, [])  
 
- const getFilterProducts = (value) => {
-   console.log(value);
- }
  //Get current products  
  const indexOfLastProduct = currentPage * productPerPage; 
  const indexOfFirstProducts = indexOfLastProduct - productPerPage; 
@@ -68,10 +65,10 @@ const handleChange = ((e) => {
       {/* <SideFilterBar/> */}
         <div className="container-shop" >
           <ShowCase categories={categories}  loading={loading} {...props}   products={filteredProducts}/> 
-          <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination> 
-        </div> 
+          <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination>
+          <Footer></Footer> 
+        </div>  
     </ContainerAdminPage>
-    <Footer></Footer>
   </>
 	)
 

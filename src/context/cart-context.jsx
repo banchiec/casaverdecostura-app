@@ -4,7 +4,8 @@ import cartReducer from "./cart-reducer";
 export const CartContext = createContext();  
 console.log(CartContext)
 
-const initialState = {cartItems: [], itemCount: 0, total: 0}; 
+const initialState = {cartItems: [], itemCount: 0, total: 0};  
+console.log(initialState);
 
 const CartContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(cartReducer, initialState);
@@ -14,8 +15,7 @@ const CartContextProvider = ({children}) => {
     const contextValues = {
         ...state,    
         addProduct, 
-        increase,   
-        decrease
+        increase, 
     }   
     return (
         <CartContext.Provider value={contextValues}>

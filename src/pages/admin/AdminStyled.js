@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 export const ContainerAdminPage = styled.div`
 	display: flex;
-	flex-direction: row ;
+	flex-direction: row ; 
+	min-height: 100%;
 	.container_screen {
 		width: 80%;
 		background: red;

@@ -12,7 +12,7 @@ import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 const Navbar = (props) => {   
 
   const {itemCount,cartItems} = useContext(CartContext);
-  console.log(cartItems);   
+  console.log(cartItems, itemCount);   
 
 
 

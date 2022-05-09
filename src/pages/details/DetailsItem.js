@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Details.css";    
-import { Gallery } from '../../components/Gallery/Gallery';
+import { Gallery } from '../../components/Gallery/Gallery';  
+import { IsInCart } from '../../helpers';
 //import { CartContext } from '../../context/cart-context'; 
 import { Colors } from '../../components/Colors/Colors'; 
+import { CartContext } from '../../context/cart-context';
 export const DetailsItem = (props) => { 
-    console.log(props); 
     let images = props.photos?.map(item => item.url);
-    const [imageShow, setImageShow] = useState(images[0]); 
-  //  const { addProduct, cartItems, increase } = useContext(CartContext);
+    const [imageShow, setImageShow] = useState(images[0]);                                 
+    let imageUrl = imageShow;   
+    const {name, price, _id, description} = props.productDetails; 
+    const product = {name, imageUrl, _id, description, price }; 
+    const { addProduct, cartItems, increase } = useContext(CartContext);   
+    const itemInCart = IsInCart(product, cartItems);   
     const [showSidebarshop, setShowSidebarshop] = useState(true);
     const [show, setShow] = useState("");    
     const toogleShowSidebashop = () => {
@@ -50,9 +55,16 @@ export const DetailsItem = (props) => {
               </select>
               <hr />
               <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
-              <br /> 
-              <button className='btn-cart'>Añadir al carrito</button>
-
+              <br />   
+              {
+                !itemInCart && 
+                <button onClick={() => addProduct(product)} className='btn-cart'>Añadir al carrito</button>
+              }
+           
+             {
+               itemInCart && 
+               <button onClick={() => increase(product)} className='btn-cart'>ADD MORE</button>
+             }
               <p className='regards-politics' onClick={toogleShowSidebashop}>
                 Envios, cambios y devoluciones
               </p>

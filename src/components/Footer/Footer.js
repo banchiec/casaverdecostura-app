@@ -28,7 +28,7 @@ import "./../Footer/Footer.css";
                       <div></div>
                       <div className="links">
                         <ul className="footer-links">
-                          <li><a href="#">FAQ</a></li>
+                          <li><a href="#">FAQ</a></li> 
                           <li><a href="#">Búsqueda</a></li>
                           <li><a href="#">Contáctanos</a></li>
                           <li><a href="#">Sobre Nosotros</a></li>

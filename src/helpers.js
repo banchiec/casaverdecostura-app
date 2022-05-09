@@ -1,9 +1,7 @@
-export const IsInCart = (product, cartItems) => { 
+export const IsInCart = (product, cartItems) => {  
    return cartItems.find(item => item.id === product.id)
 } 
- 
 const API = "http://localhost:5005/api/pay"; 
- 
  async  function fetchFromAPI(endpoint,opts) {
    const {method, body} = {method: "POST", body: null, ...opts}; 
    const res = await fetch(`${API}/${endpoint}`, {
@@ -16,4 +14,4 @@ const API = "http://localhost:5005/api/pay";
    return res.json()
 } 
 
-export default fetchFromAPI;
+export default fetchFromAPI;           

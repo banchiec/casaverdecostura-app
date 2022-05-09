@@ -1,16 +1,19 @@
 .site-footer {
-  position: relative;
   width: 100%;
-  bottom: 0;
   display: flex;
+  position: absolute;
   flex-direction: column;
   background-color: #007220;;
-  padding:45px 0 20px; 
-  bottom: 0; 
-  font-size:15px;
+  padding:45px 0 20px;   
+  font-size:15px; 
+  left: 0;
   line-height:24px;
   color:#737373;
-}
+} 
+   
+
+
+
 .container-text-footer {
   display: flex; 
   align-items: stretch;
@@ -186,7 +189,9 @@
  
 .subscribe p {
   width: 230px; 
-}
+} 
+
+
 
 
 @media (max-width:767px)
