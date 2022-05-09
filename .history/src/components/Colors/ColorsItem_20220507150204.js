@@ -2,7 +2,7 @@ import React from 'react'
 import "./ColorsItem.css"
 
 export const ColorsItem = (props) => { 
-    // console.log(props)
+    console.log(props)
   return ( 
       <> 
       {

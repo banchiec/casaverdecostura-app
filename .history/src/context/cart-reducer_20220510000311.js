@@ -7,6 +7,7 @@
  }
  
  const cartReducer = (state, action) => {
+    console.log(state);
     switch(action.type) {  
         case "ADD_ITEM":  
         if(!state.cartItems.find(item => item._id === action.payload._id)) {
@@ -16,21 +17,19 @@
                quantity: 1
            })
         }  
-        console.log(state);
         return {
             ...state, 
             cartItems: [...state.cartItems], 
             ...sumItems(state.cartItems)
         } 
         case "INCREASE": 
-        const IncreaseIndex = state.cartItems.findIndex(item => item._id === action.payload._id)  
-        state.cartItems[IncreaseIndex].quantity++
-        console.log(state.cartItems[IncreaseIndex])
-        // return {
-        //     ...state, 
-        //     cartItems: [...state.cartItems], 
-        //     ...sumItems(state.cartItems)
-        // }        
+        const IncreaseIndex = state.cartItems.findIndex(item => item._id === action.payload._id);  
+        state.cartItems[IncreaseIndex].quantity++;  
+        return {
+            ...state, 
+            cartItems: [...state.cartItems], 
+            ...sumItems(state.cartItems)
+        }        
         // case "DECREASE": 
         // const decreaseIndex = state.cartItems.findIndex(item => item.id === action.payload.id);  
         // const product = state.cartItems(decreaseIndex); 

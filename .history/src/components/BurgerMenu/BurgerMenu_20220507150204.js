@@ -6,7 +6,7 @@ export const BurgerMenu = () => {
  
     const [menuBurger, setmenuBurger] = useState(true);  
     const [show, setShow] = useState(""); 
-    // console.log(menuBurger)
+    console.log(menuBurger)
  
     const handleBurgerMenu = () => {
         setmenuBurger(!menuBurger); 
