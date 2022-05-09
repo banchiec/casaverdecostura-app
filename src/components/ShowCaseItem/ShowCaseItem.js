@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext, useEffect, useState } from "react"
 import "./ShowCaseItem.css"  
 import {MdFavorite, MdFavoriteBorder} from 'react-icons/md'
@@ -8,24 +9,45 @@ import { IsInCart } from "../../helpers"
 export const ShowCaseItem = (props) => {    
   const images = props.photos?.map((photo) => (photo.url))   
   const [clickFavorities,setClickFavorities] = useState(false) 
+=======
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import {MdFavorite, MdFavoriteBorder} from 'react-icons/md'
+import "./ShowCaseItem.css"  
+
+export const ShowCaseItem = (props) => {    
+  const images = props.photos?.map((photo) => (photo.url))   
+  const [clickFavorities,setClickFavorities] = useState(false)
+  const [favorities, setFavorities]  = useState([])
+>>>>>>> 2473202da26663bfcb4388dceba7cf145ff69c2d
 
   const saveFavority = (e) => {
     console.log("object");
   }
   useEffect(() => {
-    clickFavorities ? addFavority() : removeFavority()
+    // clickFavorities ? addFavority() : removeFavority()
   },[clickFavorities])
   
-  const addFavority= () => {
-    props?.user?.favorities.push(props?._id)
-    console.log(props?.user.favorities);
+  // console.log(props?.user?.favorities);
+  const addFavority = () => {
+    const newFavorities = props?.user?.favorities
+    newFavorities.push(props?._id)
+    setFavorities(newFavorities)
+    // .push(props?._id)
+    // const updateUser= {
+    //   ...props.user,
+    //   favorities: props?.user?.favorities 
+    // }
+    // enviar a la base de datos y actualizar 
   }
-
-  const removeFavority= () => {
-    let newFavorities = props?.user?.favorities.map((item) => item.id != props?._id)
-    props?.user?.favorities.pop(props?._id)
-    console.log(newFavorities);
+  const removeFavority = () => {
+    const newFavorities = props?.user?.favorities.filter((item) => {
+      return item && item != props._id
+      //  return item =! props?._id
+    })
+    setFavorities(newFavorities)
   }
+  console.log(favorities);
   const handleFavority = () => {
     setClickFavorities(!clickFavorities)
   }
@@ -36,9 +58,9 @@ export const ShowCaseItem = (props) => {
         onClick={()=> handleFavority()}
       >
         {clickFavorities ?
-          <MdFavorite/>
+          <MdFavorite onClick={removeFavority} />
           :
-          <MdFavoriteBorder />
+          <MdFavoriteBorder onClick={addFavority} />
         }
       </div>
       <div className="card">
