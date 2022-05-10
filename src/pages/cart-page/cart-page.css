@@ -43,7 +43,15 @@
     font-size: 1rem; 
     font-weight: normal;
 } 
- 
+  
+
+.empty-cart p {
+    text-align: center;
+} 
+
+.total p {
+    text-align: center;
+}
 
 @media(min-width: 1024px) { 
     .cart-page {

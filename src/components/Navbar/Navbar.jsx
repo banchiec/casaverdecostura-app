@@ -12,7 +12,7 @@ import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 const Navbar = (props) => {   
 
   const {itemCount,cartItems} = useContext(CartContext);
-  console.log(cartItems, itemCount);   
+  console.log(itemCount);   
 
 
 
@@ -70,7 +70,6 @@ const Navbar = (props) => {
           </Link>
         </div>
       </div>  
-      <BurgerMenu></BurgerMenu>
     </NavbarContainer>
   );
 };

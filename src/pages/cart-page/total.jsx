@@ -6,7 +6,7 @@ const Total = ({itemCount, total}) => {
     return (
         <div className="total-container">
           <div className="total">
-       <p>Total: ${total}</p>
+       <p >Total: ${total}</p>
           </div> 
           <div className="checkout">
           <Link to={"/checkout"}><button className="button is-black" >CHECKOUT</button></Link>

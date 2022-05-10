@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React, { useContext, useEffect, useState } from "react"
-import "./ShowCaseItem.css"  
-import {MdFavorite, MdFavoriteBorder} from 'react-icons/md'
-import { Link } from "react-router-dom"
-import { CartContext } from "../../context/cart-context"
-import { IsInCart } from "../../helpers"
-
-export const ShowCaseItem = (props) => {    
-  const images = props.photos?.map((photo) => (photo.url))   
-  const [clickFavorities,setClickFavorities] = useState(false) 
-=======
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import {MdFavorite, MdFavoriteBorder} from 'react-icons/md'
@@ -19,7 +7,6 @@ export const ShowCaseItem = (props) => {
   const images = props.photos?.map((photo) => (photo.url))   
   const [clickFavorities,setClickFavorities] = useState(false)
   const [favorities, setFavorities]  = useState([])
->>>>>>> 2473202da26663bfcb4388dceba7cf145ff69c2d
 
   const saveFavority = (e) => {
     console.log("object");
