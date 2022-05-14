@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./Details.css";    
 import { Gallery } from '../../components/Gallery/Gallery';  
-import { IsInCart } from '../../helpers';
-//import { CartContext } from '../../context/cart-context'; 
-import { Colors } from '../../components/Colors/Colors'; 
-import { CartContext } from '../../context/cart-context';
-export const DetailsItem = (props) => { 
+import { Colors } from '../../components/Colors/Colors';  
+import { cartContext } from '../../components/context/CartContext'; 
+export const DetailsItem = (props) => {              
+ 
+  
     let images = props.photos?.map(item => item.url);
-    const [imageShow, setImageShow] = useState(images[0]);                                 
-    let imageUrl = imageShow;   
-    const {name, price, _id, description} = props.productDetails; 
-    const product = {name, imageUrl, _id, description, price }; 
-    const { addProduct, cartItems, increase } = useContext(CartContext);   
-    const itemInCart = IsInCart(product, cartItems);   
+    const [imageShow, setImageShow] = useState(images[0]);    
+    const [sizes, setSizes] = useState(props.size[0]);                         
+    let imageUrl = imageShow;    
+    const {name, price, _id, description, } = props.productDetails; 
+    const product = {name,imageUrl,_id,description,price, sizes};  
     const [showSidebarshop, setShowSidebarshop] = useState(true);
-    const [show, setShow] = useState("");    
+    const [show, setShow] = useState("");     
+    const { addItemtoCart} = useContext(cartContext);  
     const toogleShowSidebashop = () => {
         setShowSidebarshop(!showSidebarshop);
         console.log(showSidebarshop);
@@ -22,7 +22,13 @@ export const DetailsItem = (props) => {
       };    
     const onShow = (e) => {
         setImageShow(e.target.name);
-      };  
+      };   
+
+    const handleSize = (e) => {
+      if(e.target.name === "sizes") {
+        setSizes(e.target.value)
+      }
+    }
   
   return (
     <>
@@ -44,7 +50,7 @@ export const DetailsItem = (props) => {
               </p>
               <span className="product-price">{props.productDetails?.price} EUR</span>
               <br />
-              <select className="select-size">
+              <select name="sizes"  onChange={(e)=>handleSize(e)} className="select-size">
                 {props.productDetails?.size.map((item, i) => {
                   return (
                     <>
@@ -56,15 +62,13 @@ export const DetailsItem = (props) => {
               <hr />
               <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
               <br />   
-              {
-                !itemInCart && 
-                <button onClick={() => addProduct(product)} className='btn-cart'>Añadir al carrito</button>
-              }
+            
            
-             {
-               itemInCart && 
-               <button onClick={() => increase(product)} className='btn-cart'>ADD MORE</button>
-             }
+               <button onClick={() => !addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button> 
+            
+             
+        
+            
               <p className='regards-politics' onClick={toogleShowSidebashop}>
                 Envios, cambios y devoluciones
               </p>

@@ -1,26 +1,28 @@
 import React, {useContext, useState} from "react"; 
 import { useStripe } from "@stripe/react-stripe-js"; 
-import { CartContext } from "../../context/cart-context"; 
-import fetchFromAPI from "../../helpers"; 
+import { cartContext } from "../context/CartContext"; 
+import fetchFromAPI from "../../helpers";  
+
 
 export const StripeCheckout = () => { 
     const [email, setEmail] = useState("");   
-    const {cartItems} = useContext(CartContext); 
+    const {cartItems} = useContext(cartContext); 
     const stripe = useStripe();
     console.log(stripe)
     const handleStripeSubmit = async (e) => {   
         console.log(e)
         e.preventDefault();
-     const line_items  =  cartItems.map((item) => { 
+     const line_items  =  cartItems.map((item) => {  
          console.log(item)
          return {
-             quantity: item.quantity,  
+             quantity: item.amount,  
              price_data: {
                  currency: "eur", 
                  unit_amount: item.price * 100, 
                  product_data: {
                      name: item.name, 
-                     description: item?.description, 
+                     description: item?.description,   
+                     images: [item.imageUrl]
                  }
 
              }

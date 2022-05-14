@@ -1,72 +1,51 @@
-.cart-item {
-    text-align: center; 
-    border: 1px  solid #ccc; 
-    margin: 2rem; 
-    padding: 1rem;
+.cart {
+    margin-top: 10px; 
+    border-right: 300px; 
+    width: 400px; 
+    background-color: #222222; 
+    color: white;
 } 
 
+.cart h2 {
+    text-align: center;
+} 
 
-.item-image img {
-    width: 50px;
-}  
-
-.item-image .btns-container button{ 
-    border: none; 
-    padding: 0.5rem 1rem; 
+.shop-continue {
+    display: block; 
+    margin: 0 auto; 
+    width: 10.5rem; 
+    background-color: black; 
+    color: white;   
+    letter-spacing: 0.7px;
+    font-weight: 600;
     cursor: pointer; 
-    font-size: 10px; 
-    margin-right: 5px;
-
-} 
-
-.item-image .btns-container .btn-increase{ 
-    color: #fff; 
-    background-color: #1a1a1a;
-
+    padding: 10px 12px; 
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+    border: 1px solid;
 } 
 
 
-.item-image .btns-container .btn-decrease, .btn-trash{ 
-    color: #fff; 
-    background-color: #9d534f;
-}
-
-
-.name-price h4 {
-    margin: 0;
-}
-
-.empty-cart {
-    text-align: center;
-}
-.name-price p {
-    font-size: 1rem; 
-    font-weight: normal;
-} 
-  
-
-.empty-cart p {
-    text-align: center;
-} 
-
-.total p {
+.cart-title {
     text-align: center;
 }
 
-@media(min-width: 1024px) { 
-    .cart-page {
-        display: flex; 
-        justify-content: center;
-    }
-    .cart-item {
-        display: flex; 
-        justify-content: space-between;
-    } 
+.total {
+    text-align: center; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    font-weight: 600;
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}   
 
-    .cart-item div {
-        margin: 1rem;
-    } 
-    .name-price {
-        width: 200px;
-    }
-}
+.cart-additional {
+    position: fixed; 
+    width: 100%;  
+    bottom: 0;
+    left: 0;  
+    display: flex;   
+    padding-top: 10px;
+    border-top: 1px solid black;
+    gap: 2.5rem; 
+    background-color: white;
+   justify-content: space-around;
+} 

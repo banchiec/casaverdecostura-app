@@ -62,7 +62,10 @@ const dataMenu = [
 // import {RiAdminFill} from 'react-icons/ri'
 // import { GiLargeDress } from 'react-icons/gi'
 
-const SidebarShop = (props) => {
+const SidebarShop = (props) => {  
+
+	console.log(props)
+
 	const [showSidebarshop, setShowSidebarshop] = useState(true)
 	const [show, setShow] = useState('')
 	const toogleShowSidebashop = () => {

@@ -1,4 +1,4 @@
-export const IsInCart = (product, cartItems) => {  
+export const IsInCart = (product, cartItems) => {   
    return cartItems.find(item => item._id === product._id)
 } 
 const API = "http://localhost:5005/api/pay"; 

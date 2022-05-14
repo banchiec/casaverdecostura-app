@@ -2,20 +2,22 @@ import React, { useContext, useEffect } from "react";
 import {  Link} from "react-router-dom";
 import {FaUserPlus} from 'react-icons/fa'     
 import { FiLogIn, FiSearch } from 'react-icons/fi'   
-import { NavbarContainer } from "./navbarStyled";  
+import { NavbarContainer } from "./navbarStyled";   
 import { BsCartFill } from 'react-icons/bs' 
+import {MdFavorite} from 'react-icons/md' 
 import "./Navbar.css";
-import * as PATHS from "../../utils/paths";
-import { CartContext } from "../../context/cart-context";
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-
-const Navbar = (props) => {   
-
-  const {itemCount,cartItems} = useContext(CartContext);
-  console.log(itemCount);   
+import * as PATHS from "../../utils/paths"; 
+import { cartContext } from "../context/CartContext"; 
+import {favoriteContext} from "../context/FavoritesContext";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu"; 
 
 
-
+const Navbar = (props) => {    
+  const {cartItems} = useContext(cartContext);   
+  console.log(cartItems)  
+  const {favorites} = useContext(favoriteContext);  
+  const total  = cartItems.reduce((previous, current) => previous + current.amount , 0 );   
+  console.log(total)  
   return (
     <NavbarContainer hidden >
       <div>   
@@ -61,12 +63,14 @@ const Navbar = (props) => {
                 <FaUserPlus/>
               </Link>
             </>
-          )}
-          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}> 
-          {
-            itemCount > 0 ? <span className="cart-count">{itemCount}</span>: null
-          }
+          )} 
+ 
+ <span> <MdFavorite></MdFavorite>{favorites.length} </span>
+          
+
+          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
                <Link to={"/cart"}> <BsCartFill /> </Link>
+               <span className="cart-count">{total}</span>
           </Link>
         </div>
       </div>  

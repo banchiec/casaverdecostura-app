@@ -3,12 +3,12 @@ import HomePage from "../pages/HomePage";
 import Shopping from "../pages/shopping/Shopping";
 import Login from "../pages/LogIn"; 
 import Signup from "../pages/Signup";
-import ProtectedPage from "../pages/ProtectedPage"; 
+import ProtectedPage from "../pages/ProtectedPage";  
+import { Cart } from "../pages/cart-page/cart-page";
 import Checkout from "../components/checkout/checkout";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
 import { Details } from "../pages/details/Details"; 
-import CartPage from "../pages/cart-page/cart-page"; 
 
 
 
@@ -24,13 +24,13 @@ const routes = (props) => {
       element: <Checkout {...props} />,
     }, 
     {
+      path: PATHS.CART,
+      element: <Cart {...props} />,
+    }, 
+    {
       path:  PATHS.DETAILS,
       element: <Details {...props} /> 
     }, 
-    {
-      path:  PATHS.CART,
-      element: <CartPage {...props} /> 
-    },   
 
     {
       path: PATHS.SHOPPING,
