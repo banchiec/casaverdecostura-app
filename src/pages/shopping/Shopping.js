@@ -10,7 +10,7 @@ import SidebarShop from './components/SidebarShop/SidebarShop';
 
 const Shopping = (props) => {  
   // const [filteredProducts, setfilteredProduct] = useState([]);   
-  const [products, setProducts]  = useState([]);   
+  const [products, setProducts]  = useState([]);    
   const [loading, setLoading] = useState(false);  
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);  
@@ -42,7 +42,8 @@ const Shopping = (props) => {
 
 const handleChange = ((e) => { 
   console.log(e);
-  let filteredProducts = products.filter(product => product.beloning.subCategory === e.target.id);  
+  let filteredProducts = products.filter(product => product.beloning?.subCategory === e.target.id);   
+  console.log(filteredProducts)
   setFilteredProducts(filteredProducts)
 })
  

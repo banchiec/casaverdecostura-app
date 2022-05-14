@@ -1,41 +1,52 @@
 import React, {useContext, useState} from "react"; 
 import { useStripe } from "@stripe/react-stripe-js"; 
-import { CartContext } from "../../context/cart-context"; 
-import fetchFromAPI from "../../helpers"; 
-
+import { cartContext } from "../context/CartContext"; 
+import fetchFromAPI from "../../helpers";  
 export const StripeCheckout = () => { 
     const [email, setEmail] = useState("");   
-    const {cartItems} = useContext(CartContext); 
+    const {cartItems} = useContext(cartContext); 
     const stripe = useStripe();
-    console.log(stripe)
     const handleStripeSubmit = async (e) => {   
         console.log(e)
-        e.preventDefault();
-     const line_items  =  cartItems.map((item) => { 
-         console.log(item)
-         return {
-             quantity: item.quantity,  
+        e.preventDefault(); 
+
+
+    const successshop = cartItems.map((item) => {
+        return {
+             color: item.color, 
+             name: item.name ,
+             description: item.description, 
+             price: item.price
+        }
+    } )
+
+     const line_items  =  cartItems.map((item) => {  
+         console.log(item.color)                                                                             
+         return {    
+             quantity: item.amount,  
              price_data: {
                  currency: "eur", 
                  unit_amount: item.price * 100, 
                  product_data: {
                      name: item.name, 
-                     description: item?.description, 
+                     description: item?.description,   
+                     images: [item.imageUrl]
                  }
 
              }
          } 
-     }) 
+     })  
      const response = await fetchFromAPI('', {
-         body: {line_items, customer_email: email},
-     })
+         body: {line_items, customer_email: email, successshop},
+     })       
+      
+     console.log(response.body);
+     
      const  {sessionId} =  await response;   
-     console.log(response)
     await stripe.redirectToCheckout({
       sessionId
    })
-    }
-
+    } 
 
   return (
     <form onSubmit={handleStripeSubmit} novalidate>

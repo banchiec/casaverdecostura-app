@@ -1,30 +1,46 @@
-import React ,{ useContext} from "react"; 
-import { CartContext } from "../../context/cart-context";
-import CartItem from "./cart-items";   
+
+import React, { useContext, useEffect, useState } from 'react' 
+import { ItemCart } from '../../components/ItemCart/ItemCart';
+import { cartContext } from '../../components/context/CartContext';   
+import { Link } from 'react-router-dom';
 import "./cart-page.css"
-import Total from "./total";
 
-const CartPage = () => {
-    const {cartItems, itemCount, total, increase, decrease} = useContext(CartContext);  
-    const funcs = {increase, decrease} 
-    console.log(cartItems)
-    return ( 
-        <> 
-        <h1>Cart</h1> 
-         {
-             cartItems.length === 0 ? <div className="empty-cart">Tu carrito está vacio </div>
-          : <div className="cart-page">
-              <div className="cart-item-container" >
-                {
-                  cartItems.map(item => <CartItem  {...item} key={item.name} {...funcs}/>)
-                }
-              </div>
-          </div>  
-         }
-            <Total itemCount={itemCount} total={total}></Total>
-        </>
+
+
+
+export const Cart = () => { 
+    const [productLength, setProductLength] = useState(0);  
+
+    const {cartItems} = useContext(cartContext); 
+     
+
+    useEffect(() => {
+    setProductLength(
+        cartItems.reduce((previous, current) => previous + current.amount, 0)
     )
-} 
+    }, [cartItems]) 
+     
+    const total  = cartItems.reduce((previous, current) => previous + current.amount * current.price, 0 );
 
+  return (
+   <>  
+    
+    {cartItems.length === 0 ?  (
+        <p className='empty-cart'>Tu carrito está vacio</p>
+    ): <div>   
+          <div class="cart-container"> 
+         {cartItems.map((item, i) => { 
+             return (
+                <ItemCart key={i} item={item}></ItemCart>
+             )
+         })} 
+         </div>
+        </div>} 
+     <div className='cart-additional'>
+  <h2 className='total'>Total  €{total}</h2>
+  <Link to={"/checkout"}><button className='shop-continue'>CONTINUAR</button></Link>
+  </div>
+   </>
+  ) 
 
-export default CartPage; 
+  } 
