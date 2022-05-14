@@ -1,5 +1,5 @@
 export const IsInCart = (product, cartItems) => {  
-   return cartItems.find(item => item._id === product._id)
+   return cartItems.find(item => item.id === product.id)
 } 
 const API = "http://localhost:5005/api/pay"; 
  async  function fetchFromAPI(endpoint,opts) {

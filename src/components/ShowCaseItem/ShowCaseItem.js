@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from "react" 
-import { Link } from "react-router-dom"  
+import React, { useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import {MdFavorite, MdFavoriteBorder} from 'react-icons/md'
-import "./ShowCaseItem.css"  
+import "./ShowCaseItem.css"    
 import { favoriteContext } from "../context/FavoritesContext"
 
 export const ShowCaseItem = (props) => {     
