@@ -18,14 +18,12 @@ export const Cart = () => {
     setProductLength(
         cartItems.reduce((previous, current) => previous + current.amount, 0)
     )
-    }, [cartItems]) 
-     
+    }, [cartItems])   
     const total  = cartItems.reduce((previous, current) => previous + current.amount * current.price, 0 );
 
   return (
    <>  
-    
-    {cartItems.length === 0 ?  (
+    {cartItems.length === 0 ?  ( 
         <p className='empty-cart'>Tu carrito está vacio</p>
     ): <div>   
           <div class="cart-container"> 
