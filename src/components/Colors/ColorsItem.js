@@ -8,7 +8,7 @@ export const ColorsItem = (props) => {
           props.photos.map((item, i) => { 
               return (
                   <>    
-                  <button style={{ backgroundColor: `${item.color}` }} key={i} name={item.url} onClick={props.onShow}   className='color-btn'></button>
+                  <button style={{ backgroundColor: `${item.color}` }} key={i} name={item.url} color={item.color} value={item.color} onClick={props.onShow}   className='color-btn'></button>
                   </>
               )
           })

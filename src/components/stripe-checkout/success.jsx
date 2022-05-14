@@ -7,7 +7,9 @@ export const Success = () => {
     useEffect(() => { clearCart}, [])
   return (
     <div>
-        <h1>Gracias por tu pedido</h1>  
+        <h1>Gracias por tu pedido</h1>    
+      
+
         <p>Estamos procesando tu pedido</p> 
         <button>Continue shopping</button>
     </div> 

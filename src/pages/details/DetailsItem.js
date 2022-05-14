@@ -4,15 +4,15 @@ import { Gallery } from '../../components/Gallery/Gallery';
 import { Colors } from '../../components/Colors/Colors';  
 import { cartContext } from '../../components/context/CartContext'; 
 export const DetailsItem = (props) => {              
- 
-  
     let images = props.photos?.map(item => item.url);
     const [imageShow, setImageShow] = useState(images[0]);    
-    const [sizes, setSizes] = useState(props.size[0]);                         
+    const [sizes, setSizes] = useState(props.size[0]);           
+    const [color, setColor] = useState([]);  
+    console.log(color)              
     let imageUrl = imageShow;    
     const {name, price, _id, description, } = props.productDetails; 
-    const product = {name,imageUrl,_id,description,price, sizes};  
-    const [showSidebarshop, setShowSidebarshop] = useState(true);
+    const product = {name,imageUrl,_id,description,price, sizes, color};  
+    const [showSidebarshop, setShowSidebarshop] = useState(true); 
     const [show, setShow] = useState("");     
     const { addItemtoCart} = useContext(cartContext);  
     const toogleShowSidebashop = () => {
@@ -22,10 +22,11 @@ export const DetailsItem = (props) => {
       };    
     const onShow = (e) => {
         setImageShow(e.target.name);
-      };   
+        setColor(e.target.value)
+      };    
 
     const handleSize = (e) => {
-      if(e.target.name === "sizes") {
+      if(e.target.name === "sizes") {                               
         setSizes(e.target.value)
       }
     }
@@ -48,9 +49,9 @@ export const DetailsItem = (props) => {
               <p className="product-description">
                 {props.productDetails?.description}
               </p>
-              <span className="product-price">{props.productDetails?.price} EUR</span>
-              <br />
-              <select name="sizes"  onChange={(e)=>handleSize(e)} className="select-size">
+              <span className="product-price">{props.productDetails?.price} EUR</span> 
+              <br /> 
+              <select name="sizes"  onChange={(e)=>handleSize(e)} className="select-size" required>
                 {props.productDetails?.size.map((item, i) => {
                   return (
                     <>
@@ -62,8 +63,6 @@ export const DetailsItem = (props) => {
               <hr />
               <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
               <br />   
-            
-           
                <button onClick={() => !addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button> 
             
              
