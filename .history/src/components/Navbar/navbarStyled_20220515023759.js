@@ -11,8 +11,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
   font-weight: 400;
 	img {
 		border:  1px solid green;
-		width: 200px;
-		height: 50px;
+			width: 200px;
+			height: 50px;
 	}
 	svg {
 		padding:0;

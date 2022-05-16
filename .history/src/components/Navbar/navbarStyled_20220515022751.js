@@ -10,9 +10,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
   background: #007220;
   font-weight: 400;
 	img {
-		border:  1px solid green;
-		width: 200px;
-		height: 50px;
+			width: 200px;
+			height: 50px;
 	}
 	svg {
 		padding:0;
@@ -24,12 +23,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		display: none;
 	}
 	.container-favorites {
-		width: 20px;
+		width: auto ;
 		border: 1px solid white;
-	}
-	.container-favorites p {
-		margin: 0;
-		padding: 0;
 	}
 	.container-search{
 		display: none;

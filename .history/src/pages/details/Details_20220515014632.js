@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 //import { Gallery } from "../../components/Gallery/Gallery";
 //import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
 import { DetailsItem } from "./DetailsItem"; 
-import { Footer }from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import "./Details.css"; 
 
 

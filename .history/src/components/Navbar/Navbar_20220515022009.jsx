@@ -70,10 +70,10 @@ const Navbar = (props) => {
             <span className="cart-count">{total}</span>
           </Link>
         </div>
-        <div className="container-favorites">
+        <div>
           <Link to={PATHS.SIGNUPPAGE} className="link-favorites">
             <MdFavorite/>
-            <p>{favorites.length}</p>
+            <span>{favorites.length} </span>
           </Link>
         </div>
       </div>  
