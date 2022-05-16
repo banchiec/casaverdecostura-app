@@ -34,7 +34,7 @@
     max-height: 100%;  
     flex-direction: column; 
     padding-left: 15px; 
-    gap: 30px;
+    gap: 5px;
     display: flex;                         
     align-items: center;
 } 
@@ -52,3 +52,21 @@
     height: 50px;
 } 
 
+ 
+
+
+@media(max-width: 560px) {
+    .cart-img {
+        width: 10.5rem;
+    } 
+    .cart-item-color__name {
+        font-size: 0.7rem;
+    } 
+    .cart-item__size {
+        font-size: 0.8rem;
+    } 
+    .cart-item_price {
+        font-size: 0.7rem;
+    } 
+
+}

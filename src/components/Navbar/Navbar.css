@@ -22,7 +22,8 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   background: #007220;
-}
+
+} 
 .authLink {
   color: white;
   text-decoration: none;
@@ -61,4 +62,11 @@ nav {
 .nav-logoutbtn:hover {
   transform: scale(1.05);
   background-color: #d13e3e;
+} 
+
+
+.search {
+  color: white; 
+  font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif ; 
+  letter-spacing: 0.7px;
 }
