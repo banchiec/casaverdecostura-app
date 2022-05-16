@@ -13,6 +13,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
   font-weight: 400;
 	img {
 		width: 180px;
+		border: 1px solid white;
 		height: 50px;
 	}
 	svg {
@@ -27,30 +28,19 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	.container-favorites {
 		display: flex ;
 		flex-direction: row;
-		justify-content: center;
-		/* border: 1px solid white; */
-		align-items: center;
+		border: 1px solid white;
 		margin: 0;
 		padding: 0;
 	}
-	.icon-dinamic {
-		display: flex ;
-		flex-direction: column;
-		margin: 0px;
-	}
-	.icon-dinamic a {
-		border: 1px solid white;
-	}
-	.icon-dinamic svg {
+	.container-favorites svg {
 		font-size: 1.4em;
 		color: white;
 		margin: 0;
 		padding: 0;
 	}
-	.icon-dinamic p {
+	.container-favorites p {
 		position: absolute;
-		font-size:  12px;
-		margin-top: -10px;
+		font-size:  10px;
 		color: red;
 		font-weight: 800;
 		margin-left: 8px;

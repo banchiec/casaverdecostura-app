@@ -28,7 +28,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		display: flex ;
 		flex-direction: row;
 		justify-content: center;
-		/* border: 1px solid white; */
+		border: 1px solid white;
 		align-items: center;
 		margin: 0;
 		padding: 0;

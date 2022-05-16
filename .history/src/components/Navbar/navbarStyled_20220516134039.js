@@ -26,34 +26,20 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	}
 	.container-favorites {
 		display: flex ;
-		flex-direction: row;
-		justify-content: center;
-		/* border: 1px solid white; */
-		align-items: center;
-		margin: 0;
+		flex-direction: column-reverse;
 		padding: 0;
+		margin: 0;
 	}
-	.icon-dinamic {
-		display: flex ;
-		flex-direction: column;
-		margin: 0px;
-	}
-	.icon-dinamic a {
-		border: 1px solid white;
-	}
-	.icon-dinamic svg {
+	.container-favorites svg {
 		font-size: 1.4em;
 		color: white;
-		margin: 0;
-		padding: 0;
 	}
-	.icon-dinamic p {
+	.container-favorites p {
 		position: absolute;
 		font-size:  12px;
-		margin-top: -10px;
-		color: red;
 		font-weight: 800;
-		margin-left: 8px;
+		margin-left: 4px;
+		margin-bottom: 18px;
 		padding: 0;
 	}
 	.container-search{

@@ -28,7 +28,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		display: flex ;
 		flex-direction: row;
 		justify-content: center;
-		/* border: 1px solid white; */
+		border: 1px solid white;
 		align-items: center;
 		margin: 0;
 		padding: 0;
@@ -36,7 +36,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	.icon-dinamic {
 		display: flex ;
 		flex-direction: column;
-		margin: 0px;
+		border: 1px solid white;
+		margin: -1px;
 	}
 	.icon-dinamic a {
 		border: 1px solid white;

@@ -27,19 +27,15 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	.container-favorites {
 		display: flex ;
 		flex-direction: row;
-		justify-content: center;
-		/* border: 1px solid white; */
-		align-items: center;
 		margin: 0;
 		padding: 0;
 	}
 	.icon-dinamic {
 		display: flex ;
+		padding: 0;
+		margin: 0;
+		padding: 0;
 		flex-direction: column;
-		margin: 0px;
-	}
-	.icon-dinamic a {
-		border: 1px solid white;
 	}
 	.icon-dinamic svg {
 		font-size: 1.4em;

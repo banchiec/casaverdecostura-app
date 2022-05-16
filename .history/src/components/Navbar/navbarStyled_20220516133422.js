@@ -7,7 +7,6 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	display: flex;
 	flex-direction: row;
   justify-content: space-between;
-	align-items: center;
   flex-wrap: wrap;
   background: #007220;
   font-weight: 400;
@@ -26,34 +25,17 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	}
 	.container-favorites {
 		display: flex ;
-		flex-direction: row;
-		justify-content: center;
-		/* border: 1px solid white; */
-		align-items: center;
-		margin: 0;
-		padding: 0;
-	}
-	.icon-dinamic {
-		display: flex ;
-		flex-direction: column;
-		margin: 0px;
-	}
-	.icon-dinamic a {
+		flex-direction: column-reverse;
 		border: 1px solid white;
-	}
-	.icon-dinamic svg {
-		font-size: 1.4em;
-		color: white;
-		margin: 0;
 		padding: 0;
+		margin: 0;
 	}
-	.icon-dinamic p {
+	.container-favorites p {
 		position: absolute;
-		font-size:  12px;
-		margin-top: -10px;
-		color: red;
-		font-weight: 800;
-		margin-left: 8px;
+		border: 1px solid white;
+		color: white;
+		font-size:  14px;
+		margin-bottom: 10px;
 		padding: 0;
 	}
 	.container-search{
