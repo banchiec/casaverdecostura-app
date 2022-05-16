@@ -11,7 +11,6 @@ import { cartContext } from "../context/CartContext";
 import {favoriteContext} from "../context/FavoritesContext";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu"; 
 
-
 const Navbar = (props) => {    
   const {cartItems} = useContext(cartContext);   
   console.log(cartItems)  
@@ -22,7 +21,7 @@ const Navbar = (props) => {
     <NavbarContainer hidden >
       <div>   
         <div className='container-search'>
-          <FiSearch/>
+          <p className="search">BUSCAR</p>
           <input type='text'/>
         </div>
         <div className='navbar-center'> 
@@ -64,11 +63,14 @@ const Navbar = (props) => {
               </Link>
             </>
           )} 
- 
- <span> <MdFavorite></MdFavorite>{favorites.length} </span>
-          
+  
+
 
           <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
+          <Link to={"/favorites"}>
+  <span> <MdFavorite></MdFavorite>{favorites.length} </span>
+  </Link>
+          
                <Link to={"/cart"}> <BsCartFill /> </Link>
                <span className="cart-count">{total}</span>
           </Link>

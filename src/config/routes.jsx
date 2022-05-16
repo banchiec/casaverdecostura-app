@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/home-page/HomePage";
 import Shopping from "../pages/shopping/Shopping";
 import Login from "../pages/LogIn"; 
 import Signup from "../pages/Signup";
@@ -8,9 +8,8 @@ import { Cart } from "../pages/cart-page/cart-page";
 import Checkout from "../components/checkout/checkout";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
-import { Details } from "../pages/details/Details"; 
-
-
+import { Details } from "../pages/details/Details";  
+import { Favorites } from "../pages/favorites-page/favorites-page";
 
 const routes = (props) => { 
   const { user } = props;
@@ -18,7 +17,11 @@ const routes = (props) => {
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
-    }, 
+    },  
+    {
+      path: PATHS.FAVORITES,
+      element: <Favorites {...props} />,
+    },  
     {
       path: PATHS.CHECKOUT,
       element: <Checkout {...props} />,

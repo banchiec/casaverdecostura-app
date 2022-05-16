@@ -4,6 +4,7 @@ export const LOGINPAGE = "/auth/login";
 export const DETAILS="/details/:id";
 export const CART="/cart";
 export const CHECKOUT="/checkout";
+export const FAVORITES="/favorites";
 export const PROTECTEDPAGE = "/protected";
 export const SHOPPING = '/shopping';
 export const ADMIN = '/admin';

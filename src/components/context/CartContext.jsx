@@ -12,10 +12,7 @@ import { createContext, useEffect, useState} from "react";
         } catch (error) {
         return [] 
         }
-    });  
-    console.log(cartItems)
- 
-
+    }); 
     useEffect(() => {
         localStorage.setItem("cartProducts", JSON.stringify(cartItems))
     }, [cartItems]); 

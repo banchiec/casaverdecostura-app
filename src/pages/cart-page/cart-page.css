@@ -16,14 +16,17 @@
     width: 10.5rem; 
     background-color: black; 
     color: white;   
-    letter-spacing: 0.7px;
-    font-weight: 600;
     cursor: pointer; 
     padding: 10px 12px; 
     font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
     border: 1px solid;
 } 
+ 
 
+.empty-cart {
+    text-align: center;
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
 
 .cart-title {
     text-align: center;
@@ -31,9 +34,8 @@
 
 .total {
     text-align: center; 
-    font-size: 0.8rem; 
+    font-size: 0.6rem; 
     text-transform: uppercase; 
-    font-weight: 600;
     font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
 }   
 
@@ -44,8 +46,16 @@
     left: 0;  
     display: flex;   
     padding-top: 10px;
-    border-top: 1px solid black;
     gap: 2.5rem; 
     background-color: white;
    justify-content: space-around;
-} 
+}  
+
+
+
+@media(max-width: 560px) {
+  
+    .cart-additional {
+        flex-direction: row-reverse;
+    }
+}
