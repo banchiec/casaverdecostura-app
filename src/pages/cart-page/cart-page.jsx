@@ -33,12 +33,14 @@ export const Cart = () => {
              )
          })} 
          </div>
-        </div>} 
-     <div className='cart-additional'>
-  <h2 className='total'>Total  €{total}</h2>
-  <Link to={"/checkout"}><button className='shop-continue'>CONTINUAR</button></Link>
-  </div>
+        </div>}  
+  {cartItems.length > 0   && 
+   <div className='cart-additional'>
+   <h2 className='total'>Total  {total} EUR</h2>
+   <Link to={"/checkout"}><button className='shop-continue'>CONTINUAR</button></Link> 
+   </div>
+  }
    </>
-  ) 
-
+  )  
+  
   } 
