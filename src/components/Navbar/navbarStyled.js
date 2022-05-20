@@ -22,6 +22,25 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	.navbar_icons {
 		display: none;
 	}
+	.navbar_icons_mobile {
+		display: flex;
+		flex-direction: row;
+	}
+	.navbar_icons_mobile div {
+		display: flex;
+		flex-direction: column-reverse;
+		padding: 5px;
+	}
+	.navbar_icons_mobile div p {
+		position: absolute;
+		font-size: 14px;
+		color: white;
+		margin: 0 0 20px 6px;
+	}
+	.navbar_icons_mobile div svg {
+		font-size: 1.2em;
+		color: white;
+	}
 	.container-search{
 		display: none;
 	}

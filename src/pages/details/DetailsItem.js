@@ -63,7 +63,7 @@ export const DetailsItem = (props) => {
         <hr />
         <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
         <br />   
-        {
+        {/* {
           !itemInCart && 
           <button onClick={() => addProduct(product)} className='btn-cart'>Añadir al carrito</button>
         }
@@ -71,7 +71,7 @@ export const DetailsItem = (props) => {
         {
           itemInCart && 
           <button onClick={() => increase(product)} className='btn-cart'>ADD MORE</button>
-        }
+        } */}
         <p className='regards-politics' onClick={toogleShowSidebashop}>
           Envios, cambios y devoluciones
         </p>

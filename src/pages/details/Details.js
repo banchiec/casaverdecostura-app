@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import "./Details.css"; 
 //import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
 import { DetailsItem } from "./DetailsItem"; 
+import {Footer} from '../../components/Footer/Footer'
 
 
 export const Details = (props) => { 
