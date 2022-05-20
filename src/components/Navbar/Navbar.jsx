@@ -32,13 +32,13 @@ const Navbar = (props) => {
             <Link to={PATHS.SHOPPING}>
               TIENDA
             </Link> 
-            <Link to={PATHS.PROTECTEDPAGE}>
+            <Link to={"#"}>
               NOVEDADES
             </Link> 
-            <Link to={PATHS.PROTECTEDPAGE}>
-              INSPIRACIÓN
+            <Link to={"#"}>
+              COSTURA
             </Link>
-            <Link to={PATHS.PROTECTEDPAGE}>
+            <Link to={PATHS.COLLECTIONS}>
               COLECCIONES
             </Link>
             {props?.user?.role === 'admin' && (

@@ -1,0 +1,17 @@
+
+.container_colection {
+    display: flex; 
+    justify-content: center;  
+    border-bottom: 2px solid black;
+} 
+
+.container_colection img {
+     width: 250px; 
+     max-height: 100%; 
+} 
+ 
+ 
+
+ h2 {
+  text-align: center;
+}

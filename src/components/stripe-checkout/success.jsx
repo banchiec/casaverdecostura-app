@@ -9,7 +9,7 @@ export const Success = () => {
     <div>
         <h1>Gracias por tu pedido</h1>    
       
-
+   <p>das</p>
         <p>Estamos procesando tu pedido</p> 
         <button>Continue shopping</button>
     </div> 

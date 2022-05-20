@@ -13,8 +13,8 @@ const Shopping = (props) => {
   const [products, setProducts]  = useState([]);    
   const [loading, setLoading] = useState(false);  
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);  
-  const [productPerPage, setproductPerPage] = useState(12); 
+  const [currentPage, setCurrentPage] = useState(0);  
+  const [productPerPage, setproductPerPage] = useState(); 
 
   let ProductService = new ProductsService();    
   const getProducts =  () => {  
@@ -67,9 +67,9 @@ const handleChange = ((e) => {
         <div className="container-shop" >
           <ShowCase categories={categories}  loading={loading} {...props}   products={filteredProducts}/> 
           <Pagination productPerPage={productPerPage} totalProducts={products.length} paginate={paginate}></Pagination>
-          <Footer></Footer> 
-        </div>  
+        </div> 
     </ContainerAdminPage>
+    <Footer></Footer>  
   </>
 	)
 

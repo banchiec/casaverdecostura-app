@@ -5,7 +5,8 @@ import "./ShowCaseItem.css"
 import { favoriteContext } from "../context/FavoritesContext"
 
 export const ShowCaseItem = (props) => {      
- const product = props;
+  console.log(props) 
+ const product = props; 
  const images = props.photos?.map((photo) => (photo.url))   
  const [clickFavorities,setClickFavorities] = useState(false)          
  const { addtoFavorites} = useContext(favoriteContext);

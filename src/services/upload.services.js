@@ -4,7 +4,7 @@ class UploadsService {
     constructor() {
         this.instance = axios.create({
             baseURL: `${process.env.REACT_APP_SERVER_URL}/uploads`,
-            withCredentials: true
+            withCredentials: true 
         })
     }
     uploadImg = (imageForm) => this.instance.post("/image", imageForm)

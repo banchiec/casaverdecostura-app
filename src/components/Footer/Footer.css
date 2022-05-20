@@ -1,7 +1,7 @@
 .site-footer {
   width: 100%;
   display: flex;
-  position: absolute;
+  position: absolute; 
   flex-direction: column;
   background-color: #007220;;
   padding:45px 0 20px;   
@@ -179,9 +179,6 @@
 {
   background-color:#ea4c89
 }  
-
-
-
 .copyright-item {
   color: white;
   font-size: 1.2rem;
@@ -190,10 +187,6 @@
 .subscribe p {
   width: 230px; 
 } 
-
-
-
-
 @media (max-width:767px)
 {
   .social-icons li.title

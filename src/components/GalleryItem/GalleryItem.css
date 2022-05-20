@@ -21,7 +21,12 @@ img {
 }
 .container-image-gallery {
     object-fit: cover;
+} 
+ 
+.container-gallery img {
+    width: 250px;
 }
+
 .container-gallery .selected { 
     border-radius: 2px;
     object-fit: cover;
