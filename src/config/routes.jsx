@@ -9,8 +9,8 @@ import Checkout from "../components/checkout/checkout";
 import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
 import { Details } from "../pages/details/Details";  
-import { Favorites } from "../pages/favorites-page/favorites-page";
-
+import { Favorites } from "../pages/favorites-page/favorites-page"; 
+import { Collections } from "../pages/collections-page/Collections";
 const routes = (props) => { 
   const { user } = props;
   return [
@@ -31,6 +31,10 @@ const routes = (props) => {
       element: <Cart {...props} />,
     }, 
     {
+      path: PATHS.COLLECTIONS,
+      element: <Collections {...props} />,
+    }, 
+    {
       path:  PATHS.DETAILS,
       element: <Details {...props} /> 
     }, 
@@ -46,14 +50,6 @@ const routes = (props) => {
     {
       path: PATHS.LOGINPAGE,
       element: <Login {...props} />,
-    },
-    {
-      path: PATHS.PROTECTEDPAGE,
-      element: user ? (
-        <ProtectedPage {...props} />
-      ) : (
-        <Navigate to={PATHS.LOGINPAGE} replace />
-      ),
     },
     {
       path: PATHS.ADMIN,

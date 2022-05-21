@@ -21,9 +21,13 @@ img {
 }
 .container-image-gallery {
     object-fit: cover;
+} 
+ 
+.container-gallery img {
+    width: 250px;
 }
+
 .container-gallery .selected { 
-    width: 65%;
     margin: 0 auto;
     border-radius: 4px;
     object-fit: cover;
@@ -39,7 +43,7 @@ img {
 
 } 
 
-.container-gallery .imgContainer img {
+.container-gallery .imgContainer img {     
     width: 85px; 
 }
 .imgContainer {

@@ -1,6 +1,6 @@
  .content-container {
      display: flex;       
-     justify-content: space-evenly;
+     justify-content: space-around;
      flex-direction: row;
      margin-top: 10px;
      position: relative;
@@ -23,7 +23,13 @@
     color: white; 
     text-transform: uppercase;
 }   
- 
+  
+
+.product-warnings {
+    padding-left: 30px;
+} 
+
+
 
  
 .materials {

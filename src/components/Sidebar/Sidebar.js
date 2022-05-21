@@ -97,8 +97,24 @@ const Sidebar = () => {
                     Registrar producto 
                   </>
                 </Link>
+              </li>  
+              <br/>
+              <li className="items-center">
+                <Link to="/admin/blog">
+                  {/* <i
+                    className={
+                      "fas fa-tv mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/dashboard") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "} */}
+                  <>
+                  <GiLargeDress/>
+                    Registrar un blog 
+                  </>
+                </Link>
               </li>
-
               {/* <li className="items-center">
                 <Link
                   className={

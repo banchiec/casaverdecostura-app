@@ -1,0 +1,13 @@
+ 
+ .register-blog form  {
+   display: flex; 
+   justify-content: center;   
+   text-align: center;
+   width: 540px;
+   flex-direction: column;
+ }  
+
+ .container-blog {
+     display: flex; 
+     justify-content: center;
+ }
