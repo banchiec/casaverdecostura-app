@@ -6,20 +6,15 @@ import CategoriesServices from '../../../../services/categories.service'
 import UploadsService from '../../../../services/upload.services' 
 import { SketchPicker } from 'react-color';
 import './css/styles.css'
-
+ 
 
 
 const RegisterProductScreen = () => {   
   let productService = new ProductsService()   
   let categoryServices = new CategoriesServices()
   let uploadServices = new UploadsService(); 
-
-   
   const [images, setImages] = useState([]);    
-
-  const [image, setImage] = useState()
-  
-
+  const [image, setImage] = useState();                                                                                                                          
   // const [modalActive, setModalActive] = useState(true)    
   const [color, setColor] = useState({
     background: '#fff'

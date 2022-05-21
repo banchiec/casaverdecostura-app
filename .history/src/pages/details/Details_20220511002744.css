@@ -1,0 +1,225 @@
+ .content-container {
+     display: flex;       
+     justify-content: space-evenly;
+     flex-direction: row;
+     margin-top: 10px;
+     position: relative;
+     padding-bottom: 18em ;
+     min-height: 100vh;
+ }
+
+ .product-name {
+    color: black;    
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;  
+    font-family: 'Roboto Condensed', sans-serif;
+} 
+.shop-button {
+    background-color: black; 
+    padding: 12px 8px;   
+    margin-top: 10px;
+    letter-spacing: 0.7px;
+    color: white; 
+    text-transform: uppercase;
+}   
+ 
+
+ 
+.materials {
+    align-self: center;
+} 
+ 
+.product-price {
+    font-size: 0.7rem; 
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
+
+.product-description {
+    width: 230px;  
+    font-size: 0.7rem; 
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}  
+
+select {
+    width: 100%;  
+    border: none; 
+    outline: none;
+}  
+
+.select-size {
+    font-size: 0.7rem;
+}
+
+
+.option-size{
+    text-transform: uppercase;
+} 
+
+hr {
+    color: black;
+}
+   
+
+.button-cart {
+    background: #000; 
+    border: 1px solid; 
+    cursor: pointer; 
+    padding: 10px;   
+    letter-spacing: 0.7px ; 
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+} 
+
+.product-warnings {
+    align-self: center;
+} 
+.product_warnings_title{
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', sans-serif; 
+    letter-spacing: 0.7px; 
+    font-size: 13px;
+
+} 
+
+.content-container select {
+    margin-top: 20px; 
+    text-transform: uppercase;
+} 
+
+.content-container ul {  
+    text-decoration: none;
+    list-style: none; 
+    padding-left: 0;
+} 
+
+.additional_information_sidebar{
+        position: fixed;
+      background: white;
+        opacity: .9;
+        left: -25%;
+        width: 26%;
+        height: 68%;
+} 
+
+ .show {
+    transform:  translateX(-100vw);   
+    position: relative;
+    height: 100vh; 
+    border: 1px solid grey;
+    transition: 1s; 
+    background: white;
+}  
+ 
+.titles {
+    width: 250px;
+}
+
+
+.content-blocker { 
+    text-align: center; 
+    position: fixed;    
+    margin: 0 auto;
+    display: block;
+    top: 30%;  
+	opacity: 1;
+	right: -100vw;
+    width: 50vw;
+    height: 100vh;
+} 
+
+.content-blocker p {
+    font-size: 10px;
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif 
+
+} 
+
+.content-blocker ul li{
+    text-decoration: dotted; 
+    list-style: circle;
+    font-size: 10px;
+}
+  
+.content-blocker h3 {
+    font-size: 16px; 
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;  
+    font-weight: 500 bold;
+    letter-spacing: 0.7px; 
+    text-transform: uppercase; 
+} 
+ 
+.text-container {
+    text-align: initial; 
+    padding-left: 15%; 
+    height: 70vh; 
+    overflow-y: scroll;
+}  
+
+.close-img {
+    width: 40px; 
+    position: absolute; 
+    left: 0; 
+    top: 0;
+} 
+
+
+.product-warnings ul li {
+   font-size: 0.7rem;
+}
+ 
+
+.regards-politics {
+    font-size: 0.9rem; 
+    text-transform: uppercase;
+} 
+
+.warning-icon {
+    display: inline-block; 
+    width: 2rem;  
+    padding: 0;
+    height: 2rem;
+} 
+
+.btn-cart {
+  background-color: #000;
+  border: 1px solid #000; 
+  text-align: center;
+  cursor: pointer;   
+  font-size: 0.7rem;
+  padding: 10px; 
+  text-decoration: none;  
+  font-weight: 500;  
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.7px; 
+}
+
+@media(max-width: 720px){ 
+  .container-gallery {
+    order: -1;
+  }
+  .content-container { 
+    flex-direction: column;
+    align-items: center; 
+  } 
+  .product-name {
+    font-size: 1.3rem;
+    margin: 0;
+  } 
+  .product-description {
+    width: auto;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: gray;
+  }
+  .product-price {
+    font-size: .9rem;
+  }
+  .product-warnings {
+    padding: 15px;
+  } 
+  .product-info {
+    padding: 15px;
+    order: -1;
+  }
+}

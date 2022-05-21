@@ -1,19 +1,14 @@
 .site-footer {
-  width: 100%;
   display: flex;
-  position: absolute; 
+  width: 100%;
   flex-direction: column;
   background-color: #007220;;
-  padding:45px 0 20px;   
-  font-size:15px; 
-  left: 0;
-  line-height:24px;
-  color:#737373;
+  padding: 45px 0 20px;   
+  font-size: 15px;  
+  position: absolute;
+  line-height: 24px;
+  color: #737373;
 } 
-   
-
-
-
 .container-text-footer {
   display: flex; 
   align-items: stretch;
@@ -187,13 +182,55 @@
 .subscribe p {
   width: 230px; 
 } 
-@media (max-width:767px)
+
+
+
+
+@media (max-width:720px)
 {
   .social-icons li.title
   {
     display:block;
     margin-right:0;
     font-weight:600
+  }
+  .site-footer {
+    width: auto;
+    padding: 1rem;
+  }
+  .container-text-footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .container-footer-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-footer-links ul  li {
+    /* border: 1px solid white; */
+    padding: 0 10px 0 10px;
+  }
+  .footer-links{
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-links li {
+    padding: 0 10px 0 10px;
+  }
+  .container-content {
+    /* border: 1px solid white; */
+  }
+  .links {
+    order: -1;
+  }
+  .subscribe{
+    padding: 0px;
+  }
+  .subscribe h6 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
 } 
 
@@ -203,6 +240,6 @@
      align-items: center;
    } 
    .container-text-footer > div {
-     width: 230px;
+     /* width: 230px; */
    }
 }

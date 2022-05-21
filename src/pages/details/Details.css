@@ -1,15 +1,17 @@
- 
  .content-container {
      display: flex;       
-     margin-top: 10px;
-     justify-content: space-evenly;
+     justify-content: space-around;
      flex-direction: row;
+     margin-top: 10px;
+     position: relative;
+     padding-bottom: 18em ;
+     min-height: 100vh;
  }
 
  .product-name {
     color: black;    
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     text-transform: uppercase;  
     font-family: 'Roboto Condensed', sans-serif;
 } 
@@ -21,7 +23,13 @@
     color: white; 
     text-transform: uppercase;
 }   
- 
+  
+
+.product-warnings {
+    padding-left: 30px;
+} 
+
+
 
  
 .materials {
@@ -179,33 +187,47 @@ hr {
 } 
 
 .btn-cart {
-   background-color: #000;
-   border: 1px solid #000; 
-   text-align: center;
-   cursor: pointer;   
-   font-size: 0.7rem;
-   padding: 10px; 
-   text-decoration: none;  
-   font-weight: 500;  
-   text-transform: uppercase;
-   color: #fff;
-   letter-spacing: 0.7px; 
-
-
+  background-color: #000;
+  border: 1px solid #000; 
+  text-align: center;
+  cursor: pointer;   
+  font-size: 0.7rem;
+  padding: 10px; 
+  text-decoration: none;  
+  font-weight: 500;  
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.7px; 
 }
 
 @media(max-width: 720px){ 
-    .container-gallery {
-        order: -1;
-    }
-    .content-container { 
-        flex-direction: column;
-        align-items: center; 
-    } 
-    .product-warnings {
-      padding-right: 70px;
-    } 
-    .product-info {
-        order: -1;
-    }
+  .container-gallery {
+    order: -1;
+  }
+  .content-container { 
+    flex-direction: column;
+    align-items: center; 
+  } 
+  .product-name {
+    font-size: 1.3rem;
+    margin: 0;
+  } 
+  .product-description {
+    width: auto;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: gray;
+  }
+  .product-price {
+    font-size: .9rem;
+  }
+  .product-warnings {
+    width: 100%;
+    margin: 0;
+    padding-left: 2em;
+  } 
+  .product-info {
+    padding: 15px;
+    order: -1;
+  }
 }

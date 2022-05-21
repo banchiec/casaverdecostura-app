@@ -70,6 +70,6 @@ export const ContainerSidebarShop = styled.div`
 		}
 	} 
 	.menu_sidebar_shop {
-		margin-top: 50%;                                               
+		margin-top: -15%;                                               
 	}
 `
