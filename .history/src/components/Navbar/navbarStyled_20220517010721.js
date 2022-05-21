@@ -4,16 +4,14 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	hidden: props.hidden
 }))`
   display: ${props => props.hidden };
-	display: flex;
-	flex-direction: row;
   justify-content: space-between;
-	align-items: center;
   flex-wrap: wrap;
+	align-items: center ;
   background: #007220;
   font-weight: 400;
 	img {
-		width: 180px;
-		height: 50px;
+			width: 200px;
+			height: 50px;
 	}
 	svg {
 		padding:0;

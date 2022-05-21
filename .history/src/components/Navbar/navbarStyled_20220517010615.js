@@ -4,16 +4,14 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	hidden: props.hidden
 }))`
   display: ${props => props.hidden };
-	display: flex;
-	flex-direction: row;
   justify-content: space-between;
-	align-items: center;
   flex-wrap: wrap;
+	align-items: center ;
   background: #007220;
   font-weight: 400;
 	img {
-		width: 180px;
-		height: 50px;
+			width: 200px;
+			height: 50px;
 	}
 	svg {
 		padding:0;
@@ -29,15 +27,15 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		flex-direction: row;
 	}
 	.navbar_icons_mobile div {
+		border: 1px solid green ;
 		display: flex;
 		flex-direction: column-reverse;
 		padding: 5px;
 	}
 	.navbar_icons_mobile div p {
 		position: absolute;
-		font-size: 14px;
+		font-size: 12px;
 		color: white;
-		margin: 0 0 20px 6px;
 	}
 	.navbar_icons_mobile div svg {
 		font-size: 1.2em;

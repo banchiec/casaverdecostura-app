@@ -63,29 +63,23 @@ const Navbar = (props) => {
               </Link>
             </>
           )} 
+  
+
+
           <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
+          <div>
           <Link to={"/favorites"}>
-            <span> <MdFavorite></MdFavorite>{favorites.length} </span>
+            <MdFavorite/>
+            <p>
+              {favorites.length}
+            </p>
           </Link>
+          </div>
           <Link to={"/cart"}> <BsCartFill /> </Link>
             <span className="cart-count">{total}</span>
           </Link>
         </div>
       </div>  
-      <div className="navbar_icons_mobile">
-        <div>
-          <Link to={'/favorites'}>
-            <MdFavorite/>
-          </Link>
-          <p>{favorites.length}</p>
-        </div>
-        <div>
-          <Link to={'/cart'}>
-            <BsCartFill/>
-          </Link>
-          <p>{total}</p>
-        </div>
-      </div>
       {/* <BurgerMenu></BurgerMenu> */}
     </NavbarContainer>
   );

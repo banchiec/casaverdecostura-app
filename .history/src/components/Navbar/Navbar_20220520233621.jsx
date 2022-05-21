@@ -64,11 +64,22 @@ const Navbar = (props) => {
             </>
           )} 
           <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
+<<<<<<< HEAD
+            <Link to={"/cart"}> <BsCartFill /> </Link>
+            <span className="cart-count">{total}</span>
+          </Link>
+        </div>
+        <div className="container-favorites">
+          <Link to={PATHS.SIGNUPPAGE} className="link-favorites">
+            <MdFavorite/>
+            <p>{favorites.length}</p>
+=======
           <Link to={"/favorites"}>
             <span> <MdFavorite></MdFavorite>{favorites.length} </span>
           </Link>
           <Link to={"/cart"}> <BsCartFill /> </Link>
             <span className="cart-count">{total}</span>
+>>>>>>> dev
           </Link>
         </div>
       </div>  

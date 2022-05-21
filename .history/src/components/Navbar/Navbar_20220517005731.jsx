@@ -77,13 +77,11 @@ const Navbar = (props) => {
           <Link to={'/favorites'}>
             <MdFavorite/>
           </Link>
-          <p>{favorites.length}</p>
         </div>
         <div>
           <Link to={'/cart'}>
             <BsCartFill/>
           </Link>
-          <p>{total}</p>
         </div>
       </div>
       {/* <BurgerMenu></BurgerMenu> */}

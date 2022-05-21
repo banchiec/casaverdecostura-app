@@ -24,6 +24,7 @@ export const FavoritesProvider = ({children} ) => {
   const addtoFavorites = (product) => { 
     setFavorites([...favorites, product])
   } 
+
   return (
     <favoriteContext.Provider value={{favorites, addtoFavorites}}> 
         {children}

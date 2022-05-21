@@ -4,16 +4,14 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 	hidden: props.hidden
 }))`
   display: ${props => props.hidden };
-	display: flex;
-	flex-direction: row;
   justify-content: space-between;
-	align-items: center;
   flex-wrap: wrap;
+	align-items: center ;
   background: #007220;
   font-weight: 400;
 	img {
-		width: 180px;
-		height: 50px;
+			width: 200px;
+			height: 50px;
 	}
 	svg {
 		padding:0;
@@ -22,26 +20,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		display:none ;
 	}
 	.navbar_icons {
-		display: none;
-	}
-	.navbar_icons_mobile {
-		display: flex;
-		flex-direction: row;
-	}
-	.navbar_icons_mobile div {
-		display: flex;
-		flex-direction: column-reverse;
-		padding: 5px;
-	}
-	.navbar_icons_mobile div p {
-		position: absolute;
-		font-size: 14px;
-		color: white;
-		margin: 0 0 20px 6px;
-	}
-	.navbar_icons_mobile div svg {
-		font-size: 1.2em;
-		color: white;
+		/* display: none; */
 	}
 	.container-search{
 		display: none;

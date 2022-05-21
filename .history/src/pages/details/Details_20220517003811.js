@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Colors } from "../../components/Colors/Colors";
 import { useParams } from "react-router-dom";
 //import { Gallery } from "../../components/Gallery/Gallery";
+import "./Details.css"; 
 //import ColorsButtons from "../../components/ColorsButtons/ColorsButtons";
 import { DetailsItem } from "./DetailsItem"; 
 import {Footer} from '../../components/Footer/Footer'
