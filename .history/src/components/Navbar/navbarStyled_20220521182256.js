@@ -95,9 +95,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			}
 		}
 		.navbar_icons_favorites {
-			border: '1px solid white';
 			display: flex;
-			flex-direction: row-reverse;
 		}
 		.navbar-center {
 			padding: 1rem;

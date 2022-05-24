@@ -67,7 +67,7 @@ const Navbar = (props) => {
           <div className='navbar_icons_favorites' >
             <Link to={"/favorites"}>
               <MdFavorite />
-              <p>{favorites.length} </p>
+              <span>{favorites.length} </span>
             </Link>
           </div>
           <div className='navbar_icons_favorites'>

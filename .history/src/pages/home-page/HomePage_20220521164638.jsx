@@ -8,7 +8,7 @@ function HomePage() {
     <div className="container-home">
     <div className="bgimg-1">
       <div className="caption">  
-      <h1>NUESTRA TIENDA<br/> CALLE DE GOYA 99</h1>
+      <h1>NUESTRA TIENDA<br/> CALLE DE GOYA 91</h1>
       </div> 
     </div>  
     </div>

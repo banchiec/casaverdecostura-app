@@ -82,8 +82,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		}
 		.navbar_icons {
 			display: flex;
-			position: absolute;
-			right: 3%;
+			/* position: absolute; */
+			/* right: 4%; */
 			padding: 0;
 			a {
 				color: white;
@@ -93,11 +93,6 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 				font-size: 18px;
 				transition: color 0.2s ease-in-out;
 			}
-		}
-		.navbar_icons_favorites {
-			border: '1px solid white';
-			display: flex;
-			flex-direction: row-reverse;
 		}
 		.navbar-center {
 			padding: 1rem;
