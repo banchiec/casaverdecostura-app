@@ -113,12 +113,13 @@ const RegisterProductScreen = () => {
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])
+    getSubcategories(e.target.value)
     if(e.target.name === 'category'){
       e.target.name === 'category' && setCategoryId(e.target.value)
-      getSubcategories(e.target.value)
     } 
     if(e.target.name === "collections"){
       setCollections(e.target.value)
+
     }
     if(e.target.name === 'subcategory'){
       setSubcategory(e.target.value)

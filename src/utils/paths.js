@@ -8,4 +8,5 @@ export const FAVORITES="/favorites";
 export const COLLECTIONS = "/collections";
 export const SHOPPING = '/shopping';
 export const ADMIN = '/admin';
-export const CREATEPRODUCT= '/admin/products';
+export const CREATEPRODUCT= '/admin/products'; 
+export const SEARCH= '/search'; 

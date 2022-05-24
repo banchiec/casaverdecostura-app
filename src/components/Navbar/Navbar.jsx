@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import {  Link} from "react-router-dom";
 import {FaUserPlus} from 'react-icons/fa'     
-import { FiLogIn, FiSearch } from 'react-icons/fi'   
+import { FiLogIn, FiSearch} from 'react-icons/fi'    
+import { BsBag } from 'react-icons/bs';
 import { NavbarContainer } from "./navbarStyled";   
 import { BsCartFill } from 'react-icons/bs' 
 import {MdFavorite} from 'react-icons/md' 
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths"; 
 import { cartContext } from "../context/CartContext"; 
-import {favoriteContext} from "../context/FavoritesContext";
+import {favoriteContext} from "../context/FavoritesContext"; 
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu"; 
 
 const Navbar = (props) => {    
@@ -21,7 +22,7 @@ const Navbar = (props) => {
     <NavbarContainer hidden >
       <div>   
         <div className='container-search'>
-          <p className="search">BUSCAR</p>
+        <Link to={"/search"}><p className="search">BUSCAR</p></Link>
           <input type='text'/>
         </div>
         <div className='navbar-center'> 
@@ -29,6 +30,9 @@ const Navbar = (props) => {
             <img src='/casaverde_logo.png' alt="Logo" />
           </Link>                      
           <div className='navbar_menu'>
+          <Link to={"/"}>
+              INICIO
+            </Link>
             <Link to={PATHS.SHOPPING}>
               TIENDA
             </Link> 
@@ -48,7 +52,7 @@ const Navbar = (props) => {
             )}
           </div>
         </div>
-        <div className='navbar_icons'>
+        <div className='navbar_icons'> 
           {props.user ? (
             <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>
                 <FiLogIn/>
@@ -64,15 +68,16 @@ const Navbar = (props) => {
             </>
           )} 
   
-
+        
 
           <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
           <Link to={"/favorites"}>
-  <span> <MdFavorite></MdFavorite>{favorites.length} </span>
+  <span> <MdFavorite></MdFavorite>  </span>
   </Link>
-          
-               <Link to={"/cart"}> <BsCartFill /> </Link>
-               <span className="cart-count">{total}</span>
+            
+               <Link to={"/cart"}>  <BsBag className="bag-icon"/> <span className="cart-count">{total}</span>   </Link>
+               
+    
           </Link>
         </div>
       </div>  

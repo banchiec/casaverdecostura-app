@@ -1,0 +1,24 @@
+form  .search_input {
+    width: 100%;  
+    text-align: start;
+}  
+ 
+
+.search-img {
+    height: 250px;   
+    width: 190px;
+    object-fit: cover;
+} 
+
+ 
+.products {
+    display: flex; 
+    justify-content: center;              
+    padding-top: 15px;
+    gap: 50px; 
+    flex-wrap: wrap;
+} 
+
+.container-search {
+    padding-top: 15px;
+}
