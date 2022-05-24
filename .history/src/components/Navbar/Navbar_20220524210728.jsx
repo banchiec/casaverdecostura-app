@@ -76,7 +76,7 @@ const Navbar = (props) => {
           </div>
           <div className='navbar_icons_favorites'>
             <Link to={"/cart"}>
-              <BsBag className="bag-icon"/>
+              <BsBag/>
               <p className="cart-count">{total}</p>
             </Link>
           </div>
