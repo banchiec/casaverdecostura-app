@@ -7,5 +7,9 @@
 .menu_sidebar_shop li {
   font-family: "Alegreya Sans SC",'sans-serif';
 	font-weight: 600;
-} 
+}  
+ 
+.menu_sidebar_shop {
+  margin-top: -50%;
+}
   

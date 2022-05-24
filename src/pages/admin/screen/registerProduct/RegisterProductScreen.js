@@ -6,25 +6,23 @@ import CategoriesServices from '../../../../services/categories.service'
 import UploadsService from '../../../../services/upload.services' 
 import { SketchPicker } from 'react-color';
 import './css/styles.css'
-
+ 
 
 
 const RegisterProductScreen = () => {   
   let productService = new ProductsService()   
   let categoryServices = new CategoriesServices()
-  let uploadServices = new UploadsService() 
-
+  let uploadServices = new UploadsService(); 
   const [images, setImages] = useState([]);    
-
-  const [image, setImage] = useState()
-  
-
+  const [image, setImage] = useState();                                                                                                                          
   // const [modalActive, setModalActive] = useState(true)    
   const [color, setColor] = useState({
     background: '#fff'
   }) 
   const [isLoading, setIsLoading] = useState(false)
-  const [sizes, setSizes] = useState([]) 
+  const [sizes, setSizes] = useState([])  
+  const [collections, setCollections] = useState([]); 
+  console.log(collections);
   const [categoriesInDb, setCategoriesInDb] = useState([])
   const [categoryId, setCategoryId] = useState()
   const [subcategory, setSubcategory]  = useState()
@@ -74,7 +72,8 @@ const RegisterProductScreen = () => {
         subCategory: subcategory
       },
       size: sizes, 
-      photos: images
+      photos: images, 
+      collections: collections
     }             
     // console.log(product);
     productService
@@ -110,13 +109,17 @@ const RegisterProductScreen = () => {
     setCheckColor(false)  
     // setImage(null)
     // setColor(null)
-  };
+  };     
   const handleChange = (e) => { 
     setForm({ ...form, [e.target.name]: e.target.value});    
     e.target.name === 'sizes' && setSizes([...sizes, e.target.value])
+    getSubcategories(e.target.value)
     if(e.target.name === 'category'){
       e.target.name === 'category' && setCategoryId(e.target.value)
-      getSubcategories(e.target.value)
+    } 
+    if(e.target.name === "collections"){
+      setCollections(e.target.value)
+
     }
     if(e.target.name === 'subcategory'){
       setSubcategory(e.target.value)
@@ -148,6 +151,13 @@ const RegisterProductScreen = () => {
                           )
                         })}
                       </select> 
+                        <select id="collections" multiple={true} name='collections' onChange={(e)=>handleChange(e)}>
+                          <option value='Verano'>Verano</option>
+                          <option value="Primavera">Primavera</option>
+                          <option value="Invierno">Invierno</option>
+                          <option value="Exclusiva">Exclusiva</option>
+                          <option value="Costura">Costura</option>
+                        </select>    
                       <textarea type="text" name='description' rows='5' cols='54' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción" required/> 
                         <select id="sizecha ge" multiple={true} name='sizes' onChange={(e)=>handleChange(e)}>
                           <option value='xs'>xs</option>
@@ -155,6 +165,7 @@ const RegisterProductScreen = () => {
                           <option value="l">m</option>
                           <option value="m">l</option>
                         </select>    
+                        <br/>
                       <div className='mini-galery' >
                         {images[0] !== undefined && images?.map((item)=>{
                           return (

@@ -68,5 +68,8 @@ export const ContainerSidebarShop = styled.div`
 			transition: 1s;
 			left: 0px;
 		}
+	} 
+	.menu_sidebar_shop {
+		margin-top: -15%;                                               
 	}
 `

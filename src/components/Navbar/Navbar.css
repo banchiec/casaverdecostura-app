@@ -69,4 +69,15 @@ nav {
   color: white; 
   font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif ; 
   letter-spacing: 0.7px;
+} 
+
+.cart-count {
+  position: absolute;     
+  transform: translate(-180%, 40%); 
+  font-size: 10px; 
+} 
+ 
+ 
+.bag-icon {
+  position: relative; 
 }

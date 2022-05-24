@@ -1,57 +1,37 @@
  
  .bgimg-1, .bgimg-2, .bgimg-3 {
      position: relative; 
-     background-attachment: fixed; 
-     background-position: left ;              
+     background-attachment: fixed;             
      background-repeat: no-repeat; 
-     background-size: contain; 
  } 
-  
- 
  .bgimg-1{
     background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1652632281/DSC_7171_fudosy.jpg");  
-    background-size: auto; 
-    background-repeat: no-repeat;  
-    height: 100vh;    
-    background-origin: padding-box;
-    background-position:  center left 50%;
+    background-size: cover;  
+    height: 100vh;
  }  
-
-
-   
  .bgimg-2 {
-    background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1652658827/background-image2_pwmhub.jpg");  
-    background-size: cover ; 
-    background-position: top 100%;
-    height: 100vh; 
+    background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1652913750/background-image2_gauupe.jpg");  
+    background-size: cover;    
+    background-position: top;    
+    object-fit: cover;                             
  } 
-
-
  h3 {
      text-align: center;
  }
-
- 
  .caption {
      text-align: center; 
      padding-top: 50px;
  }
-  
  .section {
      height: 100vh;     
      padding-top: 50px;  
      display: block;
-     width: 100%;
-    height: 100vh;
  }  
- 
-
  .section-title {
      color: white; 
      font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
      font-size: 50px
  }
-
  .section-content {
      text-align: center;
  } 
@@ -70,4 +50,7 @@
  .caption h1 {
      color: white; 
      font-size: 50px;
- }
+ } 
+
+
+

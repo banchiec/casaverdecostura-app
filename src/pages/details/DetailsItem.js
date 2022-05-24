@@ -21,7 +21,6 @@ export const DetailsItem = (props) => {
         showSidebarshop ? setShow("show") : setShow("");
     };    
     const onShow = (e) => {
-        setImageShow(e.target.name);
         setColor(e.target.value)
       };    
 
@@ -32,25 +31,17 @@ export const DetailsItem = (props) => {
     }
   
   return (
-    <>
-      <div className="product-warnings">
-        <h3 className="product_warnings_title">CUIDADOS</h3>
-        <ul>
-          <li><img className='warning-icon' src="https://res.cloudinary.com/aleksmotin/image/upload/v1651337873/image-removebg-preview_jtf9uy.png" ></img> No lavar </li>
-          <li><img className='warning-icon' src="https://res.cloudinary.com/aleksmotin/image/upload/v1651337873/image-removebg-preview_jtf9uy.png" ></img> No usar lejilla</li>
-          <li><img className='warning-icon' src="https://res.cloudinary.com/aleksmotin/image/upload/v1651337873/image-removebg-preview_jtf9uy.png" ></img>Planchar maximo 110</li>
-          <li><img className='warning-icon' src="https://res.cloudinary.com/aleksmotin/image/upload/v1651337873/image-removebg-preview_jtf9uy.png" ></img>Lim.Seco tetracloroetileno</li>
-          <li><img className='warning-icon' src="https://res.cloudinary.com/aleksmotin/image/upload/v1651337873/image-removebg-preview_jtf9uy.png" ></img>No usar secadora</li>
-        </ul>
-      </div>
+    <>  
       <Gallery activeImage={imageShow} setImageShow={setImageShow} photos={props.productDetails?.photos}></Gallery>
       <div className="product-info">
         <p className="product-name">{props.productDetails?.name}</p>
         <p className="product-description">
           {props.productDetails?.description}
-        </p>
+        </p> 
+        <p>Precio</p>
         <span className="product-price">{props.productDetails?.price} EUR</span>
-        <br />
+        <br /> 
+        <p>Talla</p>
         <select className="select-size">
           {props.productDetails?.size.map((item, i) => {
             return (
@@ -60,18 +51,11 @@ export const DetailsItem = (props) => {
             );
           })}
         </select>
-        <hr />
+        <hr /> 
+        <p>Color</p>
         <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
-        <br />   
-        {/* {
-          !itemInCart && 
-          <button onClick={() => addProduct(product)} className='btn-cart'>Añadir al carrito</button>
-        }
-      
-        {
-          itemInCart && 
-          <button onClick={() => increase(product)} className='btn-cart'>ADD MORE</button>
-        } */}
+        <br />  
+          <button onClick={() => addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button>
         <p className='regards-politics' onClick={toogleShowSidebashop}>
           Envios, cambios y devoluciones
         </p>
@@ -180,6 +164,7 @@ export const DetailsItem = (props) => {
           </div>
         </div>
       </div>
+  
     </>
   )
 }

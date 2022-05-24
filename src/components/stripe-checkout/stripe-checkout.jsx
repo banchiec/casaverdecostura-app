@@ -42,7 +42,7 @@ export const StripeCheckout = () => {
       
      console.log(response.body);
      
-     const  {sessionId} =  await response;   
+     const  {sessionId} =  await response;    
     await stripe.redirectToCheckout({
       sessionId
    })
