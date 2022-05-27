@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import "./GalleryItem.css";
 export const GalleryItem = (props) => {   
-   
     const showImage = (url) => {
         props.setImageShow(url);
     }  
-
   return ( 
     <>  
       <div className='container-gallery'>

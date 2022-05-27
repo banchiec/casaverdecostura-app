@@ -1,48 +1,52 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./Details.css";    
-import { Gallery } from '../../components/Gallery/Gallery';  
-import { Colors } from '../../components/Colors/Colors';  
+import { Gallery } from '../../components/Gallery/Gallery';    
+import { Colors } from '../../components/Colors/Colors';    
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookIcon, TwitterIcon } from "react-share";
 import { cartContext } from '../../components/context/CartContext'; 
-export const DetailsItem = (props) => {              
+export const DetailsItem = (props) => {     
     let images = props.photos?.map(item => item.url);
-    const [imageShow, setImageShow] = useState(images[0]);    
+    const [imageShow, setImageShow] = useState(images[0]);     
     const [sizes, setSizes] = useState(props.size[0]);           
-    const [color, setColor] = useState([]);  
-    console.log(color)              
+    const [color, setColor] = useState([props.photos[0].color]);     
+    const [handle, setHandle] = useState();
     let imageUrl = imageShow;    
     const {name, price, _id, description, } = props.productDetails; 
     const product = {name,imageUrl,_id,description,price, sizes, color};  
-    const [showSidebarshop, setShowSidebarshop] = useState(true); 
+    const [showSidebarshop, setShowSidebarshop] = useState(true);   
     const [show, setShow] = useState("");     
-    const { addItemtoCart} = useContext(cartContext);  
+   const [isActive, setActive] = useState(false);
+    const { addItemtoCart} = useContext(cartContext);                                                                                  
     const toogleShowSidebashop = () => {
         setShowSidebarshop(!showSidebarshop);
         console.log(showSidebarshop);
         showSidebarshop ? setShow("show") : setShow("");
-    };    
-    const onShow = (e) => {
-        setColor(e.target.value)
-      };    
-
+    };   
+    const onShow = (e, i ) => {    
+      console.log(e.target.getAttribute("data-index"))
+        setColor(e.target.value)                                        
+        setActive(!isActive);
+      };   
     const handleSize = (e) => {
       if(e.target.name === "sizes") {                               
         setSizes(e.target.value)
       }
-    }
-  
+    } 
+ 
+
   return (
-    <>  
-      <Gallery activeImage={imageShow} setImageShow={setImageShow} photos={props.productDetails?.photos}></Gallery>
+    <>   
+     <Gallery activeImage={imageShow} setImageShow={setImageShow} photos={props.productDetails?.photos}></Gallery>
       <div className="product-info">
         <p className="product-name">{props.productDetails?.name}</p>
+        <span className="product-price">{props.productDetails?.price} €</span> 
+        <p>Impuestos incluidos</p>
         <p className="product-description">
           {props.productDetails?.description}
-        </p> 
-        <p>Precio</p>
-        <span className="product-price">{props.productDetails?.price} EUR</span>
-        <br /> 
-        <p>Talla</p>
-        <select className="select-size">
+        </p>  
+        <label for="size">Talla</label>
+        <select id='size' className="select-size">
           {props.productDetails?.size.map((item, i) => {
             return (
               <>
@@ -51,11 +55,29 @@ export const DetailsItem = (props) => {
             );
           })}
         </select>
-        <hr /> 
-        <p>Color</p>
-        <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
-        <br />  
-          <button onClick={() => addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button>
+        <p>Color</p> 
+        <Colors onShow={onShow} active={isActive}  photos={props.productDetails?.photos}></Colors>
+        <br />   
+       <button onClick={() => !addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button>  
+       <p>Compratir</p>       
+      <div className='share-icons'>
+      <FacebookShareButton
+        url={"https://peing.net/ja/"}
+        quote={"フェイスブックはタイトルが付けれるようです"}
+        hashtag={"#hashtag"}
+        description={"aiueo"}
+        className="Demo__some-network__share-button"
+      >
+        <FacebookIcon size={32} round /> 
+      </FacebookShareButton> 
+      <TwitterShareButton
+        url={"https://peing.net/ja/"}
+        quote={"フェイスブックはタイトルが付けれるようです"}
+        hashtag={"#hashtag"}
+        description={"aiueo"}
+        className="Demo__some-network__share-button"
+      >   <TwitterIcon size={32} round />  </TwitterShareButton>
+      </div>
         <p className='regards-politics' onClick={toogleShowSidebashop}>
           Envios, cambios y devoluciones
         </p>
@@ -118,25 +140,7 @@ export const DetailsItem = (props) => {
                 métodos de envío disponibles, el coste y la fecha de
                 entrega de tu pedido.
               </p>
-              <span className="product-price">{props.productDetails?.price} EUR</span> 
-              <br /> 
-              <select name="sizes"  onChange={(e)=>handleSize(e)} className="select-size" required>
-                {props.productDetails?.size.map((item, i) => {
-                  return (
-                    <>
-                      <option className="option-size">{item}</option>
-                    </>
-                  );
-                })}
-              </select>
-              <hr />
-              <Colors onShow={onShow} photos={props.productDetails?.photos}></Colors>
-              <br />   
-               <button onClick={() => !addItemtoCart(product)} className='btn-cart'>Añadir al carrito</button> 
-            
-             
-        
-            
+              <b/> 
               <p className='regards-politics' onClick={toogleShowSidebashop}>
                 Envios, cambios y devoluciones
               </p>

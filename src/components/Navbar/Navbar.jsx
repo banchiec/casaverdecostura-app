@@ -19,7 +19,7 @@ const Navbar = (props) => {
   const total  = cartItems.reduce((previous, current) => previous + current.amount , 0 );   
   console.log(total)  
   return (
-    <NavbarContainer hidden >
+    <NavbarContainer >
       <div>   
         <div className='container-search'>
         <Link to={"/search"}><p className="search">BUSCAR</p></Link>
@@ -67,19 +67,15 @@ const Navbar = (props) => {
               </Link>
             </>
           )} 
-          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout} />  
-          <div className='navbar_icons_favorites' >
-            <Link to={"/favorites"}>
-              <MdFavorite />
-              <p>{favorites.length} </p>
-            </Link>
-          </div>
-          <div className='navbar_icons_favorites'>
-            <Link to={"/cart"}>
-              <BsBag className="bag-icon"/>
-              <p className="cart-count">{total}</p>
-            </Link>
-          </div>
+  
+        
+
+          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
+          <Link to={"/favorites"}>
+  <span> <MdFavorite></MdFavorite>  </span>
+  </Link>
+               <Link to={"/cart"}>  <BsBag className="bag-icon"/> <span className="cart-count">{total}</span>   </Link>
+          </Link>
         </div>
       </div>  
       <div className="navbar_icons_mobile">
@@ -91,7 +87,7 @@ const Navbar = (props) => {
         </div>
         <div>
           <Link to={'/cart'}>
-            <BsCartFill/>
+            <BsBag className="bag-icon"/>
           </Link>
           <p>{total}</p>
         </div>

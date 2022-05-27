@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+body {
+	 background-color: #f2f2f2;
+}
+h1 {
+	 font-family: 'Montserrat';
+}
+.carousel-nav-icon {
+	 height: 48px;
+	 width: 48px;
+}
+.carousel-item .col, .carousel-item .col-sm, .carousel-item .col-md {
+	 margin: 8px;
+	 height: 300px;
+	 background-size: cover;
+	 background-position: center center;
+}
+/* .carousel-img {
+	width: 150px;
+	height: 200px; 
+}
+.carousel-img img {
+	object-fit: cover;
+} */
+@media (min-width: 56rem) {
+	.container-carousel {
+		display: none;
+	}
+}
