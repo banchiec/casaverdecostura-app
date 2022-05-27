@@ -74,10 +74,7 @@ const Navbar = (props) => {
           <Link to={"/favorites"}>
   <span> <MdFavorite></MdFavorite>  </span>
   </Link>
-          
                <Link to={"/cart"}>  <BsBag className="bag-icon"/> <span className="cart-count">{total}</span>   </Link>
-               
-    
           </Link>
         </div>
       </div>  
