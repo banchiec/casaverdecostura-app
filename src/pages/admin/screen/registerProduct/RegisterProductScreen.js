@@ -20,7 +20,7 @@ const RegisterProductScreen = () => {
     background: '#fff'
   }) 
   const [isLoading, setIsLoading] = useState(false)
-  const [sizes, setSizes] = useState([])  
+  const [sizes, setSizes] = useState([]); 
   const [collections, setCollections] = useState([]); 
   console.log(collections);
   const [categoriesInDb, setCategoriesInDb] = useState([])
@@ -32,10 +32,10 @@ const RegisterProductScreen = () => {
     name: "", 
     price: "", 
     description: "",  
-    size: [""], 
-  })    
-
-    
+    size: [""],  
+    cantidad: ""
+  })      
+   
   useEffect(() => {
     getCategories()
   },[])
@@ -53,7 +53,8 @@ const RegisterProductScreen = () => {
         setSubcategories(data.data.subCategory)
       })
       .catch()
-  }
+  } 
+
   const clearState = () => {
     setForm({})
     setImage(null)
@@ -66,14 +67,16 @@ const RegisterProductScreen = () => {
     const product = { 
       name: form.name, 
       price: form.price, 
-      description:  form.description, 
+      description:  form.description,  
+      cantidad: form.cantidad, 
       beloning: {
         idCategory: categoryId,
         subCategory: subcategory
       },
       size: sizes, 
       photos: images, 
-      collections: collections
+      collections: collections, 
+
     }             
     // console.log(product);
     productService
@@ -97,13 +100,12 @@ const RegisterProductScreen = () => {
       }
     })
     .catch(error => alert("Error,  el tamaño de la imagén es muy grande, intentalo de nuevo"))   
-  } 
+  }   
   const getColor = (res) => { 
     setCheckColor(true)                
     console.log("Tienes que introducir un color.")
-  } 
+  }  
   const  handleChangeComplete = (color) => { 
-    console.log(color);
     setColor({ color: color.hex });
       setImages([...images, {url: image, color: color.hex}]) 
     setCheckColor(false)  
@@ -123,7 +125,7 @@ const RegisterProductScreen = () => {
     }
     if(e.target.name === 'subcategory'){
       setSubcategory(e.target.value)
-    }
+    }  
   };  
 
   return( 
@@ -166,6 +168,7 @@ const RegisterProductScreen = () => {
                           <option value="m">l</option>
                         </select>    
                         <br/>
+                        <textarea type="text" name='description' rows='5' cols='54' onChange= {(e)=>{handleChange(e)}} placeholder="Descripción" required/> 
                       <div className='mini-galery' >
                         {images[0] !== undefined && images?.map((item)=>{
                           return (
@@ -174,7 +177,7 @@ const RegisterProductScreen = () => {
                                 <div className='container-color' style={{background: `${item.color}`}}>
                               </div>
                             </div>
-                          )
+                          )                                                                
                           })
                         }
                       </div>

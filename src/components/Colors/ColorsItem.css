@@ -1,7 +1,10 @@
 .color-btn {
-    width: 20.6px; 
-    height: 20.6px;
-    border: 1px solid gray;
+    width: 25.6px; 
+    height: 25.6px;
+    border: 6px solid  black;
     border-radius: 100px; 
 } 
 
+.active {
+    border: 3px dashed black;
+}

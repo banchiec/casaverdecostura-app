@@ -11,15 +11,7 @@ export const StripeCheckout = () => {
         e.preventDefault(); 
 
 
-    const successshop = cartItems.map((item) => {
-        return {
-             color: item.color, 
-             name: item.name ,
-             description: item.description, 
-             price: item.price
-        }
-    } )
-
+                                                                                                                                                                                                
      const line_items  =  cartItems.map((item) => {  
          console.log(item.color)                                                                             
          return {    
@@ -37,11 +29,8 @@ export const StripeCheckout = () => {
          } 
      })  
      const response = await fetchFromAPI('', {
-         body: {line_items, customer_email: email, successshop},
+         body: {line_items, customer_email: email},
      })       
-      
-     console.log(response.body);
-     
      const  {sessionId} =  await response;    
     await stripe.redirectToCheckout({
       sessionId
