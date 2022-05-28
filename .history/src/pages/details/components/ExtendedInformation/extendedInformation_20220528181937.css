@@ -1,0 +1,7 @@
+.container-extended-information {
+	border: 1px solid green;
+}
+.title-extended {
+	display: flex;
+	flex-direction: row;
+}

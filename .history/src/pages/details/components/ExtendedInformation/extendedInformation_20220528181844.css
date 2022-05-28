@@ -1,0 +1,5 @@
+.container-extended-information {
+	display: flex;
+
+	border: 1px solid green;
+}
