@@ -2,73 +2,116 @@
 
  section {
      background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a1/Fondo_Negro.jpg"); 
-     background-size: cover; 
-    height: 850px;
- }
+     background-size: cover;  
+     padding: 2rem;  
+    height: 100%;
+ }      
 
- .collections-container { 
-     display: flex;  
-     align-items: flex-start; 
+ .collections-container {
+     display: flex;   
+     padding: 0;
+     margin: 0;
      padding-top: 15px;
-     flex-wrap: wrap;   
      justify-content: center;
-     justify-content: center;
-     gap: 50px; 
- } 
- .collections-container img {
-     width: 35%;
- }  
+ }   
 
- .wrapper {
-     height: 100vh;
- }
-
- .collections-content {
-     width: 50%;  
-     font-weight: 200;
-     font-family: Krub, sans-serif;
-     color: white;
- }  
-
- .collection-content p {
-    font-family: Krub, sans-serif; 
-    font-weight: 200;
- }
- section h2 {
-    text-align: center;  
-    padding-top: 12px;  
-    font-weight: 200;
-    font-size: 3.5rem; 
-    font-family: Krub, sans-serif;
+.collections-content {
+    display: flex;  
+    justify-content: center;  
+    padding: 0;
     margin: 0;
-    color: white;
-}  
-section h3 {
-    text-align: start; 
-    font-size: 1.5rem;  
-    font-weight: 200;
-    font-family: Krub, sans-serif;
-    margin: 0;
-}    
-
+    width: 100%; 
+    gap: 50px;
+    flex-direction: row;
+}   
 
 .line {
     width: 30%;  
     size: 5cm;
     border-color: green;
 }
+.collections-content-text {
+    color: white;   
+    display: block; 
+    margin:  0 auto;
+    text-align: start;
+    width: 50%;
+}  
 
+.collections-content-text h3  {
+   text-align: start; 
+   font-size: 1.5rem;
+}  
 
-@media(max-width: 965px) {
-    .collections-container img { 
-    width: 80%;
-    } 
+.collections-content-image {
+    display: block; 
+    margin: 0 auto;  
+    padding-top: 15px;
+} 
+.title { 
+    margin: 0 ; 
+    color: white;  
+    font-size: 3.5rem;
+    text-align: center; 
+}
+ @media(max-width: 965px) {  
+     section {
+         padding: 0; 
+         margin: 0;
+     }
+     .collections-container {
+        width: 100%;
+     }
      .collections-content {
-        width: 100%; 
-        text-align: start;
+         display: flex; 
+         flex-direction: column;
+     }
+     
+     .collections-content-text h3 {
+        text-align: center;
     } 
-    .collections-container {
-        padding-left: 50px;
+
+    .collections-content-image {  
+        width: 85%;
+        padding: 10px;
+    } 
+
+    .collections-content-text {
+        width: 90%;  
+        text-align: center; 
+    } 
+   
+ }
+
+@media(max-width: 630px) {  
+    section {
+      
+        padding-top: 15px;
+        margin: 0;
+    }
+    .collections-content-image {  
+        width: 85%;
+        padding: 10px;
+    }    
+    .collections-content {
+        display: flex; 
+        flex-direction: column;
+    }  
+    .collections-content-text h3 {
+        text-align: center; 
+        padding: 0; 
+        margin: 0;
+    }
+   
+    .collections-content-text {
+        width: 100%;  
+        text-align: center;
+
+    } 
+
+    .collections-content-text  p {
+     padding: 20px; 
+     margin: 0; 
     }
 
 }

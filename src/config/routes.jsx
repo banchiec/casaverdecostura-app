@@ -10,7 +10,7 @@ import * as PATHS from "../utils/paths";
 import Admin from "../pages/admin/Admin"
 import { Details } from "../pages/details/Details";  
 import { Favorites } from "../pages/favorites-page/favorites-page";  
-import { Collections } from "../components/Collections/Collections";
+import { AllCollections } from "../pages/AllCollections/AllCollections";
 import { Search } from "../pages/search-page/search-page";  
 import { SpringCollectionPage } from "../pages/spring-collection-page/SpringCollectionPage"; 
 import { SummerCollectionPage } from "../pages/summer-collection-page/SummerCollectionPage";
@@ -20,7 +20,7 @@ const routes = (props) => {
   return [ 
     {
       path: PATHS.COLLECTIONS,
-      element: <Collections {...props} />,
+      element: <AllCollections {...props} />,
     },  
     {
       path: PATHS.SUMMER,

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react' 
 import ProductsService from '../../services/products.service'  
-import "./SpringCollectionPage.css" 
 import { Collections } from '../../components/Collections/Collections';    
 
 export const SpringCollectionPage = () => { 

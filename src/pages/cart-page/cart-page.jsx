@@ -23,23 +23,7 @@ export const Cart = () => {
 
   return (
    <>  
-    {cartItems.length === 0 ?  ( 
-        <p className='empty-cart'>Tu carrito está vacio</p>
-    ): <div>   
-          <div class="cart-container"> 
-         {cartItems.map((item, i) => { 
-             return (
-                <ItemCart key={i} item={item}></ItemCart>
-             )
-         })} 
-         </div>
-        </div>}  
-  {cartItems.length > 0   && 
-   <div className='cart-additional'>
-   <h2 className='total'>Total  {total} EUR</h2>
-   <Link to={"/checkout"}><button className='shop-continue'>CONTINUAR</button></Link> 
-   </div>
-  }
+   
    </>
   )  
   

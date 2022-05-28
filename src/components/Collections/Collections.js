@@ -10,24 +10,33 @@ export const Collections = ({products}) => {
     const  productsPhotos = products[i]?.photos;   
     allphotos.push(...productsPhotos);
  }       
- console.log(allphotos)  
-  return ( 
-    <>     
-    <section>  
-        <h2>{products[0]?.collections[0]}</h2> 
-        <hr className='line' ></hr> 
-      <article>
-        <div className='collections-container'> 
-        <img  src={allphotos[0]?.url}/>   
-        <div className='collections-content'> 
-        <h3>Deslumbra a tus <br/> invitados</h3>
-        <p>Trabajamos a medida. Tú puedes elegir el vestido que más se adapte a tu personalidad. Desde nuestros modelos puedes elegir la forma, los tejidos, los colores, los complementos  y modificar el modelo para sentirte más espectacular y segura en la boda de tu hijo o hija. Nuestro equipo te ayudará a elegir el modelo de tus sueños.</p>
+  return (
+    <>  
+      <section> 
+      <h2 className='title'>{products[0]?.collections[0]}</h2> 
+        <div className="collections-container"> 
+          <div className="collections-content">
+            <div className="collections-content-image">
+              <img className="collection-image" src={allphotos[0]?.url}></img>
+            </div>
+            <div className="collections-content-text">
+              <h3>
+                Deslumbra a tus <br /> invitados
+              </h3>
+              <p>
+                Trabajamos a medida. Tú puedes elegir el vestido que más se
+                adapte a tu personalidad. Desde nuestros modelos puedes elegir
+                la forma, los tejidos, los colores, los complementos y modificar
+                el modelo para sentirte más espectacular y segura en la boda de
+                tu hijo o hija. Nuestro equipo te ayudará a elegir el modelo de
+                tus sueños.
+              </p>
+            </div>
+          </div>
         </div>
-        </div>
-      </article>
-    </section> 
-      <GalleryCollection photos={allphotos}   />   
+      </section>
+      <GalleryCollection photos={allphotos} />
     </>
-   
-  )
+  );
 }
+ 
