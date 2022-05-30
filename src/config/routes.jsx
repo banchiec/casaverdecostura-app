@@ -13,14 +13,30 @@ import { Favorites } from "../pages/favorites-page/favorites-page";
 import { AllCollections } from "../pages/AllCollections/AllCollections";
 import { Search } from "../pages/search-page/search-page";  
 import { SpringCollectionPage } from "../pages/spring-collection-page/SpringCollectionPage"; 
-import { SummerCollectionPage } from "../pages/summer-collection-page/SummerCollectionPage";
-import { WinterCollectionPage } from "../pages/winter-collection-page/WinterCollectionPage";
+import { SummerCollectionPage } from "../pages/summer-collection-page/SummerCollectionPage"; 
+import { TailorMainPage } from "../pages/tailor-main-page/TailorMainPage"; 
+import { BlogDetails } from "../components/BlogDetails/BlogDetails";
+import { WinterCollectionPage } from "../pages/winter-collection-page/WinterCollectionPage"; 
+import { Blog } from "../components/Blog/Blog";
+
 const routes = (props) => { 
   const { user } = props;
   return [ 
     {
       path: PATHS.COLLECTIONS,
       element: <AllCollections {...props} />,
+    },   
+    {
+      path: PATHS.BLOGDETAILS,
+      element: <BlogDetails {...props} />,
+    },  
+    {
+      path: PATHS.TailorMainPage,
+      element: <TailorMainPage {...props} />,
+    }, 
+    {
+      path: PATHS.BLOG,
+      element: <Blog {...props} />,
     },  
     {
       path: PATHS.SUMMER,

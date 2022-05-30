@@ -1,0 +1,47 @@
+
+.blog-content-container {
+    display: flex; 
+    flex-direction: column;  
+    width: 100%;
+    justify-content: center; 
+}  
+  
+
+
+ 
+
+
+.blog-content-image {
+    padding: 30px;  
+
+}            
+
+  
+.blog-content-text{      
+padding-left: 30px; 
+padding-right: 30px;
+}  
+ 
+
+
+
+
+
+
+@media(min-width: 850px) { 
+ .blog-content-image img {
+    width: 250px; 
+}    
+ 
+.blog-content-text {
+    width: 250px;
+}
+  
+    .blog-content-container {
+        flex-direction: row; 
+        display: flex;  
+        flex-wrap: wrap;
+    
+    }
+  
+}

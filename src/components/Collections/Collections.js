@@ -3,6 +3,8 @@ import "./Collections.css"
 import ProductsService from '../../services/products.service'    
 import { GalleryCollection } from '../GalleryCollection/GalleryCollection'
 export const Collections = ({products}) => {     
+
+
  // console.log(props.product[0]?.photos?.map(item => item.url))    
  const  allphotos = []; 
  for(let i = 0;  i  < products.length ; i++) {
