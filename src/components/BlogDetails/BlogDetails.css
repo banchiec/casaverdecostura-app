@@ -1,0 +1,27 @@
+.details-blog-textarea h3 {
+   padding: 10px;
+}
+
+.details-blog-textarea p {
+  padding: 15px;
+}  
+
+.details-blog-content-info {
+    text-align: center;
+}
+
+.details-blog-content-image {
+    padding: 15px;
+}
+
+ 
+
+
+@media(min-width: 850px) {
+    .details-blog-content {
+        display: flex; 
+    } 
+    .details-blog-content-info-container {
+        width: 70%;
+    }
+}

@@ -9,7 +9,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
   justify-content: space-between;
 	align-items: center;
   flex-wrap: wrap;
-  background: #007220;
+  background: black;
   font-weight: 400;
 	img {
 		width: 180px;
@@ -105,7 +105,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			padding: 1rem;
 			display:flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: center;  
 			align-items: center;
 			div {
 				margin-top: 15px ;
@@ -114,9 +114,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 
 		}
 		img {
-			padding: 10px  0 10px 0; 
-			width: 450px;
-			height: 92px;
+			height: 50px;
 		 }
 		.container-search {
 		  display: inline;

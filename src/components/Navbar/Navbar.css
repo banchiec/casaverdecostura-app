@@ -9,19 +9,22 @@ nav {
   padding: 1em;
   justify-content: space-around;
   flex-wrap: wrap;
-  background: #007220;
 }
 
 .nav__projectName {
   text-decoration: none;
-}
+} 
+
+ 
+
+
 .nav-main{
   display: flex;
   padding: 1em;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background: #007220;
+  background: black;
 
 } 
 .authLink {
@@ -69,7 +72,7 @@ nav {
 } 
 .cart-count {
   position: absolute;     
-  transform: translate(-180%, 40%); 
+  transform: translate(-200%, 50%); 
   font-size: 10px; 
 } 
 .bag-icon {

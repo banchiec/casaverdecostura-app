@@ -83,11 +83,9 @@ export const Cart = () => {
          <div className='cart-info-additionals-quantity'> {cartItems.length }  artículos</div> 
          <div className='cart-details-total'> {total} €</div>
          </div>  
-                </>
-            
-     
+                </>    
          <div className='cart-info-pay-button'>
-         <Link to={"/checkout"}><button>PAGAR</button> </Link>
+         <Link to={"/checkout"}><button>PAGAR</button></Link>
      </div>     
      <hr/>
      <div className='cart-info-links'> 

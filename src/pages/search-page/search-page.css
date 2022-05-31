@@ -21,4 +21,9 @@ form  .search_input {
 
 .container-search {
     padding-top: 15px;
+} 
+
+.products__content p {
+   width: 50px; 
+   text-align: center;
 }

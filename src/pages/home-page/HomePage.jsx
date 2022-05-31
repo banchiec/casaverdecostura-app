@@ -60,8 +60,8 @@ function HomePage() {
         </div>
       </section> 
       <CarouselCustom/>
-      <Footer></Footer>
     </ContainerHome>
+    <Footer></Footer>
     </>
   );
 }

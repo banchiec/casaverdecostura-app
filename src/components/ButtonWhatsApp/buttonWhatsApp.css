@@ -1,6 +1,8 @@
 .container-button-whatsApp {
-	position: absolute;
-	width: 70px;
-	height: 70px;
+	position: fixed;
+	width: 50px; 
+	right: 0; 
+	bottom: 0;
+	height: 50px;
 	right: 5px;
 }

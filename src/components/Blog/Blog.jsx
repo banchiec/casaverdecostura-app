@@ -9,7 +9,6 @@ export const Blog = ({blogs}) => {
   
  
   return ( 
-
       <div className='blogs-container'> 
       <div className='blog-content-container'>            
       {blogs?.map((item, i) => {   

@@ -14,7 +14,6 @@ import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 const Navbar = (props) => {    
   const {cartItems} = useContext(cartContext);   
   const {favorites} = useContext(favoriteContext);  
-
   const total  = cartItems.reduce((previous, current) => previous + current.amount , 0 );   
 
   return (
@@ -23,26 +22,24 @@ const Navbar = (props) => {
         <div className='container-search'>
         <Link to={"/search"}><p className="search">BUSCAR</p></Link>
           <input type='text'/>
-        </div>
-        <div className='navbar-center'> 
-          <Link to={PATHS.HOMEPAGE}>
-            <img src='/casaverde_logo.png' alt="Logo" />
-          </Link>                      
+        </div>   
+        <div className='navbar-center'>  
+        <Link to={PATHS.HOMEPAGE}>
+            <img src="https://res.cloudinary.com/aleksmotin/image/upload/v1653992753/logonavbar_hqdjsf.png" alt="Logo" />
+          </Link>                   
           <div className='navbar_menu'>
           <Link to={"/"}>
               INICIO
             </Link>
-            <Link to={PATHS.SHOPPING}>
-              TIENDA
-            </Link> 
-            <Link to={"#"}>
-              NOVEDADES
-            </Link> 
-            <Link to={"#"}>
+            <a href="/shopping" >TIENDA</a>
+            <Link to={PATHS.COLLECTIONS}>
+              COLLECIONES
+            </Link>
+            <Link to={"/"}>
               COSTURA
             </Link>
-            <Link to={PATHS.COLLECTIONS}>
-              COLECCIONES
+            <Link to={"/aboutus"}>
+              NOSOTRAS
             </Link>
             {props?.user?.role === 'admin' && (
               <Link to={PATHS.ADMIN}>

@@ -16,7 +16,8 @@ import { SpringCollectionPage } from "../pages/spring-collection-page/SpringColl
 import { SummerCollectionPage } from "../pages/summer-collection-page/SummerCollectionPage"; 
 import { TailorMainPage } from "../pages/tailor-main-page/TailorMainPage"; 
 import { BlogDetails } from "../components/BlogDetails/BlogDetails";
-import { WinterCollectionPage } from "../pages/winter-collection-page/WinterCollectionPage"; 
+import { WinterCollectionPage } from "../pages/winter-collection-page/WinterCollectionPage";  
+import { AboutUs } from "../pages/about-us-page/AboutUs";
 import { Blog } from "../components/Blog/Blog";
 
 const routes = (props) => { 
@@ -25,7 +26,11 @@ const routes = (props) => {
     {
       path: PATHS.COLLECTIONS,
       element: <AllCollections {...props} />,
-    },   
+    },  
+    {
+      path: PATHS.ABOUTUS,
+      element: <AboutUs {...props} />,
+    },  
     {
       path: PATHS.BLOGDETAILS,
       element: <BlogDetails {...props} />,
