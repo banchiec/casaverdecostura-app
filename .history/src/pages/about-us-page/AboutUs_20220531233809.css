@@ -1,0 +1,51 @@
+ .icon {
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%; 
+    border: 1px solid grey;
+}  
+
+.contacts-content {
+  text-align: center;
+} 
+
+.contents-container {
+  padding: 25px;
+}
+ 
+.contact-content-item {
+  padding-top: 15px;
+} 
+.contacts-subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+} 
+ 
+.contacts-container {
+  padding-top: 15px;
+} 
+
+.how-to-reach_us {
+    text-align: center;
+} 
+.contacts-title {
+  font-size: 1.4rem;
+}  
+
+
+ 
+.contacts-subtitle h4 {
+    font-size: 15px;
+}
+
+@media(min-width: 865px) {
+    .contacts-content {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 50px;
+    } 
+    .contacts-subtitle h4 {
+        font-size: 17px;
+    }
+}
