@@ -59,9 +59,10 @@ function HomePage() {
           </Link>
         </div>
       </section> 
-      <CarouselCustom/>
-    </ContainerHome>
-    <Footer></Footer>
+      <CarouselCustom/> 
+      <Footer></Footer>
+    </ContainerHome> 
+       
     </>
   );
 }

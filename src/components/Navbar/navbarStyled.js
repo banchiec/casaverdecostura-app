@@ -113,7 +113,8 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			}
 
 		}
-		img {
+		img { 
+			width: 250px;
 			height: 50px;
 		 }
 		.container-search {
