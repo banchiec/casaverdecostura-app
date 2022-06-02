@@ -11,6 +11,7 @@ export const SHOPPING = '/shopping';
 export const SPRING = '/spring'; 
 export const ABOUTUS = '/aboutus'; 
 export const SUMMER = '/summer'; 
+export const SEWING = '/sewing'; 
 export const TailorMainPage = "/tailor"
 export const BLOGDETAILS = "/post/:id"
 export const BLOG = '/blog';

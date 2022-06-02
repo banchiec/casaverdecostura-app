@@ -14,11 +14,10 @@ import { AllCollections } from "../pages/AllCollections/AllCollections";
 import { Search } from "../pages/search-page/search-page";  
 import { SpringCollectionPage } from "../pages/spring-collection-page/SpringCollectionPage"; 
 import { SummerCollectionPage } from "../pages/summer-collection-page/SummerCollectionPage"; 
-import { TailorMainPage } from "../pages/tailor-main-page/TailorMainPage"; 
 import { BlogDetails } from "../components/BlogDetails/BlogDetails";
 import { WinterCollectionPage } from "../pages/winter-collection-page/WinterCollectionPage";  
-import { AboutUs } from "../pages/about-us-page/AboutUs";
-import { Blog } from "../components/Blog/Blog";
+import { AboutUs } from "../pages/about-us-page/AboutUs"; 
+import { Sewing } from "../components/Seving/Sewing";
 
 const routes = (props) => { 
   const { user } = props;
@@ -36,12 +35,8 @@ const routes = (props) => {
       element: <BlogDetails {...props} />,
     },  
     {
-      path: PATHS.TailorMainPage,
-      element: <TailorMainPage {...props} />,
-    }, 
-    {
-      path: PATHS.BLOG,
-      element: <Blog {...props} />,
+      path: PATHS.SEWING,
+      element: <Sewing {...props} />,
     },  
     {
       path: PATHS.SUMMER,

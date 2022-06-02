@@ -1,36 +1,43 @@
  .icon {
-    width: 70px; 
-    height: 70px; 
+    width: 90px; 
+    height: 90px; 
     border-radius: 50%; 
     border: 1px solid grey;
 }  
+.container-about {
+  padding: 20px 10px;
+}
 
+.container-card {
+  border: 1px solid red;
+  align-items: center;
+}
 .contacts-content {
-    text-align: center;
+  text-align: center; 
+  gap: 80px;
 } 
 
 .contents-container {
-    padding: 25px;
+  padding: 25px;
 }
  
 .contact-content-item {
-    padding-top: 15px;
+  padding-top: 15px;
 } 
-
-
 .contacts-subtitle {
-    text-align: center;
-} 
+  font-size: 0.9rem;
+  text-align: center;
+}                 
  
 .contacts-container {
-    padding-top: 15px;
+  padding-top: 15px;
 } 
 
 .how-to-reach_us {
     text-align: center;
 } 
 .contacts-title h3 {
-    font-size: 40px;
+  font-size: 2rem;
 }  
 
 
@@ -48,5 +55,12 @@
     } 
     .contacts-subtitle h4 {
         font-size: 17px;
+    } 
+    .contacts-title h3 {
+      font-size: 3.4rem;
+    }   
+    .contacts-subtitle h4 {
+      font-size: 1rem;
     }
+    
 }

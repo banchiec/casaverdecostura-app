@@ -6,14 +6,13 @@
  } 
  .bgimg-1{
     align-items: 'center';
-    background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1652632281/DSC_7171_fudosy.jpg");  
-    background-size: cover;  
+    background-image: url("./../../../public/bg-1.jpg");    
+    background-size: contain ; 
     height: 100vh;
  }  
  .bgimg-2 {
-    background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1652913750/background-image2_gauupe.jpg");  
-    background-size: cover;
-    background-position: top;    
+    background-image: url("./../../../public/bg-img2.jpg");  
+    background-size: contain;  
     object-fit: cover;                             
  } 
  h3 {

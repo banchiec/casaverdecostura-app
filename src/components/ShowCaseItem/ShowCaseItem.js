@@ -16,7 +16,7 @@ export const ShowCaseItem = (props) => {
         className='container_favorities'
       >
         {clickFavorities ?
-          <MdFavorite />
+          <MdFavorite fill="grey" />
           :
           <MdFavoriteBorder onClick={() => addtoFavorites(product)}  />
         } 

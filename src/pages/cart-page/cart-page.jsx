@@ -62,7 +62,7 @@ export const Cart = () => {
            </div>  
               <div className='cart-content-buttons-extras'>
            <div key={i} className='cart-content-total'> 
-            {total} €
+            {item?.amount * item?.price} €
            </div> 
            <div className='cart-content-delete'>
            <DeleteRoundedIcon/>

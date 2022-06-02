@@ -1,0 +1,62 @@
+
+.blog-content-container {
+    display: flex; 
+    flex-direction: column;  
+    width: 100%;
+    justify-content: center; 
+}  
+  
+
+
+ 
+
+
+.blog-content-image {
+    padding: 30px;  
+
+}            
+
+  
+.blog-content-text{      
+padding-left: 30px; 
+padding-right: 30px;
+}  
+ 
+
+
+
+.blog-content-buttons { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center;
+    text-align: center; 
+    padding-top: 15px;
+}
+ 
+
+.blog-content-buttons button {
+    width: 120px;  
+    height: 45px;   
+    border-radius: 20%;
+    border: none;
+    font-size: 10px;
+}
+
+
+@media(min-width: 850px) { 
+ .blog-content-image img {
+    width: 250px; 
+}    
+ 
+.blog-content-text {
+    width: 250px;
+}
+  
+    .blog-content-container {
+        flex-direction: row; 
+        display: flex;  
+        flex-wrap: wrap;
+    
+    }
+  
+}
