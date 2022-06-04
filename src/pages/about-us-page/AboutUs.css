@@ -1,13 +1,28 @@
  .icon {
-    width: 90px; 
-    height: 90px; 
-    border-radius: 50%; 
-    border: 1px solid grey;
+    width: 2.5rem; 
+    height: 2.5rem; 
+    border-radius: 50%;  
+    line-height: 20px;
+}   
+
+.contacts-content_icon {
+  width: 3.5rem; 
+  height: 3.5rem;    
+  display: block; 
+  margin: 0 auto;
+  padding-top: 5px; 
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid grey;
 }  
 .container-about {
   padding: 20px 10px;
+} 
+.contacts-content_gmail a {
+  text-align: center; 
+  color: black; 
+  font-weight: 400 bold;
 }
-
 .container-card {
   border: 1px solid red;
   align-items: center;
@@ -15,7 +30,9 @@
 .contacts-content {
   text-align: center; 
   gap: 80px;
-} 
+}  
+
+
 
 .contents-container {
   padding: 25px;
@@ -25,7 +42,7 @@
   padding-top: 15px;
 } 
 .contacts-subtitle {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   text-align: center;
 }                 
  
@@ -42,8 +59,9 @@
 
 
  
-.contacts-subtitle h4 {
-    font-size: 15px;
+.contacts-subtitle p {
+    font-size: 20px; 
+    font-weight: 700;
 }
 
 @media(min-width: 865px) {

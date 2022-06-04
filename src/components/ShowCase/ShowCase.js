@@ -12,10 +12,16 @@ export const ShowCase = (props) => {
     console.log("first");
   }
     return (
-      <ContainerShowcase>        
+      <ContainerShowcase>         
+                                         
+
         <div className="">  
             <div className="main">   
-                <ul className="cards">  
+                <ul className="cards">
+                {props.products.length == 0  ?
+         <p className="not-found">Lo sentimos pero no hay productos según esta busqueda</p>
+          : null
+        } 
                   {
                     props.products?.map((products) => { 
                         return (

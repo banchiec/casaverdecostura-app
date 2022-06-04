@@ -8,11 +8,8 @@ export const StripeCheckout = () => {
     const stripe = useStripe();
     const handleStripeSubmit = async (e) => {   
         console.log(e)
-        e.preventDefault(); 
-
-
-                                                                                                                                                                                                
-     const line_items  =  cartItems.map((item) => {  
+        e.preventDefault();                                                                                                                                                                               
+     const line_items  =  cartItems.map((item) => {   
          console.log(item.color)                                                                             
          return {    
              quantity: item.amount,  
@@ -24,10 +21,9 @@ export const StripeCheckout = () => {
                      description: item?.description,   
                      images: [item.imageUrl]
                  }
-
              }
          } 
-     })  
+     })   
      const response = await fetchFromAPI('', {
          body: {line_items, customer_email: email},
      })       

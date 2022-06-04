@@ -6,15 +6,23 @@
  } 
  .bgimg-1{
     align-items: 'center';
-    background-image: url("./../../../public/bg-1.jpg");    
-    background-size: contain ; 
+    background-image: url("./../../../public/P1\ photo_2022-06-02_14-40-04.jpg");    
+    background-size: contain ;  
+    background-position: center;
     height: 100vh;
  }  
  .bgimg-2 {
-    background-image: url("./../../../public/bg-img2.jpg");  
-    background-size: contain;  
+    background-image: url("./../../../public/p1\ photo_2022-06-02_14-22-57.jpg");  
+    background-size: contain;   
+    background-position: 19% 50%;
     object-fit: cover;                             
  } 
+ .bgimg-3 {
+   background-image: url("https://res.cloudinary.com/aleksmotin/image/upload/v1654176937/p3_yw9i7n-removebg-preview_qtgfqu.png");  
+   background-size: contain;   
+   background-position: 19% 50%;
+   object-fit: cover;                             
+} 
  h3 {
     text-align: center;
  }
@@ -31,7 +39,7 @@
     display: block;
  }  
  .section-title {
-    color: white; 
+    color: black; 
     font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
     font-size: 50px
  }
@@ -52,9 +60,9 @@
  }
  .caption h1 {
     border: '1px solid red';
-    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+   font-family: "emoji";
     margin: 0 auto;
-    color: white; 
+    color: black; 
     font-size: 2.3em;
  } 
  .caption div{
@@ -88,11 +96,12 @@
     font-size: .9em;
  }
  .section-direction {
-    padding: 0;
+    padding: 0; 
+    text-align: center;
     margin-top: 5px;
     font-family: 'Charm', cursive;
     font-weight: 400;
-    font-size: .9em;
+    font-size: 2.5rem;
  }
  .section-party {
     display: flex;
@@ -143,7 +152,7 @@
    padding: 0;
    margin: 15px 0;
    font-weight: 500;
-   color: white;
+   color: black;
    font-size: 1.2em;
  }
  .section-party button {
@@ -153,4 +162,12 @@
     border-radius: 5px;
     border: none;
     background: rgb(65, 62, 62);
+ }
+
+ 
+
+ @media(max-width: 650px) {
+    .section-direction {
+       font-size: 1.5rem;
+    }
  }

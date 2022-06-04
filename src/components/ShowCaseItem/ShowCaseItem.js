@@ -10,7 +10,7 @@ export const ShowCaseItem = (props) => {
   const [clickFavorities,setClickFavorities] = useState(false)          
   const { addtoFavorites} = useContext(favoriteContext);
 
-  return( 
+  return(  
     <div className="cards_item">
       <div 
         className='container_favorities'

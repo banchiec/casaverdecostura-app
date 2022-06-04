@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
 
-.title_sidebar_shop {
+.title_sidebar_shop h4  {
   font-family: "Alegreya Sans SC",'sans-serif';
-	font-size: 15px;
+	font-size: 15px; 
 }
+
 .menu_sidebar_shop li {
   font-family: "Alegreya Sans SC",'sans-serif';
 	font-weight: 600;
 }  
  
 .menu_sidebar_shop {
-  margin-top: -50%;
-}
+  position: absolute; 
+  z-index: 5000; 
+  top: 0;
+} 
+
   

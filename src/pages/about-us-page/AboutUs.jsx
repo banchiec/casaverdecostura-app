@@ -7,24 +7,24 @@ import { Container, Row, Col } from 'react-bootstrap'
 export const AboutUs = () => { 
   return (
       <div className='contacts-container'>
-          <div className='contacts-title'><h3>Contacta Con CASAVERDECOSTURA</h3></div> 
-          <div className='contacts-subtitle'><h4>Tienes alguna duda? Contáctanos para visitar nuestra tienda, consultar sobre algún producto o concertar una cita</h4></div>  
+          <div className='contacts-title'><h3>Contacta Con Nosotros</h3></div> 
+          <div className='contacts-subtitle'><p>Tienes alguna duda? Contáctanos para visitar nuestra tienda, consultar<br/> sobre algún producto o concertar una cita</p></div>  
           <div className='contacts-content'> 
-              <div className='contact-content-item'>
-                <div className='contacts-content_icon'><GiAmpleDress fill='orange' className="icon"/></div>
+              <div className='contact-content-item'> 
+                <div className='contacts-content_icon'><GiAmpleDress fill='grey' className="icon"/></div>
                 <div className='contacts-content_title'>¡Hablemos!</div>
                 <div className='contacts-content_phone'><p>Teléfono +34 910 646 998</p></div> 
                 <div className='contacts-content_whatsapp'><p>Whatsapps: + 34 610 600 745 </p></div> 
                 <div className='contacts-content_gmail'><a href="mailto:casaverdecostura@.es">casaverdecostura@.es</a></div> 
               </div>
               <div className='contact-content-item'>
-              <div className='contacts-content_icon'><FiMapPin fill='orange' className='icon'/></div>
+              <div className='contacts-content_icon'><FiMapPin fill='grey' className='icon'/></div>
               <div className='contacts-content_title'><p>Visitanos</p></div>
               <div className='contacts-content_direction'><p>Goya 127<br/> 28009 Madrid</p></div> 
               <div className='contacts-content_time'>L-V 10:30-14:30, 16:30-20:30<br/>Sabados: 10:30-15:00<p></p></div> 
               </div>
               <div className='contact-content-item'>
-              <div className='contacts-content_icon'><MdOutlineSupportAgent fill="orange" className='icon'/></div>
+              <div className='contacts-content_icon'><MdOutlineSupportAgent fill="grey" className='icon'/></div>
               <div className='contacts-content_title'><p>ATENCION AL CLIENTE</p></div>
               <div className='contacts-content_gmail'><a href="mailto:casaverdecostura@.es">casaverdecostura@.es</a></div> 
               </div>                          

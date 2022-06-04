@@ -65,11 +65,19 @@ export const ContainerSidebarShop = styled.div`
 		}
 		.show {
 			transform:  translate(0px);
-			transition: 1s;
+			transition: 1s; 
+			height: 100vh;
+			position: absolute; 
+			z-index: 5000;
 			left: 0px;
 		}
 	} 
 	.menu_sidebar_shop {
 		margin-top: -15%;                                               
+	} 
+
+	.title_sidebar_shop {
+		position: asbolute; 
+		z-index:10000;
 	}
 `

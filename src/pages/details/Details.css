@@ -133,15 +133,7 @@ hr {
   height: 68%;
 } 
 
- .show {
-    transform:  translateX(-100vw);   
-    position: absolute;
-    height: 100vh;  
-    z-index: 3000;
-    border: 1px solid grey;
-    transition: 1s; 
-    background: white;
-}  
+
  
 .titles {
     width: 250px;

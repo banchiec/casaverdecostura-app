@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUserPlus } from "react-icons/fa";
 import { FiLogIn, FiSearch } from "react-icons/fi";
 import { BsBag } from "react-icons/bs";
+import { slide as Menu } from 'react-burger-menu'
 import { NavbarContainer } from "./navbarStyled";
 import { MdFavorite } from "react-icons/md";
 import "./Navbar.css";
@@ -18,9 +19,11 @@ const Navbar = (props) => {
     (previous, current) => previous + current.amount,
     0
   );
-  const [isShownHoverContent, setIsShownHoverContent] = useState(false);
-  return (
-    <NavbarContainer>
+  const [isShownHoverContent, setIsShownHoverContent] = useState(false); 
+  const [isAboutHoverContent, setisAboutHoverContent] = useState(false);
+  return ( 
+    <>
+    <NavbarContainer>   
       <div>
         <div className="container-search">
           <Link to={"/search"}>
@@ -30,7 +33,7 @@ const Navbar = (props) => {
         <div className="navbar-center">
           <Link to={PATHS.HOMEPAGE}>
             <img
-              src="https://res.cloudinary.com/aleksmotin/image/upload/v1653992753/logonavbar_hqdjsf.png"
+            src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
               alt="Logo"
             />
           </Link>
@@ -40,7 +43,6 @@ const Navbar = (props) => {
             <Link className="collection-link" to={PATHS.COLLECTIONS}>
               <a
                 onMouseEnter={() => setIsShownHoverContent(true)}
-                onMouseDown={() => setIsShownHoverContent(true)}
                 onMouseLeave={() => setIsShownHoverContent(false)}
               >
                 COLLECIONES
@@ -54,7 +56,7 @@ const Navbar = (props) => {
               >
                 <div className="navbar-area-collections-content">
                   <li>
-                    <Link to={"/summer"}>
+                    <Link onClick={() => setIsShownHoverContent(false)} to={"/summer"}>
                       {" "}
                       <ul> Verano</ul>
                     </Link>
@@ -76,7 +78,27 @@ const Navbar = (props) => {
             )}
 
             <Link to={"/sewing"}>COSTURA</Link>
-            <Link to={"/aboutus"}>NOSOTRAS</Link>
+            <Link to={"/aboutus"}><a  onMouseEnter={() =>  setisAboutHoverContent(true)}
+                onMouseLeave={() =>  setisAboutHoverContent(false)}>NOSOTRAS </a></Link> 
+            {isAboutHoverContent  && (
+              <div
+              onMouseEnter={() => setisAboutHoverContent(true)}
+              onMouseLeave={() => setisAboutHoverContent(false)}
+                className="navbar-area-collections"
+              >
+                <div className="navbar-area-collections-content">
+                  <li>
+                    <ul>
+                      <Link to={"/aboutus"}>ACERCA DE CRISTINA CENDOYA</Link>
+                    </ul>
+                    <ul>
+                     CONTACTO
+                      <Link to={"/aboutus"}></Link>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+            )}
             {props?.user?.role === "admin" && (
               <Link to={PATHS.ADMIN}>ADMIN</Link>
             )}
@@ -120,8 +142,8 @@ const Navbar = (props) => {
             </Link>
           </Link>
         </div>
-      </div>
-      <div className="navbar_icons_mobile">
+      </div> 
+      <div className="navbar_icons_mobile">   
         <div>
           <Link to={"/favorites"}>
             <MdFavorite />
@@ -135,8 +157,14 @@ const Navbar = (props) => {
           <p>{total}</p>
         </div>
       </div>
-      {/* <BurgerMenu></BurgerMenu> */}
-    </NavbarContainer>
+    </NavbarContainer>  
+    <Menu right>
+        <ul>
+          <li>dsa</li>
+        </ul>
+      </Menu>
+    </>                 
+    
   );
 };
 

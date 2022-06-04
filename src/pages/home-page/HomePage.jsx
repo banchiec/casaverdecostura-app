@@ -12,16 +12,15 @@ function HomePage() {
         <div className="container-home">
           <div className="bgimg-1">
             <div className="caption">  
-              <h1>NUESTRA TIENDA
+              <h1>NUESTRA TIENDA</h1>
                 <br/>
                 <p className="section-direction">
-                  Calle Goya, 99
+                  Calle Goya, 127
                 </p>
                 <div>
                   <BsPlayFill/>
                   Ver vídeo de la passarella
                 </div>
-              </h1>
             </div> 
           </div>  
         </div>
@@ -36,18 +35,7 @@ function HomePage() {
             </Link>
           </div>
         </section> 
-        <section className="section bgimg-2P">  
-          <div className="section-girlfriends">
-            <h3 className="section-title">NOVIAS</h3>  
-            <p>La novia perfecta</p> 
-            <Link 
-              to={`/collections`}
-            >
-              <button >Entra y mira</button>
-            </Link>
-          </div>
-        </section> 
-        <section className="section bgimg-2">  
+        <section className="section bgimg-3">  
           <div className="section-party">
             <h3 className="section-title">COLECCIONES</h3>  
             <p>El vestido perfecto</p> 
