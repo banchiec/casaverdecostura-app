@@ -80,6 +80,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			color: black;
 			font-family: 'Barlow Semi Condensed', sans-serif;
 			flex-direction: row ;
+			border: 1px solid red;
 			justify-content: center;
 			align-items: center;
 			a {
@@ -125,7 +126,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		img {
 			width: 240px;
 			height: 30px;
-			/* margin-top: -20px ; */
+			margin-top: -20px ;
 			padding:  0;
 			position: absolute;
 			left: 4%;

@@ -11,7 +11,6 @@ import * as PATHS from "../../utils/paths";
 import { cartContext } from "../context/CartContext";
 import { favoriteContext } from "../context/FavoritesContext";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-import PreNavbar from "../PreNavbar/PreNavbar";
 
 const Navbar = (props) => {
   const { cartItems } = useContext(cartContext);
@@ -25,7 +24,9 @@ const Navbar = (props) => {
   return ( 
     <>
     <NavbarContainer>   
-      <PreNavbar/>
+      <div>
+
+      </div>
       <div>
         <div className="container-search">
           <Link to={"/search"}>
@@ -35,8 +36,7 @@ const Navbar = (props) => {
         <div className="navbar-center">
           <Link to={PATHS.HOMEPAGE}>
             <img
-              src='logo_condor.png'
-            // src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
+            src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
               alt="Logo"
             />
           </Link>

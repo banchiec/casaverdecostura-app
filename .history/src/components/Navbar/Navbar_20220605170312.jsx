@@ -11,45 +11,42 @@ import * as PATHS from "../../utils/paths";
 import { cartContext } from "../context/CartContext";
 import { favoriteContext } from "../context/FavoritesContext";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-import PreNavbar from "../PreNavbar/PreNavbar";
 
-const Navbar = (props) => {
-  const { cartItems } = useContext(cartContext);
-  const { favorites } = useContext(favoriteContext);
-  const total = cartItems.reduce(
-    (previous, current) => previous + current.amount,
-    0
-  );
-  const [isShownHoverContent, setIsShownHoverContent] = useState(false); 
-  const [isAboutHoverContent, setisAboutHoverContent] = useState(false);
-  return ( 
-    <>
-    <NavbarContainer>   
-      <PreNavbar/>
-      <div>
-        <div className="container-search">
-          <Link to={"/search"}>
-            <p className="search">BUSCAR</p>
-          </Link>
-        </div>
-        <div className="navbar-center">
+const Navbar = (props) => {    
+  const {cartItems} = useContext(cartContext);   
+  const {favorites} = useContext(favoriteContext);  
+  const total  = cartItems.reduce((previous, current) => previous + current.amount , 0 );   
+
+  return (
+    <NavbarContainer >
+      <div>   
+        {/* <div className='container-search'>
+          <Link to={"/search"}><p className="search">BUSCAR</p></Link>
+          <input type='text'/>
+        </div>    */}
+        <div className='container-image'>
           <Link to={PATHS.HOMEPAGE}>
-            <img
-              src='logo_condor.png'
-            // src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
-              alt="Logo"
-            />
-          </Link>
-          <div className="navbar_menu">
-            <Link to={"/"}>INICIO</Link>
-            <a href="/shopping">TIENDA</a>
-            <Link className="collection-link" to={PATHS.COLLECTIONS}>
-              <a
-                onMouseEnter={() => setIsShownHoverContent(true)}
-                onMouseLeave={() => setIsShownHoverContent(false)}
-              >
-                COLLECIONES
-              </a>
+            <img src="https://res.cloudinary.com/aleksmotin/image/upload/v1653992753/logonavbar_hqdjsf.png" alt="Logo" />
+          </Link>                   
+        </div>
+        <div className='navbar-center'>  
+          <div className='navbar_menu'>
+            <Link to={"/"}>
+              INICIO
+            </Link>
+            <a href="/shopping" >TIENDA</a>
+            <Link to={PATHS.COLLECTIONS}>
+              COLLECIONES
+            </Link>
+            <Link to={"/"}>
+              COSTURA
+            </Link>
+            <Link to={"/aboutus"}>
+              NOSOTRAS
+            </Link>
+            {props?.user?.role === 'admin' && (
+            <Link to={PATHS.ADMIN}>
+              ADMIN
             </Link>
             {isShownHoverContent && (
               <div
@@ -125,24 +122,12 @@ const Navbar = (props) => {
                 <FaUserPlus />
               </Link>
             </>
-          )}
-
-          <Link
-            to={PATHS.HOMEPAGE}
-            className="authLink"
-            onClick={props.handleLogout}
-          >
-            <Link to={"/favorites"}>
-              <span>
-                {" "}
-                <MdFavorite></MdFavorite>{" "}
-              </span>
-            </Link>
-            <Link to={"/cart"}>
-              {" "}
-              <BsBag className="bag-icon" />{" "}
-              <span className="cart-count">{total}</span>{" "}
-            </Link>
+          )} 
+          <Link to={PATHS.HOMEPAGE} className='authLink' onClick={props.handleLogout}>  
+          <Link to={"/favorites"}>
+          <span> <MdFavorite></MdFavorite>  </span>
+          </Link>
+               <Link to={"/cart"}>  <BsBag className="bag-icon"/> <span className="cart-count">{total}</span>   </Link>
           </Link>
         </div>
       </div> 

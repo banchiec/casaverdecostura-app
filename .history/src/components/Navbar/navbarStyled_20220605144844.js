@@ -5,14 +5,12 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 }))`
   display: ${props => props.hidden };
 	display: flex;
+	color: black;
 	flex-direction: row;
   justify-content: space-between;
 	align-items: center;
   flex-wrap: wrap;
   background: transparent;
-	z-index: 20;
-	width: 100%;
-	position: absolute;
   font-weight: 400;
 	img {
 		width: 180px;
@@ -52,20 +50,16 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 
 	@media (min-width: 780px){
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
-    /* font-weight: 500; */
+    font-weight: 500;
 		align-items: center ;
-		position: fixed;
-		padding: 0;
-		border: 0;
-		margin: 0;
+		padding: 0 ;
 		div {
 			display: flex ;
 			justify-content: space-around ;
+			/* border: 1px solid white; */
+			padding: 10px ;
 			align-items: center;
-			/* border: 1px solid red; */
-			/* padding: 10px ; */
 		}
 		svg {
 			padding: 0;
@@ -77,14 +71,12 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		}
 		.navbar_menu {
 			display: flex ;
-			color: black;
-			font-family: 'Barlow Semi Condensed', sans-serif;
+			/* border: 1px solid white; */
 			flex-direction: row ;
 			justify-content: center;
 			align-items: center;
 			a {
 				color: white;
-				color: black;
 				text-decoration: none;
 				margin: 0 15px 0 15px;
 				font-size: 18px;
@@ -97,7 +89,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			right: 3%;
 			padding: 0;
 			a {
-				color: black;
+				color: white;
 				text-decoration: none;
 				padding:  0;
 				margin: 0 15px 0 15px;
@@ -111,29 +103,25 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			flex-direction: row-reverse;
 		}
 		.navbar-center {
-			/* padding: 1rem; */
+			padding: 1rem;
 			display:flex;
 			flex-direction: column;
 			justify-content: center;  
-			font-weight: 500;
 			align-items: center;
 			div {
-				/* margin-top: 15px ; */
-				/* margin-bottom: -15px; */
+				margin-top: 15px ;
+				margin-bottom: -15px;
 			}
+
 		}
 		img {
-			width: 240px;
-			height: 30px;
-			/* margin-top: -20px ; */
-			padding:  0;
-			position: absolute;
-			left: 4%;
+			height: 50px;
 		 }
 		.container-search {
-		  display: none;
+		  display: inline;
 			position: absolute;
 			left: 4%;
+			/* border: 1px solid white; */
 			input {
 				margin: 0 0 0 10px;
 				border: none;

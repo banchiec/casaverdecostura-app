@@ -35,7 +35,7 @@ const Navbar = (props) => {
         <div className="navbar-center">
           <Link to={PATHS.HOMEPAGE}>
             <img
-              src='logo_condor.png'
+              src='/casaverde_logo.png'
             // src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
               alt="Logo"
             />

@@ -52,20 +52,17 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 
 	@media (min-width: 780px){
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
     /* font-weight: 500; */
 		align-items: center ;
 		position: fixed;
-		padding: 0;
-		border: 0;
-		margin: 0;
+		padding: 0 ;
 		div {
 			display: flex ;
 			justify-content: space-around ;
+			/* border: 1px solid white; */
+			padding: 10px ;
 			align-items: center;
-			/* border: 1px solid red; */
-			/* padding: 10px ; */
 		}
 		svg {
 			padding: 0;
@@ -111,21 +108,25 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			flex-direction: row-reverse;
 		}
 		.navbar-center {
-			/* padding: 1rem; */
+			padding: 1rem;
 			display:flex;
 			flex-direction: column;
 			justify-content: center;  
 			font-weight: 500;
 			align-items: center;
 			div {
-				/* margin-top: 15px ; */
-				/* margin-bottom: -15px; */
+				margin-top: 15px ;
+				margin-bottom: -15px;
 			}
+
 		}
+		/* .container-image {
+			border: 1px solid green;
+		} */
 		img {
-			width: 240px;
-			height: 30px;
-			/* margin-top: -20px ; */
+			width: 300px;
+			height: 90px;
+			margin-top: -20px ;
 			padding:  0;
 			position: absolute;
 			left: 4%;

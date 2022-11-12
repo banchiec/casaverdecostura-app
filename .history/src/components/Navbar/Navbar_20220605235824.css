@@ -5,10 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* font menu navbar */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
-
-/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200&display=swap');
 
 nav {
   display: flex;
@@ -16,9 +14,14 @@ nav {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .nav__projectName {
   text-decoration: none;
 } 
+
+ 
+
+
 .nav-main{
   display: flex;
   padding: 1em;
@@ -78,6 +81,8 @@ nav {
 .bag-icon {
   position: relative; 
 }
+ 
+
 .navbar-area-collections {
   background-color:  white; 
   position: absolute;   
@@ -89,14 +94,17 @@ nav {
   right: 0; 
   z-index: 1000
 }   
+
 .navbar-area-collections ul {
   color: black;
 }
+
 .navbar-area-collections-content li  {
   display: flex;   
   gap: 40px;
   flex-direction: row;
 } 
+
 .navbar-area-collections-content ul:hover {
    color: green; 
    border-width: 2px;
@@ -104,15 +112,23 @@ nav {
    margin: 0;
    text-align: center;
 } 
+ 
 ul a {
   color: black;
 }
+
+
+
 .collection-link {
   position: relative;
 } 
+ 
+
 .menu {
   background-color: white;
 }  
+
+
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -122,14 +138,17 @@ ul a {
   right: 15px; 
   top: 20px;
 }
+
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;
 }
+
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: #a90000;
 }
+
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   height: 24px;
@@ -140,33 +159,43 @@ ul a {
 .bm-cross {
   background: #bdc3c7;
 }
+
 /*
 Sidebar wrapper styles
 Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
+
+
 /* General sidebar styles */
 .bm-menu {
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
+
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
 }
+
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
 }
+
 /* Individual item */
 .bm-item {
   display: inline-block;
 }
+
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }      
+ 
+
+
 @media(max-width: 860px) {
   .menu {
     background-color: white;
@@ -175,14 +204,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
     width: 100%; 
 
   }    
+
 .bm-burger-button span {
   background-color: white;
 }
+
   .bm-menu-wrap {
     width: 100vw; 
     top: 0; 
     background-color: white;
   }
+   
   .bm-burger-button {
     position: absolute;
     width: 36px;  
@@ -191,6 +223,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     right: 15px; 
     top: 20px;
   } 
+ 
+  
+
 }
 
 

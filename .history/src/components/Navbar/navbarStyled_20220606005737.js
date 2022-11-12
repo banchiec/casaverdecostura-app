@@ -63,9 +63,9 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		div {
 			display: flex ;
 			justify-content: space-around ;
+			border: 1px solid red;
+			padding: 10px ;
 			align-items: center;
-			/* border: 1px solid red; */
-			/* padding: 10px ; */
 		}
 		svg {
 			padding: 0;
@@ -80,6 +80,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			color: black;
 			font-family: 'Barlow Semi Condensed', sans-serif;
 			flex-direction: row ;
+			border: 1px solid red;
 			justify-content: center;
 			align-items: center;
 			a {
@@ -118,14 +119,14 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 			font-weight: 500;
 			align-items: center;
 			div {
-				/* margin-top: 15px ; */
-				/* margin-bottom: -15px; */
+				margin-top: 15px ;
+				margin-bottom: -15px;
 			}
 		}
 		img {
 			width: 240px;
 			height: 30px;
-			/* margin-top: -20px ; */
+			margin-top: -20px ;
 			padding:  0;
 			position: absolute;
 			left: 4%;

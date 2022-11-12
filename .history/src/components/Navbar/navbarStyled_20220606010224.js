@@ -100,7 +100,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 				color: black;
 				text-decoration: none;
 				padding:  0;
-				margin: 0 15px 0 15px;
+				/* margin: 0 15px 0 15px; */
 				font-size: 18px;
 				transition: color 0.2s ease-in-out;
 			}
@@ -125,7 +125,7 @@ export const NavbarContainer = styled.nav.attrs(props => ({
 		img {
 			width: 240px;
 			height: 30px;
-			/* margin-top: -20px ; */
+			margin-top: -20px ;
 			padding:  0;
 			position: absolute;
 			left: 4%;

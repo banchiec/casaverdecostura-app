@@ -163,6 +163,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item {
   display: inline-block;
 }
+
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
@@ -191,6 +192,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     right: 15px; 
     top: 20px;
   } 
+ 
+  
+
 }
 
 
