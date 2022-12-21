@@ -1,31 +1,18 @@
 import React, { useEffect, useState } from "react";
-import ProductsService from "../../services/products.service";  
+import ProductsService from "../../services/products.service";
 import { Link } from "react-router-dom";
 import "./AllCollections.css";
-import { Footer } from "../../components/Footer/Footer"; 
+import { Footer } from "../../components/Footer/Footer";
 export const AllCollections = () => {
-  const [product, setProduct] = useState([]);
-  let productService = new ProductsService();
-  let getCollectionsPhotos = () => {
-    productService.getProducts().then((product) => {
-      setProduct(product?.data);
-    });
-  };
-  useEffect(() => {
-    getCollectionsPhotos();
-  }, []);
   return (
     <>
-      <section id="Verano">
-        <h2 className="title">VERANO</h2>
-        <hr />
+      <section className="summercollection">
+        <h2 className="summercollection__title titlecollection">VERANO</h2>
+        <hr className="line" />
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img
-                className="collection-image"
-                src={product[0]?.photos[0].url}
-              ></img>
+              <img className="collection-image" src="#"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -46,16 +33,15 @@ export const AllCollections = () => {
           </div>
         </div>
       </section>
-      <section id="Invierno">
-        <h2 className="title">EXCLUSIVA</h2>
+      <section className="exclusivecollection">
+        <h2 className="exclusivecollection__title titlecollection">
+          EXCLUSIVA
+        </h2>
         <hr />
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img
-                className="collection-image"
-                src={product[0]?.photos[0].url}
-              ></img>
+              <img className="collection-image" src="#"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -76,16 +62,13 @@ export const AllCollections = () => {
           </div>
         </div>
       </section>
-      <section id="Spring">
-        <h2 className="title">Primavera</h2>
+      <section className="springcollection">
+        <h2 className="springcollection__title titlecollection">Primavera</h2>
         <hr />
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img
-                className="collection-image"
-                src={product[0]?.photos[0].url}
-              ></img>
+              <img className="collection-image" src="#"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -101,22 +84,19 @@ export const AllCollections = () => {
               </p>
               <Link to={"/spring"}>
                 {" "}
-                <button className="explore" >Explorar</button>{" "}
-              </Link> 
+                <button className="explore">Explorar</button>{" "}
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section id="Winter">
-        <h2 className="title">Invierno</h2>
+      <section className="winter">
+        <h2 className="winter__title titlecollection">Invierno</h2>
         <hr />
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img
-                className="collection-image"
-                src={product[0]?.photos[0].url}
-              ></img>
+              <img className="collection-image" src="#"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -138,7 +118,7 @@ export const AllCollections = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 };
