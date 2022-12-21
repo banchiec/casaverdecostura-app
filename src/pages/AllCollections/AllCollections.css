@@ -9,11 +9,12 @@ section {
   text-align: center;
 }
 
-section button {
+.collection-button {
   width: 150px;
+  background-color: azure;
+  border-radius: 15px;
   font-family: Krub, sans-serif;
   height: 50px;
-  background-color: orange;
 }
 
 .collections-container {

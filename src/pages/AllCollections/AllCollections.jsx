@@ -12,7 +12,7 @@ export const AllCollections = () => {
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img className="collection-image" src="#"></img>
+              <img className="collection-image" src="vestidoejemplo1.jpg"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -27,7 +27,9 @@ export const AllCollections = () => {
                 tus sueños.
               </p>
               <Link to={"/summer"}>
-                <button>Explorar</button>
+                <button className="summmercollection__button collection-button">
+                  Explorar
+                </button>
               </Link>
             </div>
           </div>
@@ -41,7 +43,7 @@ export const AllCollections = () => {
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img className="collection-image" src="#"></img>
+              <img className="collection-image" src="vestidoejemplo2.jpg"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -56,7 +58,9 @@ export const AllCollections = () => {
                 tus sueños.
               </p>
               <Link to={"/exclusive"}>
-                <button>Explorar</button>
+                <button className="exclusivecollection__button collection-button">
+                  Explorar
+                </button>
               </Link>
             </div>
           </div>
@@ -68,7 +72,7 @@ export const AllCollections = () => {
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img className="collection-image" src="#"></img>
+              <img className="collection-image" src="vestidoejemplo3.jpg"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -84,19 +88,21 @@ export const AllCollections = () => {
               </p>
               <Link to={"/spring"}>
                 {" "}
-                <button className="explore">Explorar</button>{" "}
+                <button className="springcollection__button collection-button">
+                  Explorar
+                </button>{" "}
               </Link>
             </div>
           </div>
         </div>
       </section>
-      <section className="winter">
-        <h2 className="winter__title titlecollection">Invierno</h2>
+      <section className="wintercollection">
+        <h2 className="wintercollection__title titlecollection">Invierno</h2>
         <hr />
         <div className="collections-container">
           <div className="collections-content">
             <div className="collections-content-image">
-              <img className="collection-image" src="#"></img>
+              <img className="collection-image" src="vestidoejemplo4.jpg"></img>
             </div>
             <div className="collections-content-text">
               <h3>
@@ -112,7 +118,9 @@ export const AllCollections = () => {
               </p>
               <Link to={"/winter"}>
                 {" "}
-                <button>Explorar</button>{" "}
+                <button className="wintercollection__button collection-button">
+                  Explorar
+                </button>{" "}
               </Link>
             </div>
           </div>
