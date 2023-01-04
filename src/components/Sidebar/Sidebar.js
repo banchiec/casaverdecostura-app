@@ -1,38 +1,32 @@
 import { Link } from "react-router-dom";
 
-	// import NotificationDropdown from "../Dropdowns/NotificationDropdown"
+// import NotificationDropdown from "../Dropdowns/NotificationDropdown"
 // import UserDropdown from "../Dropdowns/UserDropdown.js";
 import { ContainerSidebar, ContainerIcon } from "./sidebarStyled";
-import {RiAdminFill} from 'react-icons/ri'
-import { GiLargeDress } from 'react-icons/gi'
+import { RiAdminFill } from "react-icons/ri";
+import "./Sidebar.css";
+import { GiLargeDress } from "react-icons/gi";
 
 const Sidebar = () => {
-	return(
-		<ContainerSidebar>
-			<nav className="md:left-1 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
-        <div
-            className="sidebar_logo"
-        >
+  return (
+    <ContainerSidebar>
+      <nav className="md:left-1 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+        <div className="sidebar_logo">
           <div
-            // className={
-            //   "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded " +
-            //   collapseShow
-            // }
+          // className={
+          //   "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded " +
+          //   collapseShow
+          // }
           >
             <div className="">
               <div className="flex flex-wrap">
                 <ContainerIcon>
-                  <Link
-                    to="/"
-                  >
-                   <RiAdminFill/> 
+                  <Link to="/">
+                    <RiAdminFill />
                   </Link>
                   <div>
-                    <h3>
-                      Panel de Administración 
-                    </h3>
+                    <h3>Panel de Administración</h3>
                   </div>
-
                 </ContainerIcon>
                 {/* <div className="w-6/12 flex justify-end">
                   <button
@@ -45,14 +39,13 @@ const Sidebar = () => {
                   </button>
                 </div> */}
               </div>
-          {/* <button
+              {/* <button
             className="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
             type="button"
             onClick={() => setCollapseShow(" .hidden bg-white m-2 py-3 px-6")}
           >
             show
           </button> */}
-
             </div>
             {/* Form */}
             {/* <form className="mt-6 mb-4 md:hidden">
@@ -93,12 +86,12 @@ const Sidebar = () => {
                     }
                   ></i>{" "} */}
                   <>
-                  <GiLargeDress/>
-                    Registrar producto 
+                    <GiLargeDress className="admin-link" />
+                    Registrar producto
                   </>
                 </Link>
-              </li>  
-              <br/>
+              </li>
+              <br />
               <li className="items-center">
                 <Link to="/admin/blog">
                   {/* <i
@@ -110,8 +103,8 @@ const Sidebar = () => {
                     }
                   ></i>{" "} */}
                   <>
-                  <GiLargeDress/>
-                    Registrar un blog 
+                    <GiLargeDress className="admin-link" />
+                    Registrar un blog
                   </>
                 </Link>
               </li>
@@ -341,7 +334,7 @@ const Sidebar = () => {
           </div>
         </div>
       </nav>
-		</ContainerSidebar>
-	)
-}
-export default Sidebar
+    </ContainerSidebar>
+  );
+};
+export default Sidebar;

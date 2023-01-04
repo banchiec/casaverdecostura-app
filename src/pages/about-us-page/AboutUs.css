@@ -1,26 +1,26 @@
- .icon {
-    width: 2.5rem; 
-    height: 2.5rem; 
-    border-radius: 50%;  
-    line-height: 20px;
-}   
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  line-height: 20px;
+}
 
 .contacts-content_icon {
-  width: 3.5rem; 
-  height: 3.5rem;    
-  display: block; 
+  width: 3.5rem;
+  height: 3.5rem;
+  display: block;
   margin: 0 auto;
-  padding-top: 5px; 
+  padding-top: 5px;
   text-align: center;
   border-radius: 50%;
   border: 1px solid grey;
-}  
+}
 .container-about {
   padding: 20px 10px;
-} 
+}
 .contacts-content_gmail a {
-  text-align: center; 
-  color: black; 
+  text-align: center;
+  color: black;
   font-weight: 400 bold;
 }
 .container-card {
@@ -28,57 +28,53 @@
   align-items: center;
 }
 .contacts-content {
-  text-align: center; 
+  text-align: center;
   gap: 80px;
-}  
-
-
+}
 
 .contents-container {
   padding: 25px;
 }
- 
+
 .contact-content-item {
   padding-top: 15px;
-} 
+}
 .contacts-subtitle {
   font-size: 1.5rem;
   text-align: center;
-}                 
- 
-.contacts-container {
-  padding-top: 15px;
-} 
-
-.how-to-reach_us {
-    text-align: center;
-} 
-.contacts-title h3 {
-  font-size: 2rem;
-}  
-
-
- 
-.contacts-subtitle p {
-    font-size: 20px; 
-    font-weight: 700;
 }
 
-@media(min-width: 865px) {
-    .contacts-content {
-        display: flex; 
-        flex-direction: row; 
-        justify-content: center; 
-        gap: 50px;
-    } 
-    .contacts-subtitle h4 {
-        font-size: 17px;
-    } 
-    .contacts-title h3 {
-      font-size: 3.4rem;
-    }   
-    .contacts-subtitle h4 {
-      font-size: 1rem;
-    }
-    
+.contacts-container {
+  padding-top: 100px;
+}
+
+.how-to-reach_us {
+  text-align: center;
+}
+.contacts-title h3 {
+  font-size: 2rem;
+}
+
+.contacts-subtitle p {
+  font-size: 15px;
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+@media (min-width: 865px) {
+  .contacts-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+  .contacts-subtitle h4 {
+    font-size: 17px;
+  }
+  .contacts-title h3 {
+    font-size: 3.4rem;
+  }
+  .contacts-subtitle h4 {
+    font-size: 1rem;
+  }
 }

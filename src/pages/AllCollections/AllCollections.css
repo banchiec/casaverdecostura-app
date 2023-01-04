@@ -1,136 +1,133 @@
- 
+section {
+  background-size: cover;
+  background-color: white;
+  padding-top: 120px;
+  margin-bottom: 30px;
+}
 
- section {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a1/Fondo_Negro.jpg"); 
-    background-size: cover;  
-    height: 850px;
-}     
+.titlecollection {
+  margin-top: 50px;
+  text-align: center;
+}
 
-section button {
-    width: 150px; 
-    font-family: Krub, sans-serif;
-    height: 50px; 
-    background-color: orange; 
+.collection-button {
+  width: 150px;
+  background-color: azure;
+  border-radius: 15px;
+  font-family: Krub, sans-serif;
+  height: 50px;
 }
 
 .collections-container {
-    display: flex;   
-    padding: 0;
-    margin: 0;
-    padding-top: 15px;
-    justify-content: center;
-}   
+  display: flex;
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+  justify-content: center;
+}
 
 .collections-content {
-   display: flex;  
-   justify-content: center;  
-   padding: 0;
-   margin: 0;
-   width: 100%; 
-   gap: 50px;
-   flex-direction: row;
-}    
+  display: flex;
+  padding: 120px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+  gap: 50px;
+  flex-direction: row;
+}
 
 .explore {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
-.line {
-   width: 30%;  
-   size: 5cm;
-   border-color: green;
-}
 .collections-content-text {
-   color: white;  
-   display: block; 
-   margin:  0 auto;
-   text-align: start;
-   width: 50%;
-}  
-
-
-hr {
-  border-color: orange; 
+  color: black;
+  display: block;
+  margin: 0 auto;
+  text-align: start;
   width: 50%;
 }
 
-.collections-content-text h3  {
-  text-align: start; 
+hr {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.collections-content-text h3 {
+  text-align: start;
   font-size: 1.5rem;
-}  
+}
 
 .collections-content-image {
-   display: block; 
-   margin: 0 auto;  
-   width: 50%;
-   padding-top: 15px;
-} 
-.title { 
-   margin: 0 ; 
-   color: white;  
-   font-size: 3.5rem;
-   text-align: center; 
-} 
- 
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+.title {
+  margin: 0;
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
 #Invierno .collections-content {
   flex-direction: row-reverse;
-} 
+}
 
 #Winter .collections-content {
-    flex-direction: row-reverse;
-}
- 
-
-
-@media(max-width: 965px) { 
-   
-    .collections-content-image {
-        width: 45%;
-    }    
-    .collections-container {
-       width: 100%;
-    }
-    .collections-content {
-        display: flex; 
-        flex-direction: column;
-    }
-    .collections-content-text {
-        width: 60%;
-    }  
-    #Invierno .collections-content {
-        flex-direction: column;
-    } 
-    #Winter .collections-content {
-        flex-direction: column;
-    }
-
+  flex-direction: row-reverse;
 }
 
-@media(max-width: 630px) { 
-   .collections-content-image {
-       width: 70%; 
-       display: block; 
-       margin: 0 auto; 
-       padding-top: 15px;
-   }    
-   .collections-content {
-       display: flex; 
-       flex-direction: column;
-   }  
-   #Invierno .collections-content {
-       flex-direction: column;
-   }
-  
-   .collections-content-text {
-       width: 70%; 
-       display: block; 
-       margin: 0 auto; 
-   }
-   #Invierno .collections-content {
+@media (max-width: 1099px) {
+  .collections-content-image {
+    width: 45%;
+  }
+
+  .collections-container {
+    width: 100%;
+  }
+  .collections-content {
+    display: flex;
+    padding: 0;
     flex-direction: column;
-} 
-#Winter .collections-content {
+  }
+  .collections-content-text {
+    width: 60%;
+  }
+  #Invierno .collections-content {
     flex-direction: column;
+  }
+  #Winter .collections-content {
+    flex-direction: column;
+  }
 }
 
+@media (max-width: 630px) {
+  .collections-content-image {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  .collections-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #Invierno .collections-content {
+    flex-direction: column;
+  }
+
+  .collections-content-text {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+  #Invierno .collections-content {
+    flex-direction: column;
+  }
+  #Winter .collections-content {
+    flex-direction: column;
+  }
 }
