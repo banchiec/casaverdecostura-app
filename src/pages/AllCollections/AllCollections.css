@@ -6,6 +6,7 @@ section {
 }
 
 .titlecollection {
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -27,8 +28,9 @@ section {
 
 .collections-content {
   display: flex;
+  padding: 120px;
   justify-content: center;
-  padding: 0;
+  align-items: flex-start;
   margin: 0;
   width: 100%;
   gap: 50px;
@@ -62,7 +64,6 @@ hr {
   display: block;
   margin: 0 auto;
   width: 50%;
-  padding-top: 15px;
 }
 .title {
   margin: 0;
@@ -79,15 +80,17 @@ hr {
   flex-direction: row-reverse;
 }
 
-@media (max-width: 965px) {
+@media (max-width: 1099px) {
   .collections-content-image {
     width: 45%;
   }
+
   .collections-container {
     width: 100%;
   }
   .collections-content {
     display: flex;
+    padding: 0;
     flex-direction: column;
   }
   .collections-content-text {

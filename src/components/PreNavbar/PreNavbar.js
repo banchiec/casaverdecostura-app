@@ -1,11 +1,17 @@
-import { Container } from "./preNavbarStyles"
+import { Container } from "./preNavbarStyles";
+import NavbarBurgerButton from "../NavbarBurgerButton/NavbarBurgerButton";
+import BurgerMenuList from "../BurgerMenuList/BurgerMenuList";
+import { useState } from "react";
 
-const PreNavbar = () => {
-	return(
-		<Container>
-			<h1>CASAVERDE</h1>
-			{/* <span>COSTURA</span> */}
-		</Container>
-	)
-}
-export default PreNavbar
+const PreNavbar = ({ clicked, setClicked }) => {
+  return (
+    <>
+      <Container>
+        <h1>CASAVERDE</h1>
+        <NavbarBurgerButton setClicked={setClicked} clicked={clicked} />
+      </Container>
+      <BurgerMenuList clicked={clicked} />
+    </>
+  );
+};
+export default PreNavbar;

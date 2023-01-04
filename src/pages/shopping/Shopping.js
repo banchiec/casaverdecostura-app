@@ -42,7 +42,7 @@ const Shopping = (props) => {
     let filteredProducts = products.filter(
       (product) => product.beloning?.subCategory === e.target.id
     );
-    console.log(filteredProducts);
+    console.log(filteredProducts, "productos filtrados");
     setFilteredProducts(filteredProducts);
   };
 

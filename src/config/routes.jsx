@@ -23,6 +23,7 @@ const routes = (props) => {
       path: PATHS.COLLECTIONS,
       element: <AllCollections {...props} />,
     },
+
     {
       path: PATHS.ABOUTUS,
       element: <AboutUs {...props} />,

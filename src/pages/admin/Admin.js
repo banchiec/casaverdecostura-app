@@ -1,18 +1,15 @@
 import { ContainerAdminPage } from "./AdminStyled";
-import RegisterProductScreen from "./screen/registerProduct/RegisterProductScreen"; 
+import RegisterProductScreen from "./screen/registerProduct/RegisterProductScreen";
 import RegisterBlogScreen from "./screen/registerProduct/RegisterBlogScreen";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-const Admin = () => {                              
-  
-  
-  return ( 
+const Admin = () => {
+  return (
     <>
-    <ContainerAdminPage>
-      <Sidebar />  
-      <RegisterProductScreen />       
-    </ContainerAdminPage> 
-    <RegisterBlogScreen></RegisterBlogScreen>
+      <ContainerAdminPage>
+        <Sidebar />
+        <RegisterProductScreen />
+      </ContainerAdminPage>
     </>
   );
 };
