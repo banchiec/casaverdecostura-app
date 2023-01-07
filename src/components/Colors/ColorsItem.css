@@ -5,6 +5,15 @@
   border-radius: 100px;
 }
 
+.color-btn.default {
+  border: 3px solid black;
+}
+
 .active {
-  border: 3px dashed black;
+  border: 3px solid black;
+}
+
+.undefined {
+  background: rgb(248, 231, 28);
+  border: solid;
 }

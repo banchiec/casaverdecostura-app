@@ -5,6 +5,7 @@ import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import { BurgerMenuList } from "./components/BurgerMenuList/BurgerMenuList";
 import { getLoggedIn, logout } from "./services/auth";
+import { Cart } from "./components/Cart/Cart";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
 import ButtonWhatsApp from "./components/ButtonWhatsApp/ButtonWhatsApp";
@@ -52,6 +53,7 @@ export default function App() {
   return (
     <div>
       <Navbar handleLogout={handleLogout} user={user} />
+      <Cart />
       <Routes>
         {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
