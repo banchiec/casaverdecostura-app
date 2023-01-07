@@ -4,10 +4,11 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.11.3",
     "@react-icons/all-files": "^4.1.0",
     "@stripe/react-stripe-js": "^1.7.2",
     "@stripe/stripe-js": "^1.29.0",
