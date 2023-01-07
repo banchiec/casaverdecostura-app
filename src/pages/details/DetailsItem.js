@@ -18,7 +18,7 @@ export const DetailsItem = (props) => {
   const product = { name, imageUrl, _id, description, price, sizes, color };
   const [showSidebarshop, setShowSidebarshop] = useState(true);
   const [show, setShow] = useState("");
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState({ active: `default`, defaultzero: 0 });
   const { addItemtoCart } = useContext(cartContext);
   const toogleShowSidebashop = () => {
     setShowSidebarshop(!showSidebarshop);
@@ -69,6 +69,7 @@ export const DetailsItem = (props) => {
           <Colors
             onShow={onShow}
             setImageShow={setImageShow}
+            setActive={setActive}
             active={isActive}
             photos={props.productDetails?.photos}
           ></Colors>

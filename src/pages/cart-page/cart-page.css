@@ -5,7 +5,7 @@
 .cart-info-content {
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px;
 }
 
@@ -15,16 +15,23 @@
   box-shadow: 2px 2px 11px 0px rgb(0 0 0 / 10%);
 }
 
-.cart-info-general-color {
-  display: none;
+button .color-btn.active {
+  border: 1px solid black;
 }
 
 .counter {
-  width: 15%;
   display: flex;
+  gap: 50px;
   justify-content: space-between;
   align-items: center;
 }
+
+.cart-info-general-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 .btn {
   width: 40px;
   height: 40px;
@@ -39,6 +46,13 @@
   color: #202020;
   cursor: pointer;
 }
+
+.cart-img {
+  margin-top: 10px;
+  max-height: 100%;
+  width: 100%;
+}
+
 .count {
   font-size: 20px;
   font-family: ‘Open Sans’;

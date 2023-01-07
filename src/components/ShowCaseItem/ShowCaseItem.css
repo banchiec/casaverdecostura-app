@@ -33,6 +33,7 @@ img {
 .cards {
   display: flex;
   flex-direction: row;
+  z-index: 0;
   /* justify-content: center; */
   justify-content: center;
   width: 100%;

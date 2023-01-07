@@ -6,6 +6,7 @@ import { BsBag } from "react-icons/bs";
 import { slide as Menu } from "react-burger-menu";
 import { NavbarContainer } from "./navbarStyled";
 import { MdFavorite } from "react-icons/md";
+import { Cart } from "../Cart/Cart";
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
 import { cartContext } from "../context/CartContext";
@@ -135,7 +136,6 @@ const Navbar = (props) => {
                 </Link>
               </>
             )}
-
             <Link
               to={PATHS.HOMEPAGE}
               className="authLink"
@@ -147,11 +147,6 @@ const Navbar = (props) => {
                   <MdFavorite></MdFavorite>{" "}
                 </span>
               </Link>
-              <Link to={"/cart"}>
-                {" "}
-                <BsBag className="bag-icon" />{" "}
-                <span className="cart-count">{total}</span>{" "}
-              </Link>
             </Link>
           </div>
         </div>
@@ -161,12 +156,6 @@ const Navbar = (props) => {
               <MdFavorite />
             </Link>
             <p>{favorites.length}</p>
-          </div>
-          <div>
-            <Link to={"/cart"}>
-              <BsBag className="bag-icon" />
-            </Link>
-            <p>{total}</p>
           </div>
         </div>
       </NavbarContainer>

@@ -39,29 +39,40 @@ export const Cart = () => {
           <hr />
           <div className="cart-info">
             {cartItems.map((item, i) => {
-              console.log(item);
+              console.log(item.color, "color de producto");
               const colorName = GetColorName(`${item.color}`);
               return (
                 <>
                   <div className="cart-info-content">
                     <div className="cart-info-image">
                       <img
+                        className="cart-img"
                         src={`http://localhost:5005/${item?.imageUrl}`}
                       ></img>
                     </div>
                     <div className="cart-info-general">
                       <p className="cart-info-general-name">{item.name}</p>
-                      <p className="cart-info-general-color">
-                        Color: {colorName}{" "}
-                      </p>
+                      <div
+                        className="cart-info-general-color"
+                        style={{
+                          backgroundColor: `${item.color}`,
+                        }}
+                      ></div>
                       <p className="cart-info-general-size">
                         Talla: {item.sizes}
                       </p>
                     </div>
                     <div className="counter">
-                      <div className="btn">+</div>
+                      <div onClick={() => addItemtoCart(item)} className="btn">
+                        +
+                      </div>
                       <div className="count">{item.amount}</div>
-                      <div className="btn">-</div>
+                      <div
+                        onClick={() => deleteItemfromCart(item)}
+                        className="btn"
+                      >
+                        -
+                      </div>
 
                       <div className="cart-content-buttons-extras">
                         <div key={i} className="cart-content-total">
@@ -93,7 +104,6 @@ export const Cart = () => {
               <button>PAGAR</button>
             </Link>
           </div>
-          <hr />
           <div className="cart-info-links">
             <p>
               <HttpsRoundedIcon /> Política de Privacidad
