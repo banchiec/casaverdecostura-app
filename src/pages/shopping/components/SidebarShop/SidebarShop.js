@@ -1,66 +1,6 @@
-import { useEffect, useState } from 'react'
-// import HamburguerButton from "../../../../components/CustomButtons/HamburguerButton/HamburguerButton"
+import { useState } from 'react'
 import { ContainerSidebarShop } from './sidebarShopStyled.js'
 import './sidebarShop.css'
-
-const dataMenu = [
-	{
-		id: 1,
-		value: 'Vestidos',
-	},
-	{
-		id: 2,
-		value: 'Pantalones',
-	},
-	{
-		id: 3,
-		value: 'Blusas',
-	},
-	{
-		id: 4,
-		value: 'Chalecos',
-	},
-	{
-		id: 5,
-		value: 'Abrigos',
-	},
-	{
-		id: 6,
-		value: 'Faldas',
-	},
-	{
-		id: 7,
-		value: 'Toreras',
-	},
-	{
-		id: 8,
-		value: 'Kimonos',
-	},
-	{
-		id: 9,
-		value: 'Monos',
-	},
-	{
-		id: 10,
-		value: 'Joyeria',
-	},
-	{
-		id: 11,
-		value: 'Bolsos',
-	},
-	{
-		id: 12,
-		value: 'Mascarillas',
-	},
-	{
-		id: 13,
-		value: 'Tocados',
-	},
-]
-
-// import { ContainerSidebar, ContainerIcon } from "./sidebarStyled";
-// import {RiAdminFill} from 'react-icons/ri'
-// import { GiLargeDress } from 'react-icons/gi'
 
 const SidebarShop = (props) => {
 	const [showSidebarshop, setShowSidebarshop] = useState(true)

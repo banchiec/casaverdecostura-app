@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import LoadingComponent from "./components/Loading";
+import Navbar from "./components/Navbar/Navbar";
+import { BurgerMenuList } from "./components/BurgerMenuList/BurgerMenuList";
+import { getLoggedIn, logout } from "./services/auth";
+import { Cart } from "./components/Cart/Cart";
+import routes from "./config/routes";
+import * as USER_HELPERS from "./utils/userToken";
+import ButtonWhatsApp from "./components/ButtonWhatsApp/ButtonWhatsApp";
+=======
 import { useEffect, useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
@@ -7,6 +20,7 @@ import { getLoggedIn, logout } from './services/auth'
 import routes from './config/routes'
 import * as USER_HELPERS from './utils/userToken'
 import ButtonWhatsApp from './components/ButtonWhatsApp/ButtonWhatsApp'
+>>>>>>> develop
 
 export default function App() {
 	const [user, setUser] = useState(null)
@@ -49,6 +63,20 @@ export default function App() {
 		setUser(user)
 	}
 
+<<<<<<< HEAD
+  return (
+    <div>
+      <Navbar handleLogout={handleLogout} user={user} />
+      <Cart />
+      <Routes>
+        {routes({ user, authenticate, handleLogout }).map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+      <ButtonWhatsApp number="34617982536" message="Hola" />
+    </div>
+  );
+=======
 	return (
 		<div>
 			<Navbar handleLogout={handleLogout} user={user} />
@@ -60,4 +88,5 @@ export default function App() {
 			<ButtonWhatsApp number="34617982536" message="Hola" />
 		</div>
 	)
+>>>>>>> develop
 }
