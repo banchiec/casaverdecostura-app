@@ -8,9 +8,14 @@ import { cartContext } from "../../components/context/CartContext";
 import { BiShoppingBag } from "react-icons/bi";
 
 export const DetailsItem = (props) => {
+  const { setCartOpen, cartOpen } = useContext(cartContext);
   let images = props.photos?.map((item) => item.url);
   const [imageShow, setImageShow] = useState(images[0]);
   const [sizes, setSizes] = useState(props.size[0]);
+  const [activesize, setactivesize] = useState({
+    active: `defaultsize`,
+    defaultzero: 0,
+  });
   const [color, setColor] = useState([props.photos[0].color]);
   const [handle, setHandle] = useState();
   let imageUrl = imageShow;
@@ -36,6 +41,10 @@ export const DetailsItem = (props) => {
     }
   };
 
+  const handleActiveSize = (name) => {
+    setactivesize({ active: name });
+  };
+
   return (
     <>
       <Gallery
@@ -46,18 +55,28 @@ export const DetailsItem = (props) => {
       <div className="container-product-info">
         <div className="container-product-text">
           <p className="product-name">{props.productDetails?.name}</p>
-          <p className="product-owner">CASAVERDECOSTURA</p>
-          <p className="product-price">{props.productDetails?.price} €</p>
-          <p>Impuestos incluidos</p>
-          <p for="size">Tamaño</p>
+          <button className="product-price">
+            {props.productDetails?.price} EUR
+          </button>
+          <p className="product-size" for="size">
+            Escoge el tamaño:
+          </p>
           <div className="container-size">
             {props.productDetails?.size.map((item, i) => {
+              console.log(i, "indice");
               return (
                 <>
                   <button
                     name={sizes}
                     onChange={() => handleSize}
-                    className="option-size"
+                    onClick={() => handleActiveSize(i)}
+                    className={`sizebutton ${
+                      i === 0 && activesize.active
+                        ? activesize.active
+                        : activesize == i
+                        ? "active"
+                        : ""
+                    }`}
                   >
                     {item}
                   </button>
@@ -65,7 +84,7 @@ export const DetailsItem = (props) => {
               );
             })}
           </div>
-          <p>Color</p>
+          <p className="color-product">Selecciona tu color preferido</p>
           <Colors
             onShow={onShow}
             setImageShow={setImageShow}
@@ -75,14 +94,17 @@ export const DetailsItem = (props) => {
           ></Colors>
           <button onClick={() => !addItemtoCart(product)} className="btn-cart">
             {" "}
-            <BiShoppingBag /> Añadir al carrito
+            <div
+              onClick={() => setCartOpen(!cartOpen)}
+              className="cart-btn-contentcontainer"
+            >
+              Añadir al carrito
+              <BiShoppingBag />
+            </div>
           </button>
         </div>
         <p className="product-description">
           {props.productDetails?.description}
-        </p>
-        <p className="regards-politics" onClick={toogleShowSidebashop}>
-          Envios, cambios y devoluciones
         </p>
         <div className="share-icons">
           <p>Compartir</p>
@@ -111,7 +133,6 @@ export const DetailsItem = (props) => {
           <div className={show}>
             <div className="text-container">
               <div></div>
-              <h3>Envíos cambios y devoluciones</h3>
               <h4>Envío</h4>
               <p>RECOGIDA EN TIENDA CASAVERDECOSTURA - GRATUITO</p>
               <p>En la tienda que elijas en 2-3 días laborables.</p>

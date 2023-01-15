@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../services/auth";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Signup";
 import * as PATHS from "../utils/paths";
@@ -37,12 +37,10 @@ export default function LogIn({ authenticate }) {
     });
   }
 
-  return (  
-    <div className="container-form">  
-    <br/> 
-    <form onSubmit={handleFormSubmission}> 
-      <h4>INICIA SESIÓN</h4>
-        <label htmlFor="input-username"></label>
+  return (
+    <div className="container-form">
+      <br />
+      <form className="auth-form" onSubmit={handleFormSubmission}>
         <input
           id="input-username"
           type="text"
@@ -52,7 +50,7 @@ export default function LogIn({ authenticate }) {
           onChange={handleInputChange}
           required
         />
-        <br/>
+        <br />
 
         <label htmlFor="input-password"></label>
         <input
@@ -64,30 +62,22 @@ export default function LogIn({ authenticate }) {
           onChange={handleInputChange}
           required
           minLength="8"
-        />  
-        <br/>
-      
+        />
+        <br />
+
         {error && (
           <div className="error-block">
             <p>There was an error submiting the form:</p>
             <p>{error.message}</p>
           </div>
         )}
-        <br/>
-        <button className="button__submit" type="submit">
-        INICIAR SESIÓN
+        <br />
+        <button className="auth_button" type="submit">
+          ENTRAR
         </button>
-      </form>  
+      </form>
 
-      <div className="register_information">   
-      <h4>REGÍSTRATE</h4>  
-      <div className="registration_information-description">
-      <p>SI TODAVÍA NO TIENES UNA CUENTA DE USUARIO DE CASAVERDECOSTURA.ES UTILIZA ESTA OPCIÓN PARA ACCEDER AL FORMULARIO DE REGISTRO.</p>  
-      <p>TE SOLICITAREMOS LA INFORMACIÓN IMPRESCINDIBLE PARA AGILIZAR EL PROCESO DE COMPRA.</p>
-      </div> 
-      <button className="button__submit account">CREAR CUENTA</button>
-      </div> 
       <p></p>
-      </div>
+    </div>
   );
 }

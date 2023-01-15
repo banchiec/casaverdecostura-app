@@ -1,61 +1,54 @@
- 
- .content-container {
-     display: flex;  
-     max-width: 1200px; 
-     justify-content: center;
-     flex-direction: column;
- }
+.content-container {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  flex-direction: column;
+}
 
- .product-name {
-    color: black;    
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;  
-    font-family: 'Roboto Condensed', sans-serif;
-} 
+.product-name {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+}
 .shop-button {
-    background-color: black; 
-    padding: 12px 8px;   
-    margin-top: 10px;
-    letter-spacing: 0.7px;
-    color: white; 
-    text-transform: uppercase;
-}  
- 
+  background-color: black;
+  padding: 12px 8px;
+  margin-top: 10px;
+  letter-spacing: 0.7px;
+  color: white;
+  text-transform: uppercase;
+}
+
 .materials {
-    align-self: center;
-} 
- 
-.product-price {
-    font-size: 11px; 
-    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+  align-self: center;
 }
 
 .product-description {
-    width: 230px;  
-    font-size: 10px; 
-    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
-}  
+  width: 230px;
+  font-size: 10px;
+  font-family: "Neue-Helvetica", "Helvetica", "Arial", Sans-Serif;
+}
 
 select {
-    width: 100%; 
-    border: none; 
-    outline: none;
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
-.option-size{
-    text-transform: uppercase;
-} 
+.option-size {
+  text-transform: uppercase;
+}
 
 hr {
-    color: black;
+  color: black;
 }
-  
- 
-@media(min-width: 500px){
-    .content-container {
-        flex-direction: row; 
-        align-items: flex-start;  
-        justify-content: space-evenly;
-    }
+
+@media (min-width: 500px) {
+  .content-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
 }

@@ -51,15 +51,17 @@ export default function App() {
   }
 
   return (
-    <div>
-      <Navbar handleLogout={handleLogout} user={user} />
-      <Cart />
-      <Routes>
-        {routes({ user, authenticate, handleLogout }).map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-      <ButtonWhatsApp number="34617982536" message="Hola" />
-    </div>
+    <>
+      <div className="modal-cart">
+        <Navbar handleLogout={handleLogout} user={user} />
+        <Cart />
+        <Routes>
+          {routes({ user, authenticate, handleLogout }).map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+        <ButtonWhatsApp number="34617982536" message="Hola" />
+      </div>
+    </>
   );
 }

@@ -43,14 +43,14 @@ const Navbar = (props) => {
             <Link to={PATHS.HOMEPAGE}>
               <img
                 className="navbarlogo"
-                src="logo_condor.png"
+                src="../logo_condor.png"
                 // src="https://res.cloudinary.com/aleksmotin/image/upload/v1654175568/p2_LOGO.R_BLANCO_qdofyf.png"
                 alt="Logo"
               />
             </Link>
             <div className="navbar_menu">
               <Link to={"/"}>INICIO</Link>
-              <a href="/shopping">TIENDA</a>
+              <Link to="/shopping">TIENDA</Link>
               <Link className="collection-link" to={PATHS.COLLECTIONS}>
                 <a onMouseEnter={() => setIsShownHoverContent(true)}>
                   COLLECIONES

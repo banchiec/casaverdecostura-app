@@ -9,7 +9,8 @@ export const NavbarContainer = styled.nav.attrs((props) => ({
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: transparent;
+  background: black;
+  height: 100px;
   z-index: 20;
   width: 100%;
   position: absolute;
@@ -85,11 +86,11 @@ export const NavbarContainer = styled.nav.attrs((props) => ({
       color: black;
       font-family: "Barlow Semi Condensed", sans-serif;
       flex-direction: row;
+      margin-top: 15px;
       justify-content: center;
       align-items: center;
       a {
         color: white;
-        color: black;
         text-decoration: none;
         margin: 0 15px 0 15px;
         font-size: 18px;

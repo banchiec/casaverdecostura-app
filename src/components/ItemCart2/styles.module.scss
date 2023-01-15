@@ -1,15 +1,36 @@
 .cartItem {
-  height: 80px;
-  background-color: #3a3a3a;
   margin-top: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 20px;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
+
+  @keyframes example {
+    0% {
+      position: absolute;
+      top: -1000px;
+      background-color: yellow;
+    }
+    100% {
+      top: 200px;
+    }
+  }
 
   img {
-    height: 65px;
+    width: 120px;
+    position: relative;
+    border: 2px solid #e2e7ec;
+    height: 120px;
     border-radius: 5px;
+  }
+
+  svg {
+    width: 70px;
+    position: absolute;
   }
 
   .dataContainer {
@@ -19,6 +40,9 @@
     height: 100%;
     padding: 15px 0;
 
+    .buttonsize {
+    }
+
     .left {
       padding-left: 20px;
       display: flex;
@@ -26,10 +50,33 @@
       justify-content: space-between;
 
       p {
+        color: black;
+        letter-spacing: 0.7px;
         font-weight: bold;
+        font-family: Futura, sans-serif;
         font-size: 13px;
       }
-
+      span {
+        color: #818d92;
+        line-height: 1.2;
+        font-family: Futura, sans-serif;
+        font-size: 13px;
+      }
+      .buttonsize {
+        border: none;
+        background-color: white;
+      }
+      .colorbtn {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: none;
+      }
+      .buttonsize::after {
+        content: "";
+        border-left: 2px solid grey;
+        margin-left: 5px;
+      }
       .buttons {
         display: flex;
         gap: 5px;
@@ -68,5 +115,51 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+.hoverable {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.closecontainer {
+  position: absolute;
+  border: 1px solid gray;
+  transform: translate(-6px, -10px);
+  width: 23px;
+  height: 23px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.amountcontainer {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding-top: 3px;
+  margin-top: 5px;
+
+  p::after {
+    border-left: 1px solid black;
+    margin-left: 4px;
+    content: "";
+  }
+}
+
+.shop-cart {
+  width: 15px;
+  height: 15px;
+}
+
+.addproduct {
+  span {
+    color: black;
+  }
+}
+.deleteproduct {
+  span {
+    color: black;
   }
 }
