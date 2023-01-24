@@ -1,49 +1,48 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import  Carousel  from "react-bootstrap/Carousel"
-import { Link } from "react-router-dom";
-import ProductsService  from "../../../../services/products.service" 
+import { useEffect } from 'react'
+import { useState } from 'react'
+import Carousel from 'react-bootstrap/Carousel'
+import { Link } from 'react-router-dom'
+import ProductsService from '../../../../services/products.service'
 import './carouselCustomStyles.css'
 
 const CarouselCustom = () => {
-
- let ProductService = new ProductsService();    
-  const [products, setProducts]  = useState([]);    
-  const getProducts =  () => {  
-      ProductService 
-      .getProducts() 
-      .then((products) => { 
-       setProducts(products?.data) 
-      })
-      .catch(err => console.log("Error retreiving products", err))     
-  } 
+	let ProductService = new ProductsService()
+	const [products, setProducts] = useState([])
+	const getProducts = () => {
+		ProductService.getProducts()
+			.then((products) => {
+				setProducts(products?.data)
+			})
+			.catch((err) => console.log('Error retreiving products', err))
+	}
 	useEffect(() => {
 		getProducts()
-	},[])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 	return (
-			<Carousel variant="dark" className='container-carousel'>
-				{products.map((item,i) => {
-					return(
-						<Carousel.Item  className='carousel-img' key={i} interval={1000}>
-          		<Link  to={`/details/${item._id}`}>
-								<img
-									className="d-block w-100"
-									src={item?.photos[0]?.url}
-									alt={item?.name}
-								/>
-								<Carousel.Caption >
-									<div className="carousel-description">
-										<h3>{item?.name}</h3>
-										{/* <p>{item?.description}</p> */}
-										<span>{`Precio: ${item?.price}.00€`}</span>
-									</div>
-								</Carousel.Caption>
-							</Link>
-						</Carousel.Item>
-					)
-				})}
+		<Carousel variant="dark" className="container-carousel">
+			{products.map((item, i) => {
+				return (
+					<Carousel.Item className="carousel-img" key={i} interval={1000}>
+						<Link to={`/details/${item._id}`}>
+							<img
+								className="d-block w-100"
+								src={item?.photos[0]?.url}
+								alt={item?.name}
+							/>
+							<Carousel.Caption>
+								<div className="carousel-description">
+									<h3>{item?.name}</h3>
+									{/* <p>{item?.description}</p> */}
+									<span>{`Precio: ${item?.price}.00€`}</span>
+								</div>
+							</Carousel.Caption>
+						</Link>
+					</Carousel.Item>
+				)
+			})}
 
-				{/* <Carousel.Item interval={1000}>
+			{/* <Carousel.Item interval={1000}>
 					<img
 						className="d-block w-100"
 						src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun05.jpg"
@@ -76,7 +75,7 @@ const CarouselCustom = () => {
 						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
 					</Carousel.Caption>
 				</Carousel.Item> */}
-			</Carousel>
+		</Carousel>
 	)
 }
 

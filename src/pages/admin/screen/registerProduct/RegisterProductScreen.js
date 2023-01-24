@@ -38,6 +38,7 @@ const RegisterProductScreen = () => {
 
 	useEffect(() => {
 		getCategories()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const getCategories = () => {
@@ -136,6 +137,7 @@ const RegisterProductScreen = () => {
 
 	return (
 		<>
+			{isLoading}
 			<div className="register-page">
 				<div className="form">
 					<div className="container-forms">

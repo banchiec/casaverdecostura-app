@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './ShowCaseItem.css'
 import { MdFavorite, MdFavoriteBorder } from 'react-icons/md'
-import { Link } from 'react-router-dom'
 
 export const ShowCaseItem = (props) => {
 	const images = props.photos?.map((photo) => photo.url)
@@ -9,6 +9,7 @@ export const ShowCaseItem = (props) => {
 
 	useEffect(() => {
 		clickFavorities ? addFavority() : removeFavority()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [clickFavorities])
 
 	const addFavority = () => {
