@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useContext } from "react";
+import ProductsService from "../../services/products.service";
+import { useParams } from "react-router-dom"; 
+import { DetailsItem } from "./DetailsItem";  
+import './Details.css'
+import ExtendedInformation from "./components/ExtendedInformation/ExtendedInformation";
+import ButtonWhatsApp from "../../components/ButtonWhatsApp/ButtonWhatsApp";
+
+export const Details = (props) => { 
+  const ProductService = new ProductsService(); 
+  const [productDetails, setProductDetails] = useState(null);  
+  const { id } = useParams();
+  useEffect(() => {
+    getProduct(id);
+  }, []);  
+=======
 import React, { useEffect, useState } from 'react'
 import ProductsService from '../../services/products.service'
 import { useParams } from 'react-router-dom'
@@ -12,6 +29,7 @@ export const Details = (props) => {
 		getProduct(id)
 		//eslint-disable-next-line
 	}, [])
+>>>>>>> preprodClean
 
 	const getProduct = (id) => {
 		ProductService.getOneProduct(id)
@@ -21,6 +39,25 @@ export const Details = (props) => {
 			.catch((err) => console.log(err))
 	}
 
+<<<<<<< HEAD
+  return (
+    <div className="content-container-details">
+      <div className="content-container-details-section">
+        {productDetails ? (
+          <>  
+           <DetailsItem size={productDetails?.size}   productDetails={productDetails} photos={productDetails?.photos} ></DetailsItem>
+          </>
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
+      {/* <div>
+        <ExtendedInformation product={productDetails}/>
+      </div> */}
+    </div>
+  );
+};
+=======
 	return (
 		<>
 			<div className="content-container">
@@ -54,3 +91,4 @@ export const Details = (props) => {
 		</>
 	)
 }
+>>>>>>> preprodClean

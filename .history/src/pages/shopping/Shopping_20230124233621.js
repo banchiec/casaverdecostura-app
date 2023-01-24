@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
+// import { Pagination } from '../../components/Pagination/Pagination'
+=======
 import { Pagination } from '../../components/Pagination/Pagination'
+>>>>>>> preprodClean
 import ProductsService from '../../services/products.service'
 import { ContainerAdminPage } from '../admin/AdminStyled'
 import { ShowCase } from '../../components/ShowCase/ShowCase'
@@ -11,8 +15,13 @@ const Shopping = (props) => {
 	const [products, setProducts] = useState([])
 	const [loading, setLoading] = useState(false)
 	const [filteredProducts, setFilteredProducts] = useState([])
+<<<<<<< HEAD
+	// const [currentPage, setCurrentPage] = useState(0)
+	// const [productPerPage, setproductPerPage] = useState()
+=======
 	const [currentPage, setCurrentPage] = useState(1)
 	const [productPerPage, setproductPerPage] = useState(12)
+>>>>>>> preprodClean
 
 	let ProductService = new ProductsService()
 	const getProducts = () => {
@@ -38,15 +47,31 @@ const Shopping = (props) => {
 	const handleChange = (e) => {
 		console.log(e)
 		let filteredProducts = products.filter(
+<<<<<<< HEAD
+			(product) => product.beloning?.subCategory === e.target.id
+		)
+		console.log(filteredProducts, 'productos filtrados')
+		setFilteredProducts(filteredProducts)
+=======
 			(product) => product.beloning.subCategory === e.target.id
 		)
 		setFilteredProducts(filteredProducts)
 		console.log(filteredProducts)
+>>>>>>> preprodClean
 	}
 
 	useEffect(() => {
 		getProducts()
 		getCategories()
+<<<<<<< HEAD
+	}, [])
+
+	//Get current products
+	// const indexOfLastProduct = currentPage * productPerPage
+	// const indexOfFirstProducts = indexOfLastProduct - productPerPage
+	// const currentProducts = filteredProducts.slice(indexOfFirstProducts, indexOfLastProduct)
+	// const paginate = (pageNumuber) => setCurrentPage(pageNumuber)
+=======
 		//eslint-disable-next-line
 	}, [])
 
@@ -56,10 +81,15 @@ const Shopping = (props) => {
 	const currentProducts = filteredProducts.slice(indexOfFirstProducts, indexOfLastProduct)
 	setproductPerPage(currentProducts)
 	const paginate = (pageNumuber) => setCurrentPage(pageNumuber)
+>>>>>>> preprodClean
 	return (
 		<>
 			<ContainerAdminPage>
 				<SidebarShop {...props} handleChange={handleChange} />
+<<<<<<< HEAD
+				{/* <SideFilterBar/> */}
+=======
+>>>>>>> preprodClean
 				<div className="container-shop">
 					<ShowCase
 						categories={categories}
@@ -67,11 +97,19 @@ const Shopping = (props) => {
 						{...props}
 						products={filteredProducts}
 					/>
+<<<<<<< HEAD
+					{/* <Pagination
+						productPerPage={productPerPage}
+						totalProducts={products.length}
+						paginate={paginate}
+					></Pagination> */}
+=======
 					<Pagination
 						productPerPage={productPerPage}
 						totalProducts={products.length}
 						paginate={paginate}
 					></Pagination>
+>>>>>>> preprodClean
 				</div>
 			</ContainerAdminPage>
 			<Footer></Footer>

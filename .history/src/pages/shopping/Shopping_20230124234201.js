@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
+// import { Pagination } from '../../components/Pagination/Pagination'
+=======
 import { Pagination } from '../../components/Pagination/Pagination'
+>>>>>>> preprodClean
 import ProductsService from '../../services/products.service'
 import { ContainerAdminPage } from '../admin/AdminStyled'
 import { ShowCase } from '../../components/ShowCase/ShowCase'
@@ -11,8 +15,13 @@ const Shopping = (props) => {
 	const [products, setProducts] = useState([])
 	const [loading, setLoading] = useState(false)
 	const [filteredProducts, setFilteredProducts] = useState([])
+<<<<<<< HEAD
+	// const [currentPage, setCurrentPage] = useState(0)
+	// const [productPerPage, setproductPerPage] = useState()
+=======
 	const [currentPage, setCurrentPage] = useState(1)
 	const [productPerPage, setproductPerPage] = useState(12)
+>>>>>>> preprodClean
 
 	let ProductService = new ProductsService()
 	const getProducts = () => {
