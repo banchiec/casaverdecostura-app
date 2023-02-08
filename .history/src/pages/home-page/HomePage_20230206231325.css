@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+	position: relative;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+@media (min-width: 780px) {
+	.bgimg-1 {
+		border: 1px solid blue;
+	}
+}
+.bgimg-1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: end;
+	/* border: 1px solid green; */
+
+	background-image: url('./../../../public/P1\ photo_2022-06-02_14-40-04.jpg');
+	background-size: 21.2rem;
+	background-position: center 6em;
+	height: 100vh;
+}
+.bgimg-2 {
+	background-image: url('./../../../public/p1\ photo_2022-06-02_14-22-57.jpg');
+	background-size: 20.2rem;
+	background-position: 10% 60%;
+	object-fit: cover;
+	height: 100vh;
+}
+.bgimg-3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: end;
+
+	background-image: url('https://res.cloudinary.com/aleksmotin/image/upload/v1654176937/p3_yw9i7n-removebg-preview_qtgfqu.png');
+	background-size: 20.2rem;
+	background-position: 19% 50%;
+	object-fit: cover;
+	height: 100vh;
+}
+@media (min-width: 780px) {
+	.bgimg-3,
+	.bgimg-2,
+	.bgimg-1 {
+		background-size: contain;
+		/* background-position: 1% 50%; */
+		/* font-size: 1.5rem; */
+		/* border: 1px solid orange; */
+	}
+}
+h3 {
+	text-align: center;
+}
+.caption {
+	/* border: 1px solid green; */
+	align-items: center;
+	padding: 0;
+	margin-bottom: 10vh;
+}
+.container-home {
+	/* marn-top: 1rem; */
+}
+.section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid green;
+}
+section-title {
+	color: black;
+	font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+	font-size: 50px;
+}
+.section-content {
+	text-align: center;
+}
+
+.section-content:first-child {
+	font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
+
+.section-content button {
+	background-color: #000000;
+	color: white;
+	width: 150px;
+	font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+	height: 50px;
+}
+.caption h1 {
+	/* border: 1px solid red; */
+	font-family: 'emoji';
+	padding: 0;
+	margin: 0;
+	color: black;
+	font-size: 2.2em;
+}
+.caption div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 280px;
+	margin: 0 auto;
+	padding: 10px 15px;
+	border: none;
+	font-size: 16px;
+	color: white;
+	border-radius: 5px;
+	background: #ffa333;
+	cursor: pointer;
+}
+.caption div :hover {
+	color: gray;
+}
+.caption div svg {
+	font-size: 28px;
+	margin: 0 5px;
+	/* border: 1px solid green; */
+}
+
+.section-subtitle {
+	padding: 0;
+	font-weight: 400;
+	font-size: 0.9em;
+}
+.section-direction {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Charm', cursive;
+	font-weight: 400;
+	font-size: 1.7rem;
+}
+.section-party {
+	border: 1px solid green;
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; */
+	margin: 0 auto;
+	/* padding-top: 30vh; */
+}
+.section-girlfriends {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding-top: 35vh;
+}
+.section-girlfriends h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 2.5em;
+	font-weight: 100;
+	font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
+.section-girlfriends p {
+	padding: 0;
+	margin: 15px 0;
+	font-weight: 500;
+	color: white;
+	font-size: 1.2em;
+}
+.section-girlfriends button {
+	padding: 12px 25px;
+	font-size: 16px;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	background: rgb(65, 62, 62);
+}
+.section-party h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 2.5em;
+	font-weight: 100;
+	font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
+.section-party p {
+	padding: 0;
+	margin: 15px 0;
+	font-weight: 500;
+	color: black;
+	font-size: 1.2em;
+}
+.section-party button {
+	padding: 12px 25px;
+	font-size: 16px;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	background: rgb(65, 62, 62);
+}

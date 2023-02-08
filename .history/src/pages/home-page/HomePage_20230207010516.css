@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+	position: relative;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+/* @media (min-width: 780px) {
+	.bgimg-1 {
+		border: 1px solid blue;
+	}
+} */
+.bgimg-1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	background-image: url('./../../../public/P1\ photo_2022-06-02_14-40-04.jpg');
+	background-size: 21.2em;
+	background-position: center 6em;
+	height: 100vh;
+}
+.bgimg-2 {
+	background-image: url('./../../../public/p1\ photo_2022-06-02_14-22-57.jpg');
+	background-size: 20.2rem;
+	background-position: 10% 60%;
+	object-fit: cover;
+	height: 100vh;
+}
+.bgimg-3 {
+	background-image: url('./../../../public/P1\ photo_2022-06-02_14-40-04.jpg');
+	background-size: 20.2rem;
+	background-position: 19% 50%;
+	object-fit: cover;
+	height: 100vh;
+}
+@media (min-width: 780px) {
+	/* .bgimg-1, */
+	.bgimg-2,
+	.bgimg-3 {
+		border: 3px solid green;
+		background-size: 20.2em;
+		background-position: 12ch 10em;
+		background-size: contain;
+	}
+	.bgimg-1 {
+		background-size: contain;
+		background-size: 31.2em;
+		background-position: center 8em;
+	}
+	.section-party {
+		border: 3px solid red;
+	}
+	.bgimg-1 h1 {
+		/* border: 1px solid green; */
+		font-size: 49px;
+	}
+}
+h3 {
+	text-align: center;
+}
+.caption {
+	padding: 0;
+	align-items: center;
+	margin-bottom: 10vh;
+}
+.section {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+}
+.section-title {
+	color: black;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-size: 2.2em;
+}
+/* .section-content {
+	text-align: center;
+} */
+
+.section-content:first-child {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.section-content button {
+	color: white;
+	width: 150px;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	height: 50px;
+}
+.caption h1 {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	padding: 0;
+	margin: 0;
+	color: black;
+	font-size: 2.2em;
+}
+.caption div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	margin: 0 auto;
+	padding: 10px 15px;
+	border: none;
+	font-size: 15px;
+	color: white;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	border-radius: 5px;
+	background: #ffa333;
+	cursor: pointer;
+}
+.caption div :hover {
+	color: gray;
+}
+.caption div svg {
+	font-size: 28px;
+	margin: 0 5px;
+}
+
+.section-subtitle {
+	padding: 0;
+	font-weight: 400;
+}
+.section-direction {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Charm', cursive;
+	font-weight: 400;
+	font-size: 1.7rem;
+}
+.section-party {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3em 0;
+}
+.section-party h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 2.2em;
+	font-weight: 400;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.section-party p {
+	font-weight: 100;
+	color: black;
+	font-size: 1.7rem;
+	align-items: center;
+	font-family: 'Charm', cursive;
+	padding: 0;
+	margin: 0;
+}
+.section-party button {
+	width: 250px;
+	margin: 0;
+	padding: 12px 25px;
+	font-size: 15px;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	background: rgb(65, 62, 62);
+}
